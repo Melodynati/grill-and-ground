@@ -1103,9 +1103,9 @@ footer{padding:30px 0 64px;font-size:13.5px;color:#22506F;background:#6FB7EC}
 
     <div class="stickyBar" id="stickyBar"></div>
 
-    <p class="mathline"><b id="mainCount">12</b> chef-curated main courses from the menu book, plus the sides,
-      the bar and the juice list, give <b id="combos">318,240</b> different sets. The kitchen cooks exactly
-      what it cooks today. The guest does the rest.</p>
+    <p class="mathline">With <b id="mainCount">12</b> chef-curated main courses from the menu book, plus choices across
+      sides, salads, soups, bakes, desserts, drinks, and add-ons, guests can build over <b>62,400</b> different
+      set combinations.</p>
   </div>
 </section>
 
@@ -2184,7 +2184,6 @@ $("surprise").addEventListener("click",()=>{
 });
 $("clear").addEventListener("click",()=>{ CATS.forEach(c=>delete picks[c.key]); step=0; paint(); });
 
-$("combos").textContent=CATS.reduce((n,c)=>n*c.items.length,1).toLocaleString("en-US");
 $("mainCount").textContent=MAINS.length;
 paint();
 
