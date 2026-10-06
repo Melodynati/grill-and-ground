@@ -442,6 +442,28 @@ canvas.farmVid{background:#3A2A14}
   font-weight:700;line-height:1.1}
 .fact span{display:block;font-size:13.5px;color:var(--ink-soft);margin-top:5px}
 .factNote{margin-top:18px;font-size:13.5px;color:var(--ink-soft)}
+/* ---------- branches ---------- */
+.branches{margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
+.brHead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;margin-bottom:16px}
+.brHead h3{font-size:clamp(1.3rem,3.4vw,1.7rem);color:#1F4D3A}
+.brHead p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+.brGrid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:560px){.brGrid{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.brGrid{grid-template-columns:repeat(4,1fr)}}
+.br{position:relative;display:flex;flex-direction:column;gap:3px;padding:16px 16px 15px;border-radius:14px;background:#FFFDF8;
+  border:1px solid rgba(176,140,72,.28);box-shadow:0 14px 28px -24px rgba(30,24,12,.5)}
+.br h4{margin:8px 0 0;font-family:var(--display);font-size:18px;font-weight:500;line-height:1.2;color:var(--ink)}
+.brArea{margin:0;font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
+.brHours{margin:8px 0 0;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums}
+.brHours b{font-weight:700;color:var(--ink-soft);margin-right:4px}
+.brPromo{margin:8px 0 0;padding:7px 10px;border-radius:9px;background:#FBEBDD;color:#8A3A1C;font-size:12.5px;line-height:1.4}
+.brStat{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:999px;font-size:11.5px;font-weight:700}
+.brStat:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.br.isOpen .brStat{background:#E9F3DC;color:#2F6B34}
+.br.isSoon .brStat{background:#FFF1D6;color:#8A5A10}
+.br.isSoon{border-style:dashed}
+.brSrc{margin:14px 0 0;font-size:12px;color:var(--ink-soft)}
+.brSrc a{color:#1F4D3A}
 .certs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:26px}
 .certLead{font-size:13.5px;font-weight:700;color:#1F4D3A;margin-right:4px}
 .chip{font-size:12.5px;background:#E9F3DC;color:#2F5A34;border-radius:999px;padding:5px 11px;font-weight:500}
@@ -909,7 +931,7 @@ footer{padding:30px 0 64px;font-size:13.5px;color:#22506F;background:#6FB7EC}
       <div class="fact"><b>150+</b><span>salad bar items already running in the restaurant</span></div>
       <div class="fact"><b>THB 259</b><span>dine-in starting price, VAT in, no service charge</span></div>
       <div class="fact"><b>Ohkajhu</b><span>the organic farm brand this concept grows out of</span></div>
-      <div class="fact"><b>1 branch</b><span>The Paseo Park, Kanchanaphisek</span></div>
+      <div class="fact"><b id="brCount">4 branches</b><span id="brCountSub">Kanchanaphisek, Lasalle, Bang Yai and Rama 2</span></div>
     </div>
     <div class="certs">
       <span class="certLead">Ohkajhu Farm is certified organic by ACT</span>
@@ -918,7 +940,64 @@ footer{padding:30px 0 64px;font-size:13.5px;color:#22506F;background:#6FB7EC}
       <span class="chip">USDA Organic</span>
       <span class="chip">Canada Organic</span>
     </div>
-    <p class="factNote">Everything the plate carried up is already proven on the ground: a real organic farm, a kitchen, one dining room and a full salad bar. The Virtual Buffet is simply the way it leaves the building.</p>
+    <p class="factNote">Everything the plate carried up is already proven on the ground: a real organic farm, a kitchen, a growing set of dining rooms and a full salad bar. The Virtual Buffet is simply the way it leaves the building.</p>
+    <div class="branches" id="branches">
+      <div class="brHead">
+        <h3>Our branches</h3>
+        <p>Dine in at any branch, or let the Virtual Buffet bring the set to you.</p>
+      </div>
+      <div class="brGrid">
+        <article class="br" data-open="2000-01-01">
+          <span class="brStat"></span>
+          <h4>The Paseo Park</h4>
+          <p class="brArea">Kanchanaphisek</p>
+          <p class="brHours"><b>Daily</b> 10:00 AM – 9:30 PM</p>
+        </article>
+        <article class="br" data-open="2000-01-01">
+          <span class="brStat"></span>
+          <h4>Dadfa Lasalle</h4>
+          <p class="brArea">Lasalle</p>
+          <p class="brHours"><b>Daily</b> 9:00 AM – 10:00 PM</p>
+          <p class="brPromo" data-until="2026-10-31">Special opening steak promotions through October 2026</p>
+        </article>
+        <article class="br" data-open="2026-10-09">
+          <span class="brStat"></span>
+          <h4>PTT Station West Village</h4>
+          <p class="brArea">Bang Yai</p>
+          <p class="brHours"><b>Opens</b> 9 October 2026</p>
+        </article>
+        <article class="br" data-open="2026-10-22">
+          <span class="brStat"></span>
+          <h4>SB Design Square</h4>
+          <p class="brArea">Rama 2</p>
+          <p class="brHours"><b>Opens</b> 22 October 2026</p>
+        </article>
+      </div>
+      <p class="brSrc">Sources:
+        <a href="https://www.instagram.com/grillandground.thailand/" target="_blank" rel="noopener">Grill &amp; Ground on Instagram</a> ·
+        <a href="https://www.instagram.com/reel/DeCAKw8Og7-/" target="_blank" rel="noopener">branch announcement reel</a> ·
+        <a href="https://www.facebook.com/goodbyemoney/posts/1656934839122070/" target="_blank" rel="noopener">new branches post</a></p>
+    </div>
+    <script>
+    /* branch status follows the calendar: "Opening 9 Oct" turns into "Open now" on the day */
+    (function(){
+      const now=new Date(), today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+      const M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      let open=0, soon=0;
+      document.querySelectorAll("#branches .br").forEach(b=>{
+        const [y,m,d]=b.dataset.open.split("-").map(Number), od=new Date(y,m-1,d), st=b.querySelector(".brStat");
+        if(today>=od){ open++; b.classList.add("isOpen"); st.textContent="Open now";
+          const h=b.querySelector(".brHours"); if(h&&/Opens/.test(h.textContent)) h.innerHTML="<b>Open since</b> "+d+" "+M[m-1]+" "+y; }
+        else { soon++; b.classList.add("isSoon"); const days=Math.round((od-today)/864e5);
+          st.textContent=days<=1?"Opening tomorrow":"Opening "+d+" "+M[m-1]+" · in "+days+" days"; }
+      });
+      const c=document.getElementById("brCount"), sub=document.getElementById("brCountSub");
+      if(c){ c.textContent=(open+soon)+" branches"; sub.textContent=soon?open+" open now, "+soon+" opening soon":"Kanchanaphisek, Lasalle, Bang Yai and Rama 2"; }
+      /* time-limited promotions disappear once they end */
+      document.querySelectorAll("#branches [data-until]").forEach(e=>{ const [y,m,d]=e.dataset.until.split("-").map(Number);
+        if(today>new Date(y,m-1,d)) e.remove(); });
+    })();
+    </script>
   </div>
 </section>
 
@@ -1144,7 +1223,7 @@ footer{padding:30px 0 64px;font-size:13.5px;color:#22506F;background:#6FB7EC}
           <tr>
             <td>Dine-in buffet</td>
             <td>A grilled main plus the whole 150-item salad bar, from THB 259</td>
-            <td>Only works at The Paseo Park, and only during opening hours</td>
+            <td>Only works at a branch, and only during opening hours</td>
           </tr>
           <tr>
             <td>Food delivery</td>
