@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grill &amp; Ground v22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@400;500;700&family=Noto+Sans+Thai:wght@400;600&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+<style>{{include:styles/main.css}}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="puff" cx="45%" cy="36%" r="62%">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="52%" stop-color="#FFFFFF"/>
+      <stop offset="82%" stop-color="#EEF4FA"/><stop offset="100%" stop-color="#D8E6F2"/>
+    </radialGradient>
+    <radialGradient id="puffW" cx="45%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="48%" stop-color="#FFFCF2"/>
+      <stop offset="80%" stop-color="#FDF0D4"/><stop offset="100%" stop-color="#F1D9AE"/>
+    </radialGradient>
+    <linearGradient id="puffBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAF2F9"/><stop offset="100%" stop-color="#CFE0EF"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<section class="journey" id="journey" aria-label="From Ground to Cloud, a scrolling introduction">
+  <div class="scene" id="scene">
+
+    <div class="layer skyBase"></div>
+    <div class="layer skyHigh" id="skyHigh"></div>
+    <div class="layer sunHigh" id="sunHigh"><div class="sunRays"></div></div>
+    <div class="sunOrb" id="sunOrb"><i></i></div>
+    <div class="layer clouds cloudsFar" id="cloudsFar"></div>
+
+    <div class="layer farmIntro">
+      <div class="farm" id="farm">
+          <canvas class="farmVid" id="farmCv" role="img"
+                  aria-label="A camera glides through rows of organic vegetables at sunrise, tilts up to the sky and rises into the clouds"></canvas>
+        </div>
+    </div>
+
+    <div class="layer dof" id="dof"></div>
+    <canvas class="layer pollen" id="pollen" aria-hidden="true"></canvas>
+    <div class="layer godRays" id="godRays"></div>
+    <div class="layer bloom" id="bloom"></div>
+    <div class="layer hazeBand" id="hazeBand"></div>
+    <div class="layer clouds cloudsMid" id="cloudsMid"></div>
+
+    <div class="auraWrap" id="auraWrap"><div class="aura" id="aura"></div><div class="rays" id="rays"></div></div>
+    <div class="burst" id="burst"></div>
+    <div class="layer floor" id="floor"></div>
+
+    <div class="plateWrap" id="plateWrap"><div class="plateFloat"><img class="plateImg" id="plateImg" alt="Thai Jaew Fire Grilled Chicken on the house plate"></div></div>
+
+    <div class="layer bank" id="bank"></div>
+    <div class="layer leaves" id="leaves" aria-hidden="true"><div class="lf l"><img alt="" src="{{datauri:assets/images/misc/00.webp}}"></div><div class="lf r"><img alt="" src="{{datauri:assets/images/misc/01.webp}}"></div></div>
+    <div class="layer veil" id="veil" aria-hidden="true"></div>
+
+    <div class="ui topbar">
+      <div class="pill brandPill"><img class="logoLock" src="{{datauri:assets/images/misc/02.png}}" alt="Grill &amp; Ground" width="294" height="162"><span>powered by Ohkajhu</span></div>
+      <div class="pill alt">Altitude <b id="altName">Ground</b></div>
+    </div>
+
+    <div class="ui rail" aria-hidden="true">
+      <div class="railStop" style="bottom:0%">Ground</div>
+      <div class="railStop" style="bottom:36%">Grill</div>
+      <div class="railStop" style="bottom:66%">Sky</div>
+      <div class="railStop" style="bottom:100%">Cloud</div>
+      <div class="railDot" id="railDot"></div>
+    </div>
+
+    <div class="ui cap" id="capA">
+      <p class="step">01 Ground</p>
+      <h2>Fresh from the ground.</h2>
+      <p>Ohkajhu Farm grows it organic, certified by ACT to EU, USDA and Canada standards.
+        Lettuce, kale, carrots, tomatoes, radish, pumpkin, picked in the morning and on a plate
+        the same day.</p>
+    </div>
+    <div class="ui cap" id="capB">
+      <p class="step">02 Grill</p>
+      <h2>Fired on the grill.</h2>
+      <p>Every steak grilled to order, plated with the Harvest Salad Bar and packed as one complete set.</p>
+    </div>
+    <div class="ui cap" id="capC">
+      <p class="step">03 Sky</p>
+      <h2>Through the cloud.</h2>
+      <p>No table to book, no branch to drive to. The buffet is ordered from any screen, anywhere.</p>
+    </div>
+    <div class="ui cap capFinal" id="capD">
+      <h1><span class="g">From Ground</span> <span class="c">to Cloud</span></h1>
+      <p>The Virtual Buffet by Grill &amp; Ground. Twelve chef-curated mains, one complete set.</p>
+    </div>
+
+    <div class="ui ctaRow" id="ctaRow">
+      <a class="btn btn-solid" href="#builder">Build a set</a>
+      <a class="btn btn-ghost" href="#plan">See the plan</a>
+    </div>
+
+    <div class="ui hint pill" id="hint">
+      Scroll to rise
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="#1F4D3A" stroke-width="2"
+        fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+</section>
+
+
+<section class="facts">
+  <div class="wrap">
+    <div class="factRow">
+      <div class="fact"><b>150+</b><span>salad bar items already running in the restaurant</span></div>
+      <div class="fact"><b>THB 259</b><span>dine-in starting price, VAT in, no service charge</span></div>
+      <div class="fact"><b>Ohkajhu</b><span>the organic farm brand this concept grows out of</span></div>
+      <div class="fact"><b id="brCount">4 branches</b><span id="brCountSub">Kanchanaphisek, Lasalle, Bang Yai and Rama 2</span></div>
+    </div>
+    <div class="certs">
+      <span class="certLead">Ohkajhu Farm is certified organic by ACT</span>
+      <span class="chip">ACT, IFOAM accredited</span>
+      <span class="chip">EU Organic, TH-BIO-121</span>
+      <span class="chip">USDA Organic</span>
+      <span class="chip">Canada Organic</span>
+    </div>
+    <p class="factNote">Everything the plate carried up is already proven on the ground: a real organic farm, a kitchen, a growing set of dining rooms and a full salad bar. The Virtual Buffet is simply the way it leaves the building.</p>
+    <div class="branches" id="branches">
+      <div class="brHead">
+        <h3>Our branches</h3>
+        <p>Dine in at any branch, or let the Virtual Buffet bring the set to you.</p>
+      </div>
+      <div class="brGrid">
+        <article class="br" data-open="2000-01-01">
+          <span class="brStat"></span>
+          <h4>The Paseo Park</h4>
+          <p class="brArea">Kanchanaphisek</p>
+          <p class="brHours"><b>Daily</b> 10:00 AM – 9:30 PM</p>
+        </article>
+        <article class="br" data-open="2000-01-01">
+          <span class="brStat"></span>
+          <h4>Dadfa Lasalle</h4>
+          <p class="brArea">Lasalle</p>
+          <p class="brHours"><b>Daily</b> 9:00 AM – 10:00 PM</p>
+          <p class="brPromo" data-until="2026-10-31">Special opening steak promotions through October 2026</p>
+        </article>
+        <article class="br" data-open="2026-10-09">
+          <span class="brStat"></span>
+          <h4>PTT Station West Village</h4>
+          <p class="brArea">Bang Yai</p>
+          <p class="brHours"><b>Opens</b> 9 October 2026</p>
+        </article>
+        <article class="br" data-open="2026-10-22">
+          <span class="brStat"></span>
+          <h4>SB Design Square</h4>
+          <p class="brArea">Rama 2</p>
+          <p class="brHours"><b>Opens</b> 22 October 2026</p>
+        </article>
+      </div>
+      <p class="brSrc">Sources:
+        <a href="https://www.instagram.com/grillandground.thailand/" target="_blank" rel="noopener">Grill &amp; Ground on Instagram</a> ·
+        <a href="https://www.instagram.com/reel/DeCAKw8Og7-/" target="_blank" rel="noopener">branch announcement reel</a> ·
+        <a href="https://www.facebook.com/goodbyemoney/posts/1656934839122070/" target="_blank" rel="noopener">new branches post</a></p>
+    </div>
+    <script>{{include:scripts/01-branches.js}}</script>
+  </div>
+</section>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="dTable" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55524D"/><stop offset=".55" stop-color="#3A3733"/><stop offset="1" stop-color="#232120"/></linearGradient>
+    <linearGradient id="dSage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E2EDD2"/><stop offset="1" stop-color="#AFCB8E"/></linearGradient>
+    <linearGradient id="dMarble" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7F6F3"/><stop offset="1" stop-color="#D5D2CC"/></linearGradient>
+    <radialGradient id="dLight" cx="32%" cy="14%" r="78%">
+      <stop offset="0" stop-color="#FFF6E4" stop-opacity=".40"/><stop offset=".45" stop-color="#FFF2DC" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#FFF2DC" stop-opacity="0"/></radialGradient>
+    <radialGradient id="dVign" cx="50%" cy="46%" r="74%">
+      <stop offset=".42" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity=".46"/></radialGradient>
+    <linearGradient id="dSheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset=".42" stop-color="#FFFFFF" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#5E625E" stop-opacity=".22"/></linearGradient>
+    <linearGradient id="dGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".7"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+    <filter id="dSoft" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="dSoft2" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="dBokeh" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="2.6"/></filter>
+    <filter id="dFar" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="1.1"/></filter>
+    <filter id="dDrop" x="-40%" y="-50%" width="180%" height="220%">
+      <feDropShadow dx="2" dy="7" stdDeviation="5" flood-color="#120E0A" flood-opacity=".55"/></filter>
+    <filter id="dGrain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/></filter>
+    <pattern id="dSpeck" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="1" fill="#FFFFFF" opacity=".16"/><circle cx="11" cy="9" r=".8" fill="#000000" opacity=".22"/>
+      <circle cx="7" cy="13" r=".7" fill="#FFFFFF" opacity=".12"/><circle cx="14" cy="2" r=".6" fill="#000000" opacity=".18"/>
+    </pattern>
+    <pattern id="dGranite" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#9A968F" opacity=".5"/><circle cx="6.5" cy="6" r=".8" fill="#C9C4BB" opacity=".36"/>
+      <circle cx="7" cy="1.5" r=".6" fill="#000000" opacity=".45"/></pattern>
+    <pattern id="dBlueSpk" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r=".9" fill="#DCE8F6" opacity=".5"/><circle cx="6" cy="5.5" r=".7" fill="#12294A" opacity=".5"/></pattern>
+    <pattern id="dGrain2" width="7" height="7" patternUnits="userSpaceOnUse">
+      <ellipse cx="2" cy="2" rx="1.6" ry=".9" fill="#E3D6BE" opacity=".8"/><ellipse cx="5.5" cy="5" rx="1.5" ry=".9" fill="#3E2E22" opacity=".5"/></pattern>
+    <pattern id="dTruffle" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r=".6" fill="#241E1A" opacity=".75"/><circle cx="4.5" cy="4" r=".45" fill="#241E1A" opacity=".6"/></pattern>
+    <radialGradient id="dPlate" cx="34%" cy="26%" r="82%">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#F4F5F1"/><stop offset="1" stop-color="#D3D7D1"/></radialGradient>
+    <linearGradient id="dSteel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FDFEFE"/><stop offset=".28" stop-color="#B7BDC2"/>
+      <stop offset=".55" stop-color="#8E959B"/><stop offset=".78" stop-color="#D8DCDF"/><stop offset="1" stop-color="#9AA1A6"/></linearGradient>
+    <linearGradient id="dBrass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7EBC4"/><stop offset=".4" stop-color="#C6A469"/>
+      <stop offset=".7" stop-color="#96793F"/><stop offset="1" stop-color="#E8D8A6"/></linearGradient>
+    <radialGradient id="dIron" cx="36%" cy="26%" r="78%"><stop offset="0" stop-color="#4A4744"/><stop offset=".6" stop-color="#26241F"/>
+      <stop offset="1" stop-color="#100F0E"/></radialGradient>
+    <linearGradient id="dWood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8A5630"/><stop offset=".35" stop-color="#B0743F"/>
+      <stop offset=".72" stop-color="#7E4C28"/><stop offset="1" stop-color="#5E3819"/></linearGradient>
+    <radialGradient id="dBlue" cx="36%" cy="28%" r="80%"><stop offset="0" stop-color="#7EA4D6"/><stop offset=".6" stop-color="#3F6BA6"/>
+      <stop offset="1" stop-color="#22436F"/></radialGradient>
+    <radialGradient id="dTeal" cx="36%" cy="28%" r="80%"><stop offset="0" stop-color="#93BBC8"/><stop offset=".6" stop-color="#4C7A8C"/>
+      <stop offset="1" stop-color="#2C4F5E"/></radialGradient>
+    <linearGradient id="dChick" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#F6D69E"/><stop offset=".45" stop-color="#DDA95F"/>
+      <stop offset="1" stop-color="#A96A32"/></linearGradient>
+    <linearGradient id="dPork" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#DCA265"/><stop offset=".45" stop-color="#B0713A"/>
+      <stop offset="1" stop-color="#7A4620"/></linearGradient>
+    <linearGradient id="dRib" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E3A18"/><stop offset=".5" stop-color="#5E2009"/>
+      <stop offset="1" stop-color="#2E0E03"/></linearGradient>
+    <linearGradient id="dBeef" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#8A4028"/><stop offset=".5" stop-color="#5A2414"/>
+      <stop offset="1" stop-color="#31120A"/></linearGradient>
+    <linearGradient id="dFried" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#F8D488"/><stop offset=".45" stop-color="#DCA149"/>
+      <stop offset="1" stop-color="#A96A21"/></linearGradient>
+    <linearGradient id="dSalmon" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#FCB584"/><stop offset=".5" stop-color="#EE7F46"/>
+      <stop offset="1" stop-color="#C4551F"/></linearGradient>
+  </defs>
+</svg>
+
+<section class="builder" id="builder">
+  <div class="wrap">
+    <div class="bookRun"><span class="runMark"><img class="logoMono" src="{{datauri:assets/images/misc/03.png}}" alt="" width="100" height="100"><img class="logoLock sm" src="{{datauri:assets/images/misc/04.png}}" alt="Grill &amp; Ground" width="294" height="162"></span><span>Steak, Salad Bar, Pasta, Bread, Soup</span></div>
+    <div class="secHead">
+      <h2>Build your Virtual Buffet.</h2>
+      <p>This is the restaurant's own menu book, opened on a screen. Same dishes, same Thai names,
+        same prices as the table, so the delivery menu and the dine-in menu never drift apart.
+        Pick one from each of the eight categories and it leaves the kitchen as one set.</p>
+    </div>
+
+    <div class="steps" id="steps" role="tablist" aria-label="Virtual Buffet categories"></div>
+
+    <div class="buildGrid">
+      <div class="panel" id="panel"></div>
+
+      <aside class="tray" id="tray" aria-live="polite">
+        <div class="trayTitle">Your set</div>
+        <p class="traySub">One from each category, packed as one box.</p>
+        <ul class="trayList" id="trayList"></ul>
+        <div class="sum" id="sum"></div>
+        <div class="trayFoot">
+          <div class="confirmWrap">
+            <button class="btn-confirm" id="confirmSel" type="button" disabled aria-disabled="true" aria-describedby="confirmHelp">
+              <span class="ck" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Confirm Selection
+            </button>
+            <p class="confirmHelp" id="confirmHelp" aria-live="polite">Pick the 6 essentials to continue</p>
+          </div>
+          <button class="btn btn-solid" id="surprise" type="button">Surprise me</button>
+          <button class="btn btn-quiet" id="clear" type="button">Start over</button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="stickyBar" id="stickyBar"></div>
+
+    <p class="mathline">With <b id="mainCount">12</b> chef-curated main courses from the menu book, plus choices across
+      sides, salads, soups, bakes, desserts, drinks, and add-ons, guests can build over <b>62,400</b> different
+      set combinations.</p>
+  </div>
+</section>
+
+<section class="pack" id="pack" aria-label="The Virtual Buffet set being packed">
+  <div class="packScene">
+    <div class="packSky" id="packSky"></div>
+    <div class="filmBack" id="filmBack"></div>
+    <canvas class="packFilm" id="packFilm" width="960" height="540" role="img"
+           aria-label="Fresh dishes float above the clouds, settle into a black and gold bento, a crystal lid closes and a Grill and Ground seal is applied; the box arrives at a home table, a phone scans the seal and rewards burst out"></canvas>
+    <div class="packWarm"></div>
+
+    <div class="packCap">
+      <p class="step">04 Package</p>
+      <h2>Eight choices. One set.</h2>
+    </div>
+
+    <div class="packAura" id="packAura"><i class="glow"></i><i class="rays"></i></div>
+    <div class="trayWrap" id="trayWrap">
+      <div class="tray3d" id="tray3d">
+        <div class="trayBody" id="trayBody"></div>
+        <div class="traySweep" id="traySweep"></div>
+        <div class="trayGrain"></div>
+        <div class="cells" id="packCells"></div>
+        <div class="band" id="packBand"><span>Virtual Buffet</span></div>
+        <div class="trayLip"></div>
+      </div>
+    </div>
+
+    <div class="packCount"><div class="in" id="packCountIn">
+      <b id="packN">01 / 08</b>
+      <span><span class="cat" id="packCat">Main course</span><span class="nm" id="packNm">—</span></span>
+    </div></div>
+
+    <div class="packSeal" id="packSeal">
+      <div class="sealPrice" id="packTotal">THB 0<small>packed to order</small></div>
+      <a class="btn btn-solid" href="#builder">Build your own</a>
+      <a class="btn btn-ghost" href="#pricing">What it costs</a>
+    </div>
+
+    <div class="finStage" id="finStage">
+      <div class="rush" id="rush" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="streaks" id="streaks" aria-hidden="true"></div>
+      <div class="whiteout" id="whiteout" aria-hidden="true"></div>
+      <div class="goldFlash" id="goldFlash" aria-hidden="true"></div>
+      <div class="fCaps" id="fCaps"></div>
+      <div class="orderCard" id="orderCard">
+        <div class="ocQ" id="ocQ" aria-label="Order QR code"></div>
+        <div class="ocWrap"><p class="k">Security seal</p><h3>Sealed for you</h3><code id="ocSerial"></code></div>
+        <div class="ocWrap"><div class="ocPicks" id="ocPicks"></div>
+          <p class="ocTags">Gold foil &middot; Tamper-evident &middot; Void if broken. Unique to this order.</p></div>
+      </div>
+      <div class="route" id="route" role="status">
+        <div class="rh"><b>On its way to your door</b><span class="eta" id="eta">Arriving in 25 min</span></div>
+        <div class="rl"><div class="rf" id="routeFill"></div><div class="rd" id="routeDot"></div></div>
+        <div class="rt"><span>Grill &amp; Ground kitchen</span><span>Your door</span></div>
+      </div>
+      <div class="dToast" id="dToast" role="status">
+        <span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>Delivered to your door</b><small id="dToastSub">Sealed, warm and on time</small></span>
+      </div>
+      <div class="scanChip" id="scanChip" role="status">
+        <div class="row"><span class="sp"></span><span class="okI"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="t1"><b>Scanning the seal</b><small id="scanSub">Reading the live QR</small></span>
+          <span class="t2"><b>Seal verified</b><small>Campaign unlocked for this order</small></span></div>
+        <div class="bar" id="scanBar"></div>
+      </div>
+    </div>
+    <div class="camp" id="camp" aria-live="polite">
+      <canvas class="fx" id="fxCv" aria-hidden="true"></canvas>
+      <div class="campIn">
+        <div class="campKick" id="campKick">Virtual Buffet campaign</div>
+        <h2 class="campH" id="campH" aria-label="Scan. Taste. Play."></h2>
+        <p class="campP">Every Virtual Buffet unlocks a chance to win exciting rewards.</p>
+        <div class="reel" id="reel"><div class="reelTrack" id="reelTrack"></div><div class="reelFrame"></div></div>
+        <div class="winBox" id="winBox"><p>You won</p><h3 id="winName">&nbsp;</h3><code id="winCode"></code></div>
+        <div class="campBtns">
+          <button class="btn btn-gold" type="button" id="spinBtn">Spin again</button>
+          <a class="btn btn-line" href="#builder">Build your own set</a>
+          <button class="btn btn-line" type="button" id="finReplay">Replay</button>
+        </div>
+        <p class="campNote">Demo draw for the pitch. Rewards shown are campaign concepts, not live offers.</p>
+      </div>
+      <div class="sealCard" id="sealCard"><div class="q" id="sealQR"></div>
+        <div><b>Your security seal</b><small>Unique to this order. Scan it to play.</small><code id="sealSerial"></code></div></div>
+    </div>
+    <div class="arrive" id="arrive" aria-live="polite">
+      <div class="arriveSpot" id="arriveSpot"></div>
+      <div class="arriveCard" id="arriveCard">
+        <div class="miniBox" aria-hidden="true"><div class="g" id="miniGrid"></div></div>
+        <div class="arriveTx">
+          <p>Order received in the kitchen</p>
+          <h3>Your Virtual Buffet is being packed.</h3>
+          <small>Scroll to watch it travel from ground to cloud, all the way to your door.</small>
+          <button class="btn btn-gold arriveCta" id="arriveCta" type="button">Watch it being packed &darr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="packVig"></div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="secHead">
+      <h2>Why this is not delivery</h2>
+      <p>Delivery moves an existing dish to a new address. The Virtual Buffet moves the
+        buffet experience itself — choosing, composing, sitting down to a full table.</p>
+    </div>
+    <div class="tableScroll">
+      <table class="compare">
+        <thead>
+          <tr><th>Model</th><th>What the guest buys</th><th>What limits it</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dine-in buffet</td>
+            <td>A grilled main plus the whole 150-item salad bar, from THB 259</td>
+            <td>Only works at a branch, and only during opening hours</td>
+          </tr>
+          <tr>
+            <td>Food delivery</td>
+            <td>One dish, ordered and eaten alone</td>
+            <td>No composition, no occasion, price competition on every single item</td>
+          </tr>
+          <tr class="us">
+            <td>Virtual Buffet</td>
+            <td>A curated set the guest composes across eight categories</td>
+            <td>Needs packaging and kitchen sequencing to hold quality on arrival</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="secHead">
+      <h2>Who it is for</h2>
+      <p>Three groups already pay a premium for food that feels both indulgent and clean.
+        The set format serves all three without changing the kitchen.</p>
+    </div>
+    <div class="cols three">
+      <div class="block">
+        <h3>Working professionals</h3>
+        <p>Want a proper meal after a long day but will not travel for it. Buy single and
+          double sets on weekday evenings.</p>
+      </div>
+      <div class="block">
+        <h3>Health-minded households</h3>
+        <p>Follow the organic salad and clean-eating category. Choose lighter mains and
+          treat the salad as the centre of the set, not the side.</p>
+      </div>
+      <div class="block">
+        <h3>Small gatherings and offices</h3>
+        <p>Need one order that feeds a table and looks presentable on arrival. The largest
+          basket size and the most repeatable occasion.</p>
+      </div>
+    </div>
+
+    <div class="posBox" style="margin-top:38px">
+      <h3>Positioning statement</h3>
+      <p>For people who want restaurant-quality food that still tastes like real food,
+        Grill &amp; Ground is the buffet you compose yourself and receive complete —
+        <em>premium grill, organic ground</em> — available wherever you are, not only where
+        the restaurant stands.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="secHead">
+      <h2>One menu, one price, every channel.</h2>
+      <p>Nothing is re-priced for the internet. A main course costs what the menu book says it costs.
+        The buffet box is priced at the dine-in salad bar price of THB 259 all day. Drinks and add-ons
+        keep their menu prices, and the side is free exactly as it is with a steak at the table.</p>
+    </div>
+    <div class="cols three">
+      <div class="block">
+        <h3>Main course</h3>
+        <p>Menu price, from 199 for a kid's plate to 999 for the Fire Grilled Jaew Striploin.</p>
+      </div>
+      <div class="block">
+        <h3>Buffet box, THB 259</h3>
+        <p>Harvest salad, soup, fresh bake and sweet bar, packed from the same bar the dine-in guest
+          walks up to. Priced at what that bar costs all day in the restaurant.</p>
+      </div>
+      <div class="block">
+        <h3>Drinks and add-ons</h3>
+        <p>Menu price. A fried egg is 19 at the table and 19 on the app. One side dish is free either way.</p>
+      </div>
+    </div>
+    <div class="posBox" style="margin-top:34px">
+      <h3>A worked example</h3>
+      <p>Thai Jaew Fire Grilled Chicken at 299, the buffet box at 259, a Deep Green cold-pressed
+        at 129, free side, no add-on. <em>THB 687 for a full table at home.</em></p>
+    </div>
+    <p class="editNote">Delivery platforms take a commission of roughly a third, so holding price parity
+      is a decision to make on purpose rather than by default. The alternative is a small platform-only
+      uplift, at the cost of the promise above.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="secHead">
+      <h2>How it reaches people</h2>
+      <p>The brand lives in four places at once, and each one does a different job.</p>
+    </div>
+    <div class="cols two">
+      <div class="block">
+        <h3>Own ordering page</h3>
+        <p>Where the set builder lives and where the margin is best. Every other channel
+          points back here.</p>
+      </div>
+      <div class="block">
+        <h3>Delivery platforms</h3>
+        <p>Listed as complete sets, not loose dishes, so the format is understood even by a
+          first-time buyer scrolling past.</p>
+      </div>
+      <div class="block">
+        <h3>Social and creators</h3>
+        <p>The unboxing of a composed set is the content. Guests show the set they built,
+          which advertises the choice mechanic for free.</p>
+      </div>
+      <div class="block">
+        <h3>The restaurant itself</h3>
+        <p>Dine-in guests are taught the set language at the table so the virtual version
+          feels familiar when they order from home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="secHead">
+      <h2>Rollout</h2>
+      <p>Four stages, each one testing a single assumption before spending on the next.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <p class="when">Month 1 to 2</p>
+        <h3>Build the set and prove it travels</h3>
+        <p>Lock the eight categories, test packaging and holding times, and confirm the food
+          arrives the way it left the kitchen.</p>
+      </li>
+      <li>
+        <p class="when">Month 3</p>
+        <h3>Soft launch to existing guests</h3>
+        <p>Offer the Virtual Buffet to the current customer base first. Cheapest audience to
+          reach and the most honest feedback.</p>
+      </li>
+      <li>
+        <p class="when">Month 4 to 6</p>
+        <h3>Open the channels</h3>
+        <p>Publish on delivery platforms, start creator partnerships, and push the set
+          builder as the thing worth trying.</p>
+      </li>
+      <li>
+        <p class="when">Month 7 onward</p>
+        <h3>Extend the set, not the menu</h3>
+        <p>Seasonal categories and festive sets reuse the same kitchen. Growth comes from
+          new combinations rather than new operations.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="secHead">
+      <h2>How success gets measured</h2>
+      <p>Four numbers decide whether the format works, tracked from the first week.</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi">
+        <h3>Average order value per set</h3>
+        <p>Does composing a set lift the basket above a normal delivery order?</p>
+      </div>
+      <div class="kpi">
+        <h3>Share of Signature and Full Table sets</h3>
+        <p>Do guests trade up once they understand what the categories do?</p>
+      </div>
+      <div class="kpi">
+        <h3>Repeat rate within 30 days</h3>
+        <p>Does the variety keep people coming back without discounts?</p>
+      </div>
+      <div class="kpi">
+        <h3>Own channel share of orders</h3>
+        <p>How much volume moves off the platforms and onto our own page?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="cloudDiv up" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0h1200v34c-40 16-68 28-110 26-46-2-66-24-110-26-46-2-70 22-116 20-42-2-62-22-104-22
+  -46 0-66 26-112 26-44 0-66-22-110-20-46 2-64 28-108 28-38 0-56-20-96-22-48-2-68 22-112 32
+  C86 86 46 70 0 92Z" fill="var(--mist)"/>
+</svg>
+
+<section class="skyClose">
+  <svg class="puffs" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <filter id="puffBlur" x="-25%" y="-60%" width="150%" height="220%">
+        <feGaussianBlur stdDeviation="10"/>
+      </filter>
+      <radialGradient id="closeSun" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFFDF2" stop-opacity=".85"/>
+        <stop offset="55%" stop-color="#FFEFC6" stop-opacity=".35"/>
+        <stop offset="100%" stop-color="#FFEFC6" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="960" cy="500" r="260" fill="url(#closeSun)"/>
+    <g filter="url(#puffBlur)" fill="#FFFFFF">
+      <g opacity=".9">
+        <circle cx="130" cy="470" r="76"/><circle cx="232" cy="440" r="94"/>
+        <circle cx="330" cy="472" r="70"/><circle cx="246" cy="500" r="64"/>
+      </g>
+      <g opacity=".85">
+        <circle cx="720" cy="432" r="62"/><circle cx="790" cy="410" r="80"/>
+        <circle cx="866" cy="436" r="58"/>
+      </g>
+      <g>
+        <circle cx="120" cy="616" r="90"/><circle cx="260" cy="586" r="106"/>
+        <circle cx="400" cy="614" r="84"/><circle cx="530" cy="590" r="100"/>
+        <circle cx="670" cy="618" r="86"/><circle cx="810" cy="588" r="104"/>
+        <circle cx="950" cy="614" r="88"/><circle cx="1090" cy="592" r="98"/>
+        <rect x="40" y="610" width="1140" height="200" rx="40"/>
+      </g>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="close">
+      <h2>The vegetables stay in the ground. The buffet does not.</h2>
+      <p>Ohkajhu grows it, Grill &amp; Ground grills it, and the Virtual Buffet carries it to
+        anyone with a screen. Ground at one end, cloud at the other, one plate travelling
+        between them.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footBrand"><img class="logoLock foot" src="{{datauri:assets/images/misc/05.png}}" alt="Grill &amp; Ground" width="294" height="162"><span>Virtual Buffet marketing plan. Prepared by MJ.</span></div>
+</footer>
+
+<script>{{include:scripts/02-builder.js}}</script>
+<script>{{include:scripts/03-journey.js}}</script>
+
+<script>{{include:scripts/04-packaging.js}}</script>
+<script>{{include:vendor/gsap-3.15.0.min.js}}</script>
+<script>{{include:vendor/ScrollTrigger-3.15.0.min.js}}</script>
+<script>{{include:scripts/05-scroll-sync.js}}</script>
+<script>{{include:vendor/qrcode-generator.min.js}}</script>
+<script>{{include:scripts/06-campaign.js}}</script>
+
+
+<script>{{include:scripts/07-reveal.js}}</script>
+
+<div class="confirmFx" id="confirmFx" role="dialog" aria-modal="true" aria-labelledby="cfTitle" aria-hidden="true">
+  <div class="cfCard" id="cfCard">
+    <svg class="cfCheck" viewBox="0 0 84 84" aria-hidden="true"><circle class="glow" cx="42" cy="42" r="40"/><circle class="ring" cx="42" cy="42" r="40" transform="rotate(-90 42 42)"/><path class="tick" d="M26 43l11 11 21-23"/></svg>
+    <h2 class="cfTitle" id="cfTitle">Perfect! Let's prepare your Virtual Buffet.</h2>
+    <p class="cfSub">Your 8 picks are on their way to the kitchen.</p>
+    <div class="cfThumbs" id="cfThumbs"></div>
+    <div class="cfKitchen"><i></i>Sending to packaging<i></i></div>
+  </div>
+</div>
+<script>{{include:scripts/08-confirm.js}}</script>
+
+<style>{{include:styles/cinematic.css}}</style>
+
+<div class="cine" id="cine" role="region" aria-label="Your Virtual Buffet being created" aria-hidden="true">
+  <div class="veilBg"></div>
+  <canvas class="sky" id="cnSky"></canvas>
+  <div class="pass l" id="cnPassL"></div><div class="pass r" id="cnPassR"></div>
+  <canvas class="film" id="cnFilm" width="960" height="540" aria-hidden="true"></canvas>
+  <img class="still" id="cnStill" alt="Your sealed Virtual Buffet floating above the clouds">
+  <div class="glow" id="cnGlow"></div>
+  <div class="pulse" id="cnPulse"></div>
+  <div class="vign"></div>
+  <canvas class="dust" id="cnDust"></canvas>
+  <div class="set" id="cnSet"><div class="setGrid" id="cnSetGrid"></div>
+    <div class="setName"><span>Your Virtual Buffet</span><b id="cnSetPrice"></b></div></div>
+  <div class="say mid" id="cnSay1"><p>Order received</p><h2 id="cnPrep"></h2></div>
+  <div class="say top" id="cnSayTop"><p id="cnKick"></p><h2 id="cnHead"></h2></div>
+  <div class="holo" id="cnHolo"></div>
+  <div class="serial" id="cnSerial"></div>
+  <div class="rewards" id="cnRewards"></div>
+  <div class="flash" id="cnFlash"></div>
+  <div class="final" id="cnFinal">
+    <p>Sealed above the cloud</p>
+    <h2>Your Virtual Buffet <i>Is Ready.</i></h2>
+    <div class="row"><button type="button" class="btnGold" id="cnGo">Continue to Packaging
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="#2A1C06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="btnLine" id="cnReplay">Watch again</button></div>
+    <small class="autoNote" id="cnAuto">Taking you to packaging…</small>
+  </div>
+  <button type="button" class="skip" id="cnSkip">Skip</button>
+  <div class="bar" id="cnBar"></div>
+</div>
+
+<script>{{include:scripts/09-cinematic.js}}</script>
+
+</body>
+</html>
