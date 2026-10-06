@@ -6,7 +6,7 @@ Reads src/index.html, inlines every {{include:...}} (CSS/JS) and embeds every
 which GitHub Pages serves. No dependencies beyond Python 3.8+.
 
     python3 build.py            # build index.html
-    python3 build.py --check    # fail if index.html is out of date
+    python3 build.py --check    # fail if index.html is out of date or an asset is unused
 """
 import base64, os, re, sys
 
@@ -25,9 +25,13 @@ def read(rel, mode="rb"):
         return f.read()
 
 
+USED = set()
+
+
 def render(text):
     def sub(m):
         kind, rel = m.group(1), m.group(2)
+        USED.add(rel)
         if kind == "include":
             return render(read(rel, "r"))
         data = base64.b64encode(read(rel)).decode("ascii")
@@ -39,7 +43,19 @@ def render(text):
 
 def main():
     html = render(read("index.html", "r"))
+    unused = sorted(
+        os.path.relpath(os.path.join(d, f), SRC).replace(os.sep, "/")
+        for d, _, files in os.walk(SRC) for f in files
+        if f != "index.html" and not f.startswith(".")
+    )
+    unused = [f for f in unused if f not in USED]
+    if unused:
+        print("build: unused files in src/ (delete them or reference them):")
+        for f in unused:
+            print("  -", f)
     if "--check" in sys.argv:
+        if unused:
+            sys.exit(1)
         current = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
         if current != html:
             sys.exit("build: index.html is out of date - run `python3 build.py`")

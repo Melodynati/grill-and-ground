@@ -1,0 +1,19 @@
+name: Build check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: index.html is rebuilt from src/ and every asset is used
+        run: python3 build.py --check
+      - name: JavaScript parses
+        run: for f in src/scripts/*.js; do node --check "$f"; done

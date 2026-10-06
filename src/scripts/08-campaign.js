@@ -22,7 +22,9 @@
   /* ---------------- order serial and the dynamic QR ---------------- */
   const d0=new Date();
   const SERIAL="GG-VB-"+String(d0.getFullYear()%100).padStart(2,"0")+String(d0.getMonth()+1).padStart(2,"0")+"-"+(1000+Math.floor(Math.random()*9000));
-  const QR_URL="https://claude.ai/artifact/Ptkd6hsnWJfCVnQ3tSNMZp?o="+SERIAL;
+  /* each seal's QR opens the live site with the order serial */
+  const SITE_URL="https://melodynati.github.io/grill-and-ground/";
+  const QR_URL=SITE_URL+"?o="+SERIAL;
   const QR=(function(){
     try{ const q=qrcode(0,"M"); q.addData(QR_URL); q.make();
       return {n:q.getModuleCount(), dark:(r,c)=>q.isDark(r,c)}; }

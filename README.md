@@ -23,31 +23,38 @@ Requires only Python 3.8+. No npm install, no bundler.
 ## Project structure
 ```
 src/
-  index.html            page markup; {{tokens}} mark where CSS, JS and assets go
+  index.html             page markup; {{tokens}} mark where CSS, JS and assets go
   styles/
-    main.css            layout, journey, builder, branches, packaging
-    cinematic.css       full-screen Confirm Selection sequence
-  scripts/
-    01-branches.js      branch status by date, branch count
-    02-builder.js       menu data (MAINS, CATS, photos), builder, basket, pricing
-    03-journey.js       opening scene: frame-sequence camera, pollen, clouds
-    04-packaging.js     packaging scene layout and packing film scrub
-    05-scroll-sync.js   connects the opening to GSAP ScrollTrigger
-    06-campaign.js      packaging scenes 1–8, QR seal, scan-to-win campaign
-    07-reveal.js        section fade-in on scroll, counting numbers
-    08-confirm.js       Confirm Selection button and hand-off
-    09-cinematic.js     the cinematic order creation sequence
-  vendor/               GSAP 3.15.0, ScrollTrigger 3.15.0, qrcode-generator
+    main.css             layout, journey, builder, branches, packaging
+    cinematic.css        full-screen Confirm Selection sequence
+  scripts/               loaded in this order (classic scripts sharing one scope)
+    00-media.js          photo and footage-frame tables (PH, FARM_FRAMES, ...)
+    01-frame-player.js   canvas frame player with a <video>-like API (GGFrames)
+    02-dish-art.js       SVG fallback artwork for dishes
+    03-menu.js           menu data (MAINS, CURATE, CATS) and pricing (setPrice)
+    04-builder.js        builder UI: steps, dish cards, basket, sticky bar
+    05-journey.js        opening scene: farm → clouds → steak
+    06-packaging.js      packaging scene layout and packing-film scrub
+    07-scroll-sync.js    ties the opening to GSAP ScrollTrigger
+    08-campaign.js       packaging scenes, QR seal (links to the live site), rewards
+    09-branches.js       branch status by date, branch count
+    10-reveal.js         section fade-in on scroll, counting numbers
+    11-confirm.js        Confirm Selection button and hand-off
+    12-cinematic.js      cinematic order-creation sequence
+  vendor/                GSAP 3.15.0, ScrollTrigger 3.15.0, qrcode-generator
   assets/
-    images/ph/          menu photos, one file per dish id (e.g. truffle.webp)
-    images/sc/          sky, cloud and plate plates for the opening
-    images/ing/         ingredient images used in packaging
-    images/...          logos, final still and other page images
-    frames/farm_frames/ opening farm footage, 120 frames (960×540)
-    frames/steak_frames/steak-in-the-clouds footage, 48 frames
-    frames/pack_frames/ packing film, 275 frames (16 fps)
-build.py                inlines src/ into the published index.html
-index.html              BUILT OUTPUT served by GitHub Pages; do not edit by hand
+    images/ph/           menu photos, one per dish id (e.g. truffle.webp)
+    images/sc/           cloud plates and plate photo for the opening
+    images/ing/          ingredient photos used in packaging
+    images/brand/        logo lockup and logo mark (also the favicon)
+    images/leaves/       foreground lettuce in the opening
+    images/cine_still/   final still of the cinematic
+    frames/farm_frames/  opening farm footage, 120 frames (960×540)
+    frames/steak_frames/ steak-in-the-clouds footage, 48 frames
+    frames/pack_frames/  packing film, 275 frames (16 fps)
+build.py                 inlines src/ into the published index.html
+index.html               BUILT OUTPUT served by GitHub Pages; do not edit by hand
+.github/workflows/       CI: checks index.html is current and every asset is used
 ```
 
 ## How the build works
@@ -63,7 +70,7 @@ The output is one self-contained `index.html` (about 16 MB), so the site also ru
 
 ## Common changes
 - **Swap a menu photo:** replace `src/assets/images/ph/<dish-id>.webp` (720×480 works well), then build.
-- **Edit menu items, prices, badges:** `src/scripts/02-builder.js` (`MAINS`, `CURATE`, `CATS`).
+- **Edit menu items, prices, badges:** `src/scripts/03-menu.js` (`MAINS`, `CURATE`, `CATS`).
 - **Edit branches:** the `.br` cards in `src/index.html` (`data-open="YYYY-MM-DD"` drives the status).
 - **Edit styling:** `src/styles/main.css`.
 
@@ -73,7 +80,7 @@ The output is one self-contained `index.html` (about 16 MB), so the site also ru
 3. Commit **both** your `src/` changes and the rebuilt `index.html`.
 4. Push to `main`; GitHub Pages republishes within a minute or two.
 
-`python3 build.py --check` fails if `index.html` is out of date. Useful before committing.
+`python3 build.py --check` fails if `index.html` is out of date or a file in `src/` is no longer used. GitHub runs the same check on every push.
 
 ## Notes
 - Keep embedded media under GitHub's 100 MB per-file limit. The built page is about 16 MB.

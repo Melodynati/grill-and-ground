@@ -7,7 +7,6 @@
                                                          overlays keyed to film time)
    Final: "Your Virtual Buffet Is Ready." → Continue to Delivery
    ===================================================================== */
-const CINE_STILL="{{datauri:assets/images/cine_still/00.webp}}";
 (function(){
   "use strict";
   const $=id=>document.getElementById(id);
