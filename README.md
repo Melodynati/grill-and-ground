@@ -7,7 +7,7 @@
 ## What's on the page
 - **Opening journey**: real farm footage scrubbed by scroll, from the farm aisle up through the clouds to the steak in the cloud world (GSAP ScrollTrigger)
 - **Facts and branches**: 4 branches whose status ("Opening 9 Oct" → "Open now") follows the calendar
-- **Virtual Buffet builder**: 12 chef-curated mains plus side, salad, soup & pasta, bake, dessert, beverage and add-on; live total = main + beverage + add-on
+- **Virtual Buffet builder**: 13 chef-curated mains plus side, salad, soup & pasta, bake, dessert, beverage and add-on; live total = main + beverage + add-on
 - **Confirm Selection**: full-screen cinematic order creation (assembly, crystal lid, live QR seal, scan-to-win rewards), then an automatic glide to packaging
 - **Packaging scene**: scroll-controlled packing film, delivery, scan and the campaign
 - **12-Month Strategic Marketing Dashboard**: Objective → Target market → Strategy → Major initiatives → Budget → KPIs (`src/partials/dashboard.html`), styled after the pitch deck: forest green, cream, Playfair Display numerals, watercolour clouds

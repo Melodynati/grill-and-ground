@@ -7,7 +7,7 @@ const S={jaew:"#7A2A18",bbq:"#4A1A0C",gravy:"#8A5A2A",red:"#C2361F",cream:"#E9DF
 const M=(sec,id,it,nm,th,price,art,o)=>Object.assign({sec,id,it,nm,th,price,art},o||{});
 
 const MAINS=[
-  /* The chef's curated selection: twelve mains, hand-picked from the menu book */
+  /* The chef's curated selection: thirteen mains, hand-picked from the menu book */
   /* Kid's Menu */
   M("kids","kidfried","American Style Fried Rice","& Crispy Chicken","อเมริกันสไตล์ฟรายด์ไรซ์",199,
     ()=>BG.table+V.tray(false)+g(118,112,.8,0,'<ellipse rx="60" ry="34" fill="#B8542E"/>'+P.karaage(4))+g(186,92,1,0,X.egg())+
@@ -35,6 +35,8 @@ const MAINS=[
   /* Chicken */
   M("chicken","cheesechicken","Spicy BBQ","Cheese Chicken","สไปซี่บาร์บีคิวชีสชิคเก้น",359,
     ()=>T.plate(P.chicken("cheese"),{sauce:S.bbq})),
+  M("chicken","mushchicken","Creamy Mushroom","Bacon Chicken Steak","ชิคเก้นสเต็กซอสครีมเห็ดเบคอน",349,
+    ()=>T.plate(P.chicken("mush"),{sauce:S.gravy})),
   /* Seafood */
   M("seafood","salmonprawn","Fire Grilled Salmon","and King Prawn","แซลมอน และกุ้งตัวใหญ่ไฟร์กริลล์",599,
     ()=>BG.table+V.sizzler()+g(92,120,.9,0,X.shimeji())+g(116,96,.8,-6,X.corn())+TOM(98,70,1)+
@@ -92,6 +94,10 @@ const CURATE={
     desc:"Tender grilled chicken brushed with spicy BBQ and finished under a blanket of melted cheese.",
     ingr:["Chicken steak","Spicy BBQ sauce","Melted cheese"],
     flav:[["🌶️","Spicy"],["🧀","Cheesy"],["🔥","Smoky"]]},
+  mushchicken:{badge:"Comfort Classic",pop:4,
+    desc:"Grilled chicken steak under a creamy mushroom and smoky bacon sauce. Rich, gentle and made for a slow dinner at home.",
+    ingr:["Chicken steak","Creamy mushroom sauce","Bacon"],
+    flav:[["🍄","Earthy"],["🥓","Smoky"],["🧈","Creamy"]]},
   salmonprawn:{badge:"Premium Choice",pop:4,
     desc:"A salmon fillet and king prawns over open flame, served sizzling with shimeji and sweet corn.",
     ingr:["Salmon fillet","King prawns","Shimeji","Sweet corn"],
@@ -109,7 +115,7 @@ MAINS.forEach(m=>Object.assign(m,CURATE[m.id]||{}));
 
 const I=(id,nm,th,price,art,o)=>Object.assign({id,it:"",nm,th,price,art},o||{});
 const CATS=[
-  {key:"main",label:"Main course",head:"The Chef's Selection",note:"Twelve mains, hand-picked by our chefs from the menu book, at menu prices. There are no wrong choices here.",items:MAINS,groups:[["all","All twelve"]].concat(SECTIONS),wide:true,lux:true},
+  {key:"main",label:"Main course",head:"The Chef's Selection",note:"Thirteen mains, hand-picked by our chefs from the menu book, at menu prices. There are no wrong choices here.",items:MAINS,groups:[["all","All mains"]].concat(SECTIONS),wide:true,lux:true},
   {key:"side",label:"Side dish",head:"Side dish",note:"One free side, exactly as with a steak in the restaurant.",items:[
     I("fries","French Fries","เฟรนช์ฟรายส์",0,()=>T.small(g(0,4,1.55,0,X.fries(12)))),
     I("sweetpotato","Crispy White Sweet Potato Fries","คริสปี้มันหวานญี่ปุ่นสีขาวทอด",0,()=>T.small(g(0,4,1.55,0,X.fries(12,"#F2E2B4")))),
