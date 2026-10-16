@@ -10,7 +10,8 @@
 - **Virtual Buffet builder**: 12 chef-curated mains plus side, salad, soup & pasta, bake, dessert, beverage and add-on; live total = main + beverage + add-on
 - **Confirm Selection**: full-screen cinematic order creation (assembly, crystal lid, live QR seal, scan-to-win rewards), then an automatic glide to packaging
 - **Packaging scene**: scroll-controlled packing film, delivery, scan and the campaign
-- **12-Month Strategic Marketing Dashboard**: Objective → Target market → Strategy → Major initiatives → Budget → KPIs (`src/partials/dashboard.html`)
+- **12-Month Strategic Marketing Dashboard**: Objective → Target market → Strategy → Major initiatives → Budget → KPIs (`src/partials/dashboard.html`), styled after the pitch deck: forest green, cream, Playfair Display numerals, watercolour clouds
+- **Closing and footer**: "Virtual Buffet, from Ground to Cloud", powered by Melody Nati
 
 ## Quick start
 ```bash
@@ -30,6 +31,7 @@ src/
   styles/
     main.css             layout, journey, builder, branches, packaging
     dashboard.css        styles for the dashboard section only
+    closing.css          closing section and footer
     cinematic.css        full-screen Confirm Selection sequence
   scripts/               loaded in this order (classic scripts sharing one scope)
     00-media.js          photo and footage-frame tables (PH, FARM_FRAMES, ...)
@@ -42,7 +44,7 @@ src/
     07-scroll-sync.js    ties the opening to GSAP ScrollTrigger
     08-campaign.js       packaging scenes, QR seal (links to the live site), rewards
     09-branches.js       branch status by date, branch count
-    10-reveal.js         section fade-in on scroll, counting numbers
+    10-reveal.js         section fade-in on scroll, counting numbers, dashboard charts drawing in
     11-confirm.js        Confirm Selection button and hand-off
     12-cinematic.js      cinematic order-creation sequence
   vendor/                GSAP 3.15.0, ScrollTrigger 3.15.0, qrcode-generator
@@ -53,6 +55,7 @@ src/
     images/brand/        logo lockup and logo mark (also the favicon)
     images/leaves/       foreground lettuce in the opening
     images/cine_still/   final still of the cinematic
+    images/clouds/       watercolour cloud from the pitch deck (dashboard, closing)
     frames/farm_frames/  opening farm footage, 120 frames (960×540)
     frames/steak_frames/ steak-in-the-clouds footage, 48 frames
     frames/pack_frames/  packing film, 275 frames (16 fps)

@@ -3,11 +3,11 @@
   const RM=matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* 1. each section's heading wipes up, then its content follows in a stagger */
-  const groups=[...document.querySelectorAll("section.facts, section#plan, section#pricing, section.builder, main section, body > section")]
+  const groups=[...document.querySelectorAll("section.facts, section.builder, main section, body > section")]
     .filter(s=>!s.closest(".journey")&&!s.classList.contains("journey")&&!s.classList.contains("pack")&&!s.classList.contains("skyClose"));
   groups.forEach(sec=>{
     sec.querySelectorAll(".secHead h2, .bookRun").forEach(h=>h.classList.add("rv-head"));
-    const items=sec.querySelectorAll(".secHead p, .fact, .block, .kpi, .tier, .steps li, .compare tr, .posBox, .certs, .factNote, .stepsWrap, .stepTabs, .steps, .panel, .tray, .mathline, .close");
+    const items=sec.querySelectorAll(".secHead p, .fact, .certs, .factNote, .stepsWrap, .stepTabs, .panel, .tray, .mathline, .dashFlow, .dCard");
     items.forEach((el,i)=>{ el.classList.add("rv-item"); el.style.setProperty("--i",Math.min(i,10)); });
   });
   if(RM||!("IntersectionObserver" in window)){ groups.forEach(s=>s.classList.add("rv-on")); }
@@ -40,7 +40,15 @@
     counters.forEach(b=>io2.observe(b));
   }
 
-  /* 3. picking a dish sends its photo flying into your set */
+  /* 3. dashboard charts draw themselves when their card comes into view */
+  const dCards=[...document.querySelectorAll(".dCard")];
+  if(RM||!("IntersectionObserver" in window)){ dCards.forEach(c=>c.classList.add("d-in")); }
+  else{
+    const io3=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("d-in"); io3.unobserve(e.target); } }),{threshold:.25});
+    dCards.forEach(c=>io3.observe(c));
+  }
+
+  /* 4. picking a dish sends its photo flying into your set */
   const panel=document.getElementById("panel");
   if(panel && !RM){
     panel.addEventListener("click",e=>{

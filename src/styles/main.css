@@ -334,55 +334,6 @@ canvas.farmVid{background:#3A2A14}
   padding-left:14px;max-width:62ch}
 .mathline b{font-family:var(--display);color:var(--ink)}
 
-/* ---------- generic light blocks ---------- */
-.cols{display:grid;gap:22px;grid-template-columns:1fr}
-@media(min-width:760px){.cols.three{grid-template-columns:repeat(3,1fr)}
-  .cols.two{grid-template-columns:1fr 1fr}}
-.block h3{font-size:20px;margin-bottom:8px}
-.block p{color:var(--ink-soft);font-size:15.5px}
-.compare{width:100%;border-collapse:collapse;font-size:15px}
-.compare th,.compare td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);
-  vertical-align:top}
-.compare th{font-family:var(--body);font-weight:700;font-size:13.5px;color:var(--ink-soft)}
-.compare td:first-child{font-family:var(--display);font-weight:700;width:30%}
-.compare tr.us td{background:rgba(122,154,91,.14)}
-.tableScroll{overflow-x:auto}
-
-.posBox{background:var(--soil);color:var(--mist);border-radius:16px;padding:30px}
-.posBox h3{color:#C9D6B6;font-size:15px;font-family:var(--body);font-weight:700;margin-bottom:12px}
-.posBox p{font-family:var(--display);font-size:clamp(1.25rem,3.4vw,1.7rem);line-height:1.35;
-  color:var(--mist);margin:0}
-.posBox em{color:#D9E4C7;font-style:italic}
-.tier{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--paper)}
-.tier h3{font-size:22px}
-.tier .pick{font-size:14px;color:var(--ink-soft);margin:4px 0 14px}
-.price{font-family:var(--display);font-size:30px;font-weight:700}
-.price .cur{font-size:17px;font-weight:400;color:var(--ink-soft)}
-.tier ul{margin:14px 0 0;padding-left:18px;font-size:15px;color:var(--ink-soft)}
-.tier li{margin-bottom:6px}
-.editNote{font-size:13.5px;color:var(--ink-soft);margin-top:16px}
-
-.steps{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{counter-increment:s;padding:18px 0 18px 54px;position:relative;
-  border-top:1px solid var(--line)}
-.steps li:first-child{border-top:none}
-.steps li:before{content:counter(s);position:absolute;left:0;top:18px;width:34px;height:34px;
-  border-radius:50%;background:var(--soil);color:var(--mist);display:grid;place-items:center;
-  font-family:var(--display);font-weight:700;font-size:15px}
-.steps h3{font-size:18px}
-.steps p{margin:4px 0 0;color:var(--ink-soft);font-size:15.5px}
-.steps .when{font-size:13px;color:var(--ember);font-weight:700}
-
-.kpis{display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:680px){.kpis{grid-template-columns:1fr 1fr}}
-.kpi{border-top:2px solid var(--soil);padding-top:12px}
-.kpi h3{font-size:17px;font-family:var(--body);font-weight:700}
-.kpi p{font-size:15px;color:var(--ink-soft);margin:4px 0 0}
-
-.close{background:var(--soil);color:var(--mist);border-radius:18px;padding:40px 30px;
-  text-align:left}
-.close h2{color:var(--mist);font-size:clamp(1.7rem,4.6vw,2.4rem);max-width:22ch}
-.close p{color:rgba(233,238,228,.75);max-width:52ch;margin-top:14px}
 /* ---------- cloud motif ---------- */
 .cloudDiv{display:block;width:100%;height:auto;margin:0}
 .cloudDiv.up{margin-bottom:-2px}
@@ -420,14 +371,7 @@ canvas.farmVid{background:#3A2A14}
 .certLead{font-size:13.5px;font-weight:700;color:#1F4D3A;margin-right:4px}
 .chip{font-size:12.5px;background:#E9F3DC;color:#2F5A34;border-radius:999px;padding:5px 11px;font-weight:500}
 .tray{box-shadow:0 22px 40px -26px rgba(23,28,20,.55)}
-.skyClose{position:relative;overflow:hidden;color:var(--ink);
-  background:linear-gradient(180deg,var(--mist) 0%,#E4F1FB 18%,#BEE0F7 44%,#8CC7F0 72%,#6FB7EC 100%);
-  padding:0 0 10px}
-.skyClose .close{background:transparent;padding:76px 0 104px;color:var(--ink)}
-.skyClose .close h2{color:#1F4D3A}
-.skyClose .close p{color:#2F4A3C}
-.skyClose .puffs{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.skyClose .wrap{position:relative;z-index:2}
+/* closing section and footer: see closing.css */
 
 .logoLock{display:block;width:118px;height:auto}
 .logoLock.sm{width:96px}
@@ -697,7 +641,6 @@ canvas.farmVid{background:#3A2A14}
 .scanChip .bar{height:3px;margin:9px 0 0 40px;border-radius:3px;background:linear-gradient(90deg,#C99238,#FFE3A3);transform-origin:0 50%;transform:scaleX(0)}
 .scanChip.ok .bar{background:#2FBF71}
 
-footer{padding:30px 0 64px;font-size:13.5px;color:#22506F;background:#6FB7EC}
 /* ---------- builder: Confirm selection, the hand-off to the kitchen, arrival at packaging ---------- */
 .confirmWrap{flex:1 0 100%;display:flex;flex-direction:column;gap:7px;margin-bottom:4px}
 .btn-confirm{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;
