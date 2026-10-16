@@ -1,0 +1,109 @@
+/* =====================================================================
+   12-Month Strategic Marketing Dashboard
+   Objective → Target market → Strategy → Initiatives → Budget → KPIs
+   Single-hue charts in the brand green; values are always printed as text.
+   ===================================================================== */
+.dash{background:linear-gradient(180deg,var(--mist) 0%,#F3F6F1 100%)}
+.dashEyebrow{margin:0 0 6px!important;font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;color:#8A6A2E!important}
+
+/* the six-step flow */
+.dashFlow{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px 6px;align-items:center}
+.dashFlow li{display:flex;align-items:center;gap:6px}
+.dashFlow li:not(:last-child):after{content:"→";color:var(--ink-soft);font-size:14px}
+.dashFlow a{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 6px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);text-decoration:none;font-size:13.5px;font-weight:700;color:var(--ink)}
+.dashFlow a:hover{border-color:var(--bark)}
+.dashFlow a span{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--bark);color:#fff;font-size:11.5px}
+
+/* grid of cards */
+.dashGrid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){
+  .dashGrid{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .dObjective{grid-column:span 7}.dTarget{grid-column:span 5}
+  .dStrategy{grid-column:span 12}.dInit{grid-column:span 12}
+  .dBudget{grid-column:span 5}.dKpi{grid-column:span 7}
+}
+.dCard{background:var(--paper);border:1px solid rgba(176,140,72,.24);border-radius:16px;padding:20px 20px 18px;min-width:0;
+  box-shadow:0 18px 34px -30px rgba(30,24,12,.5);scroll-margin-top:24px}
+.dCard h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-size:clamp(1.15rem,2.6vw,1.4rem);color:#1F4D3A;margin:0 0 14px}
+.dCard h3 small{font-family:var(--body);font-size:12.5px;font-weight:500;color:var(--ink-soft);letter-spacing:0}
+.dNum{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--bark);color:#fff;
+  font-family:var(--body);font-size:13px;font-weight:700;transform:translateY(-2px)}
+.dCard h4{margin:2px 0 6px;font-family:var(--display);font-weight:500;font-size:16.5px;line-height:1.25;color:var(--ink)}
+.dCard p{font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 8px}
+.dTag{margin:0 0 4px!important;font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px!important;
+  letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E!important}
+.dNote{font-size:12px!important;color:var(--ink-soft);margin:10px 0 0!important}
+
+/* 1 · objective hero numbers */
+.dHeroRow{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:560px){.dHeroRow{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.dHero{display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:12px;background:#F2F6EE;border:1px solid rgba(31,77,58,.12)}
+.dHero b{font-family:var(--display);font-weight:700;font-size:clamp(1.35rem,2.6vw,1.7rem);line-height:1.05;color:#1F4D3A;font-variant-numeric:tabular-nums}
+.dHero span{font-size:13px;line-height:1.45;color:var(--ink-soft)}
+.dHero em{margin-top:auto;align-self:flex-start;font-style:normal;font-size:12px;font-weight:700;color:#2F6B34;
+  background:#E2EFD6;border-radius:999px;padding:3px 10px}
+
+/* 2 · target market */
+.dSeg+.dSeg{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.dFacts{list-style:none;margin:6px 0 8px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.dFacts li{font-size:12.5px;color:var(--ink);background:#F4EEE1;border-radius:999px;padding:3px 10px}
+.dFacts b{font-variant-numeric:tabular-nums}
+
+/* 3 · strategy */
+.dCols{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.dCols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.dCols blockquote{margin:2px 0 8px;font-family:var(--display);font-style:italic;font-size:16px;line-height:1.4;color:var(--ink)}
+.dBig{font-family:var(--display)!important;font-weight:700;font-size:1.4rem!important;color:#1F4D3A!important;margin:2px 0 6px!important}
+.dBig small{font-family:var(--body);font-size:13px;font-weight:500;color:var(--ink-soft)}
+
+/* horizontal bars (channel adoption, budget) */
+.dBars{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+.dBar{position:relative;display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) 4.6em;align-items:center;gap:10px;font-size:13px;outline:none}
+.dBarLab{color:var(--ink);line-height:1.25}
+.dBarTrack{height:12px;border-radius:4px;background:#E6ECE2;overflow:hidden}
+.dBarTrack i{display:block;height:100%;border-radius:0 4px 4px 0;background:var(--bark)}
+.dBarTrack.dDirect{height:auto;background:none;font-size:12px;color:var(--ink-soft);overflow:visible}
+.dBarVal{font-weight:700;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dBarVal small{font-weight:500;color:var(--ink-soft);margin-left:2px}
+.dBudgetBars .dBar{grid-template-columns:minmax(0,11em) minmax(0,1fr) 5.4em}
+.dBar:hover .dBarTrack i,.dBar:focus-visible .dBarTrack i{background:var(--soil)}
+.dBar:focus-visible{box-shadow:0 0 0 2px var(--ember);border-radius:4px}
+
+/* tooltip shared by bars and timeline */
+[data-tip]{position:relative}
+[data-tip]:hover:after,[data-tip]:focus-visible:after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);
+  z-index:5;width:max-content;max-width:min(280px,80vw);white-space:normal;padding:8px 10px;border-radius:8px;
+  background:var(--soil);color:#F1F5EE;font:500 12px/1.4 var(--body);font-style:normal;text-align:left;box-shadow:0 10px 24px -12px rgba(0,0,0,.5);pointer-events:none}
+
+/* 4 · initiatives timeline */
+.gantt{display:flex;flex-direction:column}
+.gRow{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;padding:10px 0;border-top:1px solid var(--line)}
+.gRow.gHead{display:none}
+@media(min-width:760px){
+  .gRow{grid-template-columns:minmax(0,19em) minmax(0,1fr);gap:16px;align-items:center}
+  .gRow.gHead{display:grid;border-top:0;padding:0 0 6px}
+}
+.gName b{display:block;font-size:14px;color:var(--ink)}
+.gName small{display:block;font-size:12.5px;line-height:1.45;color:var(--ink-soft);margin-top:2px}
+.gHead .gName{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.gMonths{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));min-height:26px;
+  background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),rgba(27,33,24,.08) calc(100%/12 - 1px) calc(100%/12))}
+.gHead .gMonths{background:none}
+.gHead .gMonths i{font-style:normal;font-size:11px;font-weight:700;color:var(--ink-soft);text-align:center}
+.gBar{grid-column:calc(var(--s) + 1) / calc(var(--e) + 1);align-self:center;height:22px;border-radius:4px;margin:0 2px;
+  background:var(--bark);color:#fff;font-style:normal;font-size:11.5px;font-weight:700;display:flex;align-items:center;padding:0 8px;white-space:nowrap;outline:none}
+.gAlways .gBar{background:var(--leaf);color:#12301E}
+.gBar:focus-visible{box-shadow:0 0 0 2px var(--ember)}
+
+/* 6 · KPIs */
+.kGroups{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:560px){.kGroups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kGroup{display:flex;flex-direction:column;gap:8px}
+.kTile{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.kTile b{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.1;color:#1F4D3A;font-variant-numeric:tabular-nums}
+.kTile span{font-size:12.5px;line-height:1.4;color:var(--ink-soft)}
+.kTile i{display:block;font-style:normal;font-size:11.5px;color:#2F6B34}
+
+@media(prefers-reduced-motion:reduce){.dashFlow a,.dBarTrack i{transition:none}}

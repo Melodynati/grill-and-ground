@@ -10,6 +10,7 @@
 - **Virtual Buffet builder**: 12 chef-curated mains plus side, salad, soup & pasta, bake, dessert, beverage and add-on; live total = main + beverage + add-on
 - **Confirm Selection**: full-screen cinematic order creation (assembly, crystal lid, live QR seal, scan-to-win rewards), then an automatic glide to packaging
 - **Packaging scene**: scroll-controlled packing film, delivery, scan and the campaign
+- **12-Month Strategic Marketing Dashboard**: Objective → Target market → Strategy → Major initiatives → Budget → KPIs (`src/partials/dashboard.html`)
 
 ## Quick start
 ```bash
@@ -24,8 +25,11 @@ Requires only Python 3.8+. No npm install, no bundler.
 ```
 src/
   index.html             page markup; {{tokens}} mark where CSS, JS and assets go
+  partials/
+    dashboard.html       the 12-month marketing dashboard section (edit numbers here)
   styles/
     main.css             layout, journey, builder, branches, packaging
+    dashboard.css        styles for the dashboard section only
     cinematic.css        full-screen Confirm Selection sequence
   scripts/               loaded in this order (classic scripts sharing one scope)
     00-media.js          photo and footage-frame tables (PH, FARM_FRAMES, ...)
@@ -72,6 +76,7 @@ The output is one self-contained `index.html` (about 16 MB), so the site also ru
 - **Swap a menu photo:** replace `src/assets/images/ph/<dish-id>.webp` (720×480 works well), then build.
 - **Edit menu items, prices, badges:** `src/scripts/03-menu.js` (`MAINS`, `CURATE`, `CATS`).
 - **Edit branches:** the `.br` cards in `src/index.html` (`data-open="YYYY-MM-DD"` drives the status).
+- **Edit the marketing dashboard:** `src/partials/dashboard.html`; bar widths are the `width:` percentages.
 - **Edit styling:** `src/styles/main.css`.
 
 ## Workflow
