@@ -18,13 +18,20 @@
 .closeGlow{position:absolute;left:50%;top:44%;width:min(900px,120vw);aspect-ratio:2/1;transform:translate(-50%,-50%);
   background:radial-gradient(closest-side,rgba(255,233,184,.16),rgba(255,233,184,0));pointer-events:none;z-index:-1}
 
-/* the deck's watercolour clouds, one either side of the line */
-.closeCloud{position:absolute;bottom:-46px;width:min(440px,46vw);aspect-ratio:393/255;pointer-events:none;z-index:0;
+/* the deck's watercolour clouds, one either side of the line, drifting slowly */
+.closeCloud{position:absolute;bottom:-70px;width:min(440px,46vw);aspect-ratio:399/256;pointer-events:none;z-index:0;
   background:url({{datauri:assets/images/clouds/watercolor-cloud.webp}}) center bottom/contain no-repeat;
-  animation:closeFloat 12s ease-in-out infinite alternate}
-.closeCloud.l{left:max(-90px,calc(50% - 760px));transform:scaleX(-1);width:min(360px,40vw);animation-delay:-6s}
+  will-change:translate,scale;animation:cloudDrift 18s ease-in-out infinite,cloudBreathe 11s ease-in-out infinite}
+.closeCloud.l{left:max(-90px,calc(50% - 760px));transform:scaleX(-1);width:min(360px,40vw);
+  animation-duration:22s,13s;animation-delay:-7s,-3s}
 .closeCloud.r{right:max(-70px,calc(50% - 760px))}
-@keyframes closeFloat{from{translate:0 0}to{translate:0 -10px}}
+/* a small far-away cloud crossing behind the line */
+.closeCloud.s{bottom:auto;top:16%;width:min(180px,28vw);opacity:.5;filter:blur(.6px);z-index:-1;
+  left:0;animation:cloudPass 52s linear infinite,cloudBob 12s ease-in-out infinite}
+@keyframes cloudDrift{0%,100%{translate:0 0}25%{translate:10px -9px}50%{translate:18px -3px}75%{translate:7px -14px}}
+@keyframes cloudBreathe{0%,100%{scale:1}50%{scale:1.03}}
+@keyframes cloudBob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@keyframes cloudPass{from{transform:translateX(-30vw)}to{transform:translateX(110vw)}}
 
 .skyClose .wrap{position:relative;z-index:1}
 .skyClose .close{max-width:760px;margin:0 auto;padding:108px 0 150px;text-align:center}
@@ -55,6 +62,6 @@ footer .logoLock.foot{width:132px;opacity:1;filter:brightness(0) invert(94%) sep
   footer .logoLock.foot{width:118px}
 }
 /* phones */
-@media(max-width:700px){.closeCloud{bottom:-30px}.closeCloud.l{width:44vw}.closeCloud.r{width:54vw}
+@media(max-width:700px){.closeCloud{bottom:-44px}.closeCloud.s{top:8%}.closeCloud.l{width:44vw}.closeCloud.r{width:54vw}
   .closeEyebrow{font-size:11.5px;letter-spacing:.16em}.skyClose .close{padding:84px 0 150px}}
 @media(prefers-reduced-motion:reduce){.closeCloud{animation:none}}
