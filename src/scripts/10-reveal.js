@@ -7,7 +7,7 @@
     .filter(s=>!s.closest(".journey")&&!s.classList.contains("journey")&&!s.classList.contains("pack")&&!s.classList.contains("skyClose"));
   groups.forEach(sec=>{
     sec.querySelectorAll(".secHead h2, .bookRun").forEach(h=>h.classList.add("rv-head"));
-    const items=sec.querySelectorAll(".secHead p, .fact, .certs, .factNote, .stepsWrap, .stepTabs, .panel, .tray, .mathline, .dashFlow, .dCard");
+    const items=sec.querySelectorAll(".secHead p, .fact, .certs, .factNote, .stepsWrap, .stepNav, .panel, .tray, .mathline, .dashFlow, .dCard");
     items.forEach((el,i)=>{ el.classList.add("rv-item"); el.style.setProperty("--i",Math.min(i,10)); });
   });
   if(RM||!("IntersectionObserver" in window)){ groups.forEach(s=>s.classList.add("rv-on")); }

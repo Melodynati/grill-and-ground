@@ -195,7 +195,26 @@ canvas.farmVid{background:#3A2A14}
   border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:22px;font-size:12.5px;color:var(--ink-soft)}
 .bookRun b{font-family:"Zilla Slab",Georgia,serif;font-size:14px;color:#1F4D3A;text-transform:none}
 /* builder category tabs (the rollout list below has its own .steps class) */
-.stepTabs{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.stepNav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 10px}
+.stepRail{min-width:0;position:relative}
+.stepTabs{position:relative;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;scrollbar-width:none;padding:3px 2px}
+.stepTabs::-webkit-scrollbar{display:none}
+.stepTabs .stepBtn{scroll-snap-align:center}
+.stepRail.fadeL .stepTabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 44px);mask-image:linear-gradient(90deg,transparent 0,#000 44px)}
+.stepRail.fadeR .stepTabs{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent 100%);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent 100%)}
+.stepRail.fadeL.fadeR .stepTabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 44px,#000 calc(100% - 44px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 44px,#000 calc(100% - 44px),transparent 100%)}
+.stepArrow{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;
+  background:#fff;border:1px solid var(--line);color:#1F4D3A;box-shadow:0 6px 14px -10px rgba(18,46,33,.6);
+  transition:background .2s ease,color .2s ease,transform .2s ease,opacity .2s ease}
+.stepArrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media(hover:hover){.stepArrow:not(:disabled):hover{background:#1F4D3A;color:#fff;transform:scale(1.05)}}
+.stepArrow:not(:disabled):active{transform:scale(.94)}
+.stepArrow:focus-visible{outline:3px solid #E9C46A;outline-offset:2px}
+.stepArrow:disabled{opacity:.35;cursor:default;box-shadow:none}
+.stepCount{grid-column:1 / -1;margin:2px 0 0;text-align:center;font-size:13px;color:var(--ink-soft)}
+.stepCount b{color:#1F4D3A}
+@media(max-width:520px){.stepArrow{width:36px;height:36px}.stepNav{gap:6px 6px}}
 .stepBtn{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:7px 15px 7px 7px;border-radius:999px;
   border:1px solid var(--line);background:#fff;color:var(--ink);font-family:var(--body);font-size:14px;
   font-weight:500;cursor:pointer;white-space:nowrap}

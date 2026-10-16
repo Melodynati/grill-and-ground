@@ -58,7 +58,41 @@ function renderSteps(){
   stepsEl.innerHTML=CATS.map((c,i)=>
     '<button type="button" class="stepBtn'+(picks[c.key]?" done":"")+'" role="tab" aria-selected="'+(i===step)+'" data-i="'+i+'">'+
     '<span class="n">'+(picks[c.key]?"&#10003;":(i+1))+'</span>'+c.label+(isOpt(c.key)?'<span class="opt">optional</span>':'')+'</button>').join("");
+  syncStepNav();
 }
+
+/* category strip: arrows, edge fades, and the current tab kept in view */
+const stepRail=$("stepRail"), stepPrev=$("stepPrev"), stepNext=$("stepNext"), stepCount=$("stepCount");
+let stepNavReady=false;
+function stepFades(){
+  const max=stepsEl.scrollWidth-stepsEl.clientWidth;
+  stepRail.classList.toggle("fadeL",stepsEl.scrollLeft>4);
+  stepRail.classList.toggle("fadeR",stepsEl.scrollLeft<max-4);
+}
+function syncStepNav(){
+  const on=stepsEl.querySelector('[aria-selected="true"]');
+  if(on){
+    const left=on.offsetLeft-(stepsEl.clientWidth-on.offsetWidth)/2;
+    stepsEl.scrollTo({left:Math.max(0,left),behavior:stepNavReady?"smooth":"auto"});
+  }
+  stepNavReady=true;
+  stepPrev.disabled=step===0;
+  stepNext.disabled=step===CATS.length-1;
+  stepCount.innerHTML="Step <b>"+(step+1)+"</b> of "+CATS.length+" · "+CATS[step].label;
+  requestAnimationFrame(stepFades);
+}
+stepsEl.addEventListener("scroll",stepFades,{passive:true});
+addEventListener("resize",stepFades);
+stepPrev.addEventListener("click",()=>go(step-1));
+stepNext.addEventListener("click",()=>go(step+1));
+stepsEl.addEventListener("keydown",e=>{
+  const k=e.key; let to=null;
+  if(k==="ArrowRight") to=step+1; else if(k==="ArrowLeft") to=step-1;
+  else if(k==="Home") to=0; else if(k==="End") to=CATS.length-1;
+  if(to===null) return;
+  e.preventDefault(); go(to);
+  const b=stepsEl.querySelector('[aria-selected="true"]'); if(b) b.focus({preventScroll:true});
+});
 
 function renderPanel(){
   const cat=CATS[step];

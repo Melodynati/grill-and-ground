@@ -212,7 +212,26 @@ canvas.farmVid{background:#3A2A14}
   border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:22px;font-size:12.5px;color:var(--ink-soft)}
 .bookRun b{font-family:"Zilla Slab",Georgia,serif;font-size:14px;color:#1F4D3A;text-transform:none}
 /* builder category tabs (the rollout list below has its own .steps class) */
-.stepTabs{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.stepNav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 10px}
+.stepRail{min-width:0;position:relative}
+.stepTabs{position:relative;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;scrollbar-width:none;padding:3px 2px}
+.stepTabs::-webkit-scrollbar{display:none}
+.stepTabs .stepBtn{scroll-snap-align:center}
+.stepRail.fadeL .stepTabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 44px);mask-image:linear-gradient(90deg,transparent 0,#000 44px)}
+.stepRail.fadeR .stepTabs{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent 100%);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent 100%)}
+.stepRail.fadeL.fadeR .stepTabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 44px,#000 calc(100% - 44px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 44px,#000 calc(100% - 44px),transparent 100%)}
+.stepArrow{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;
+  background:#fff;border:1px solid var(--line);color:#1F4D3A;box-shadow:0 6px 14px -10px rgba(18,46,33,.6);
+  transition:background .2s ease,color .2s ease,transform .2s ease,opacity .2s ease}
+.stepArrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media(hover:hover){.stepArrow:not(:disabled):hover{background:#1F4D3A;color:#fff;transform:scale(1.05)}}
+.stepArrow:not(:disabled):active{transform:scale(.94)}
+.stepArrow:focus-visible{outline:3px solid #E9C46A;outline-offset:2px}
+.stepArrow:disabled{opacity:.35;cursor:default;box-shadow:none}
+.stepCount{grid-column:1 / -1;margin:2px 0 0;text-align:center;font-size:13px;color:var(--ink-soft)}
+.stepCount b{color:#1F4D3A}
+@media(max-width:520px){.stepArrow{width:36px;height:36px}.stepNav{gap:6px 6px}}
 .stepBtn{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:7px 15px 7px 7px;border-radius:999px;
   border:1px solid var(--line);background:#fff;color:var(--ink);font-family:var(--body);font-size:14px;
   font-weight:500;cursor:pointer;white-space:nowrap}
@@ -1222,7 +1241,18 @@ footer .logoLock.foot{width:132px;opacity:1;filter:brightness(0) invert(94%) sep
         Pick one from each of the eight categories and it leaves the kitchen as one set.</p>
     </div>
 
-    <div class="stepTabs" id="steps" role="tablist" aria-label="Virtual Buffet categories"></div>
+    <div class="stepNav">
+      <button type="button" class="stepArrow" id="stepPrev" aria-label="Previous category">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg>
+      </button>
+      <div class="stepRail" id="stepRail">
+        <div class="stepTabs" id="steps" role="tablist" aria-label="Virtual Buffet categories"></div>
+      </div>
+      <button type="button" class="stepArrow" id="stepNext" aria-label="Next category">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg>
+      </button>
+      <p class="stepCount" id="stepCount" aria-live="polite"></p>
+    </div>
 
     <div class="buildGrid">
       <div class="panel" id="panel"></div>
@@ -2228,7 +2258,41 @@ function renderSteps(){
   stepsEl.innerHTML=CATS.map((c,i)=>
     '<button type="button" class="stepBtn'+(picks[c.key]?" done":"")+'" role="tab" aria-selected="'+(i===step)+'" data-i="'+i+'">'+
     '<span class="n">'+(picks[c.key]?"&#10003;":(i+1))+'</span>'+c.label+(isOpt(c.key)?'<span class="opt">optional</span>':'')+'</button>').join("");
+  syncStepNav();
 }
+
+/* category strip: arrows, edge fades, and the current tab kept in view */
+const stepRail=$("stepRail"), stepPrev=$("stepPrev"), stepNext=$("stepNext"), stepCount=$("stepCount");
+let stepNavReady=false;
+function stepFades(){
+  const max=stepsEl.scrollWidth-stepsEl.clientWidth;
+  stepRail.classList.toggle("fadeL",stepsEl.scrollLeft>4);
+  stepRail.classList.toggle("fadeR",stepsEl.scrollLeft<max-4);
+}
+function syncStepNav(){
+  const on=stepsEl.querySelector('[aria-selected="true"]');
+  if(on){
+    const left=on.offsetLeft-(stepsEl.clientWidth-on.offsetWidth)/2;
+    stepsEl.scrollTo({left:Math.max(0,left),behavior:stepNavReady?"smooth":"auto"});
+  }
+  stepNavReady=true;
+  stepPrev.disabled=step===0;
+  stepNext.disabled=step===CATS.length-1;
+  stepCount.innerHTML="Step <b>"+(step+1)+"</b> of "+CATS.length+" · "+CATS[step].label;
+  requestAnimationFrame(stepFades);
+}
+stepsEl.addEventListener("scroll",stepFades,{passive:true});
+addEventListener("resize",stepFades);
+stepPrev.addEventListener("click",()=>go(step-1));
+stepNext.addEventListener("click",()=>go(step+1));
+stepsEl.addEventListener("keydown",e=>{
+  const k=e.key; let to=null;
+  if(k==="ArrowRight") to=step+1; else if(k==="ArrowLeft") to=step-1;
+  else if(k==="Home") to=0; else if(k==="End") to=CATS.length-1;
+  if(to===null) return;
+  e.preventDefault(); go(to);
+  const b=stepsEl.querySelector('[aria-selected="true"]'); if(b) b.focus({preventScroll:true});
+});
 
 function renderPanel(){
   const cat=CATS[step];
@@ -3392,7 +3456,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     .filter(s=>!s.closest(".journey")&&!s.classList.contains("journey")&&!s.classList.contains("pack")&&!s.classList.contains("skyClose"));
   groups.forEach(sec=>{
     sec.querySelectorAll(".secHead h2, .bookRun").forEach(h=>h.classList.add("rv-head"));
-    const items=sec.querySelectorAll(".secHead p, .fact, .certs, .factNote, .stepsWrap, .stepTabs, .panel, .tray, .mathline, .dashFlow, .dCard");
+    const items=sec.querySelectorAll(".secHead p, .fact, .certs, .factNote, .stepsWrap, .stepNav, .panel, .tray, .mathline, .dashFlow, .dCard");
     items.forEach((el,i)=>{ el.classList.add("rv-item"); el.style.setProperty("--i",Math.min(i,10)); });
   });
   if(RM||!("IntersectionObserver" in window)){ groups.forEach(s=>s.classList.add("rv-on")); }
