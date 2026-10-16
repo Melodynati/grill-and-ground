@@ -233,10 +233,33 @@ canvas.farmVid{background:#3A2A14}
 .pick1{display:inline-flex;align-items:center;gap:6px;background:#E9F3DC;color:#1F4D3A;border-radius:999px;
   padding:5px 12px;font-size:12.5px;font-weight:700;white-space:nowrap}
 .pick1 em{font-style:normal;font-weight:400;color:#4A6B55}
-.subtabs{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;-webkit-overflow-scrolling:touch}
-.subtab{flex:0 0 auto;border:0;background:transparent;font-family:"Zilla Slab",Georgia,serif;font-weight:700;
-  text-transform:uppercase;font-size:13px;padding:6px 11px;border-radius:7px;color:var(--ink-soft);cursor:pointer;white-space:nowrap}
-.subtab[aria-pressed="true"]{background:#1B1B1B;color:#fff}
+.subNav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px;margin:2px 0 14px}
+.subNav.fits .subArrow{display:none}
+.subNav.fits{grid-template-columns:minmax(0,1fr)}
+.subRail{min-width:0}
+.subtabs{position:relative;display:flex;gap:6px;overflow-x:auto;padding:3px 2px;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;scrollbar-width:none}
+.subtabs::-webkit-scrollbar{display:none}
+.subRail.fadeL .subtabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 36px);mask-image:linear-gradient(90deg,transparent 0,#000 36px)}
+.subRail.fadeR .subtabs{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent 100%)}
+.subRail.fadeL.fadeR .subtabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 36px,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 36px,#000 calc(100% - 36px),transparent 100%)}
+.subtab{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;scroll-snap-align:center;
+  border:1px solid var(--line);background:#fff;font-family:var(--body);font-weight:500;font-size:13.5px;
+  padding:6px 8px 6px 13px;border-radius:999px;color:var(--ink);cursor:pointer;white-space:nowrap;
+  transition:background .2s ease,color .2s ease,border-color .2s ease}
+.subN{min-width:20px;height:20px;padding:0 6px;border-radius:999px;display:grid;place-items:center;
+  background:var(--mist);color:var(--ink-soft);font-size:11px;font-weight:700}
+@media(hover:hover){.subtab:hover{border-color:#1F4D3A}}
+.subtab[aria-pressed="true"]{background:#1F4D3A;border-color:#1F4D3A;color:#fff}
+.subtab[aria-pressed="true"] .subN{background:rgba(255,255,255,.2);color:#fff}
+.subtab:focus-visible{outline:3px solid #E9C46A;outline-offset:2px}
+.subArrow{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;
+  background:#fff;border:1px solid var(--line);color:#1F4D3A;transition:background .2s ease,color .2s ease,opacity .2s ease}
+.subArrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media(hover:hover){.subArrow:not(:disabled):hover{background:#1F4D3A;color:#fff}}
+.subArrow:not(:disabled):active{transform:scale(.94)}
+.subArrow:disabled{opacity:.35;cursor:default}
+.subArrow:focus-visible{outline:3px solid #E9C46A;outline-offset:2px}
 .dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 @media(min-width:640px){.dgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .dish{position:relative;display:flex;flex-direction:column;text-align:left;background:#fff;border:1px solid #E3E6E0;

@@ -103,11 +103,33 @@ function renderPanel(){
     '<div class="panelHead"><div><h3 class="slab">'+cat.head+'</h3>'+
       '<p class="panelNote">'+cat.note+'</p></div>'+
       '<span class="pick1">'+(isOpt(cat.key)?'Optional<em>pick 1 or skip</em>':'Pick 1'+(cat.daily?'<em>from the bar</em>':''))+'</span>'+(picks[cat.key]?'<span class="clearHint">Tap it again to clear</span>':'')+'</div>'+
-    (cat.groups?'<div class="subtabs">'+cat.groups.map(([k,n])=>
-      '<button type="button" class="subtab" aria-pressed="'+(group[cat.key]===k)+'" data-g="'+k+'">'+n+'</button>').join("")+'</div>':'')+
+    (cat.groups?'<div class="subNav">'+
+      '<button type="button" class="subArrow" data-d="-1" aria-label="Previous filter"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>'+
+      '<div class="subRail"><div class="subtabs" role="group" aria-label="Filter '+cat.label.toLowerCase()+'">'+cat.groups.map(([k,n])=>{
+        const c=k==="all"?cat.items.length:cat.items.filter(i=>i.sec===k).length;
+        return '<button type="button" class="subtab" aria-pressed="'+(group[cat.key]===k)+'" data-g="'+k+'">'+n+'<span class="subN">'+c+'</span></button>';}).join("")+'</div></div>'+
+      '<button type="button" class="subArrow" data-d="1" aria-label="Next filter"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button>'+
+      '</div>':'')+
     '<div class="dgrid'+(cat.lux?' luxGrid'+(entering?' enter':''):'')+'" role="radiogroup" aria-label="'+cat.head+'">'+list.map((i,n)=>cat.lux?luxCard(cat,i,n):card(cat,i)).join("")+'</div>'+
     '<div class="panelFoot"><button type="button" class="btn btn-quiet" id="prevStep"'+(step===0?" disabled":"")+'>Back</button>'+
       '<button type="button" class="btn btn-solid" id="nextStep">'+(isOpt(cat.key)&&!picks[cat.key]?(step===CATS.length-1?"Skip and review the set":"Skip to "+CATS[step+1].label):(step===CATS.length-1?"Review the set":"Next: "+CATS[step+1].label))+'</button></div>';
+  syncSubNav();
+}
+
+/* filter strip inside a category: arrows step through the filters, the chosen one stays centred */
+let subScroll={};
+function syncSubNav(){
+  const cat=CATS[step], strip=panelEl.querySelector(".subtabs"); if(!strip) return;
+  const rail=strip.parentNode, keys=cat.groups.map(g=>g[0]), at=keys.indexOf(group[cat.key]);
+  const fades=()=>{ const max=strip.scrollWidth-strip.clientWidth;
+    rail.classList.toggle("fadeL",strip.scrollLeft>4); rail.classList.toggle("fadeR",strip.scrollLeft<max-4);
+    panelEl.querySelector(".subNav").classList.toggle("fits",max<=4); };
+  const prev=subScroll[cat.key]; if(prev!=null) strip.scrollLeft=prev;   /* start where the strip was, then glide */
+  const on=strip.querySelector('[aria-pressed="true"]');
+  if(on) strip.scrollTo({left:Math.max(0,on.offsetLeft-(strip.clientWidth-on.offsetWidth)/2),behavior:prev!=null?"smooth":"auto"});
+  const [a,b]=panelEl.querySelectorAll(".subArrow"); a.disabled=at<=0; b.disabled=at>=keys.length-1;
+  strip.addEventListener("scroll",()=>{ subScroll[cat.key]=strip.scrollLeft; fades(); },{passive:true});
+  requestAnimationFrame(fades);
 }
 
 function renderTray(){
@@ -157,6 +179,8 @@ panelEl.addEventListener("click",e=>{
   const cat=CATS[step];
   const d=e.target.closest(".dish"); if(d){ pick(cat.key,d.dataset.id); return; }
   const s=e.target.closest(".subtab"); if(s){ group[cat.key]=s.dataset.g; renderPanel(); return; }
+  const a=e.target.closest(".subArrow"); if(a&&!a.disabled){ const keys=cat.groups.map(g=>g[0]);
+    group[cat.key]=keys[Math.max(0,Math.min(keys.length-1,keys.indexOf(group[cat.key])+(+a.dataset.d)))]; renderPanel(); return; }
   if(e.target.closest("#nextStep")){ step===CATS.length-1?$("tray").scrollIntoView({block:"center",behavior:"smooth"}):go(step+1); return; }
   if(e.target.closest("#prevStep")) go(step-1);
 });

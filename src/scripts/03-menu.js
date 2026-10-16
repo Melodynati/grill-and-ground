@@ -36,7 +36,7 @@ const MAINS=[
   M("chicken","cheesechicken","Spicy BBQ","Cheese Chicken","สไปซี่บาร์บีคิวชีสชิคเก้น",359,
     ()=>T.plate(P.chicken("cheese"),{sauce:S.bbq})),
   /* Seafood */
-  M("seafood","salmonprawn","Fire Grilled Salmon","and King Prawn","แซลมอน และกุ้งตัวใหญ่ไฟร์กริลล์",599,
+  M("ocean","salmonprawn","Fire Grilled Salmon","and King Prawn","แซลมอน และกุ้งตัวใหญ่ไฟร์กริลล์",599,
     ()=>BG.table+V.sizzler()+g(92,120,.9,0,X.shimeji())+g(116,96,.8,-6,X.corn())+TOM(98,70,1)+
       g(176,80,.75,-6,P.salmon())+g(186,132,1,0,P.prawns(2))),
   /* Ocean Grill */
@@ -45,12 +45,13 @@ const MAINS=[
       g(150,112,.95,-6,P.salmon())+g(180,76,1,-18,'<path d="M-30 0c20-8 44-6 60 2-18 6-40 6-60-2z" fill="#D0301E"/>')+g(226,96,1.1,0,X.broc()),
     {note:"Served with mashed potato"}),
   /* Rice Dish */
-  M("rice","trufflepork","Black Truffle","Marbled Pork Fried Rice with Pickled Egg Yolk","ข้าวผัดทรัฟเฟิลมาร์เบิลพอร์คไข่ดอง",349,
+  M("pork","trufflepork","Black Truffle","Marbled Pork Fried Rice with Pickled Egg Yolk","ข้าวผัดทรัฟเฟิลมาร์เบิลพอร์คไข่ดอง",349,
     ()=>BG.table+V.bowl("dTeal")+g(184,114,.95,0,P.rice())+g(118,112,.8,-20,P.slices("#8A4A1E","#E9C49A",5)))
 ];
 
-const SECTIONS=[["kids","Kid's menu"],["pasta","Pasta"],["combo","Signature grill combo"],["beef","Beef steak"],["hamburg","Hamburg steak"],
-  ["pork","Pork steak"],["chicken","Chicken"],["seafood","Seafood"],["ocean","Ocean grill"],["rice","Rice dish"]];
+/* main-course filter tabs, in menu-book order */
+const SECTIONS=[["pork","Pork steak"],["chicken","Chicken steak"],["ocean","Ocean"],["beef","Beef steak"],
+  ["hamburg","Hamburg steak"],["combo","Grill combo"],["pasta","Pasta"],["kids","Kid's menu"]];
 
 /* the chef's notes for each curated main: badge, story, what goes into it, how it tastes, how often it is chosen */
 const CURATE={
