@@ -1,0 +1,33 @@
+/* =====================================================================
+   EN / ไทย toggle, and Thai typography
+   ===================================================================== */
+.ggLang{position:fixed;z-index:150;right:calc(env(safe-area-inset-right,0px) + 14px);
+  top:calc(env(safe-area-inset-top,0px) + 66px);display:flex;gap:2px;padding:3px;border-radius:999px;
+  background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 0 0 1px rgba(31,77,58,.14),0 8px 20px -12px rgba(18,46,33,.55);
+  transition:top .35s cubic-bezier(.2,.8,.2,1)}
+.ggLang.solo{top:calc(env(safe-area-inset-top,0px) + 14px)}
+.ggLang button{min-width:44px;height:30px;padding:0 12px;border:0;border-radius:999px;cursor:pointer;
+  background:transparent;color:#1F4D3A;font:600 13px/1 "IBM Plex Sans","IBM Plex Sans Thai",var(--body);letter-spacing:.02em;
+  transition:background .2s ease,color .2s ease}
+.ggLang button[aria-pressed="true"]{background:#1F4D3A;color:#fff}
+@media(hover:hover){.ggLang button[aria-pressed="false"]:hover{background:rgba(31,77,58,.1)}}
+.ggLang button:focus-visible{outline:3px solid #E9C46A;outline-offset:1px}
+@media(max-width:700px){.ggLang{top:calc(env(safe-area-inset-top,0px) + 62px)}.ggLang button{min-width:40px;height:28px;padding:0 10px}}
+
+/* Thai: Latin keeps its typefaces, Thai letters use IBM Plex Sans Thai (the pitch deck's Thai face) */
+html[lang="th"]{
+  --display:"Fraunces","IBM Plex Sans Thai",Georgia,"Times New Roman",serif;
+  --body:"Karla","IBM Plex Sans Thai","Helvetica Neue",Arial,sans-serif}
+html[lang="th"] .dash,html[lang="th"] .skyClose,html[lang="th"] footer{
+  --serif:"Playfair Display","IBM Plex Sans Thai",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","IBM Plex Sans Thai","Karla",sans-serif}
+/* Thai has no capitals and its marks sit above and below the line: no tracking, a little more leading */
+html[lang="th"] [data-tr]{letter-spacing:normal!important;text-transform:none!important}
+html[lang="th"] :is(h1,h2,h3,h4,b,.slab)[data-tr]{line-height:1.32}
+html[lang="th"] p[data-tr]{line-height:1.6}
+html[lang="th"] .rv-on .rv-head{clip-path:none}
+
+html[lang="th"] [data-tr]{font-style:normal}
+/* phones: on the opening scene the switch sits bottom-right, clear of the story card */
+@media(max-width:700px){.ggLang:not(.solo){top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 22px)}}

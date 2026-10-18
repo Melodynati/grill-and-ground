@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Karla:wght@400;500;700&family=Noto+Sans+Thai:wght@400;600&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
   --soil:#0F241A;
@@ -207,10 +207,10 @@ canvas.farmVid{background:#3A2A14}
 .secHead{max-width:56ch;margin-bottom:26px}
 .secHead h2{font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.08}
 .secHead p{margin-top:12px;color:var(--ink-soft)}
-.slab{font-family:"Zilla Slab",Georgia,serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+.slab{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
 .bookRun{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
   border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:22px;font-size:12.5px;color:var(--ink-soft)}
-.bookRun b{font-family:"Zilla Slab",Georgia,serif;font-size:14px;color:#1F4D3A;text-transform:none}
+.bookRun b{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:14px;color:#1F4D3A;text-transform:none}
 /* builder category tabs (the rollout list below has its own .steps class) */
 .stepNav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 10px}
 .stepRail{min-width:0;position:relative}
@@ -285,7 +285,7 @@ canvas.farmVid{background:#3A2A14}
 .dish:hover{border-color:#B4C0AC}
 .dish>img,.dish>.noPhoto{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#E9E7E2}
 .dish>.noPhoto{display:grid;place-items:center;padding:10px;text-align:center;
-  background:linear-gradient(150deg,#1F4D3A,#2F5A34);color:#E7F0E2;font-family:"Zilla Slab",Georgia,serif;
+  background:linear-gradient(150deg,#1F4D3A,#2F5A34);color:#E7F0E2;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;
   font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.02em}
 .dish .meta{padding:9px 11px 11px;display:flex;flex-direction:column;gap:3px;flex:1}
 .dish .dn{font-family:var(--display);font-size:14.5px;line-height:1.2;font-weight:500}
@@ -296,7 +296,7 @@ canvas.farmVid{background:#3A2A14}
   font-family:var(--display);font-size:13.5px;font-weight:500}
 .dish .dpr .rule{flex:1;height:1px;background:#1B1B1B}
 .dish .dpr .sq{width:6px;height:6px;background:#1B1B1B}
-.dish .tag{position:absolute;left:8px;top:8px;background:#C7A17A;color:#fff;font-family:"Zilla Slab",Georgia,serif;
+.dish .tag{position:absolute;left:8px;top:8px;background:#C7A17A;color:#fff;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;
   font-weight:700;font-size:11px;letter-spacing:.04em;padding:3px 9px;border-radius:4px}
 .dish .ok{position:absolute;right:8px;top:8px;width:28px;height:28px;border-radius:50%;background:#9BCB5B;
   display:none;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
@@ -324,11 +324,11 @@ canvas.farmVid{background:#3A2A14}
 .luxBadge{position:absolute;left:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;
   padding:5px 11px 5px 9px;border-radius:999px;background:rgba(18,16,13,.82);color:#EBD39C;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(214,178,104,.55);
-  font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+  font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
 .luxBadge svg{width:10px;height:10px;color:#D6B268}
 .dish.lux .ok{z-index:3;right:12px;top:12px;width:32px;height:32px}
 .luxBody{display:flex;flex-direction:column;gap:7px;padding:16px 18px 16px;flex:1}
-.luxSec{font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.16em;
+.luxSec{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.16em;
   text-transform:uppercase;color:#8A6A2E}
 .luxName{font-family:var(--display);font-size:19px;line-height:1.18;font-weight:500;color:#15241C;letter-spacing:-.005em}
 .luxName i{font-style:italic;font-weight:300}
@@ -338,7 +338,7 @@ canvas.farmVid{background:#3A2A14}
 .luxFlav .fl{display:inline-flex;align-items:center;gap:5px;padding:3px 10px 3px 8px;border-radius:999px;
   background:#F4EEE1;color:#4A3C22;font-size:12px;font-weight:500;line-height:1.5}
 .luxIngr{font-size:12.5px;line-height:1.5;color:#5C5A52;padding-top:9px;border-top:1px solid rgba(176,140,72,.22)}
-.luxIngr b{display:block;font-family:"Zilla Slab",Georgia,serif;font-size:10.5px;letter-spacing:.14em;
+.luxIngr b{display:block;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:10.5px;letter-spacing:.14em;
   text-transform:uppercase;color:#8A6A2E;margin-bottom:1px}
 .luxIngr .dot{margin:0 6px;color:#B9A16A}
 .luxNote{font-size:11.5px;font-style:italic;color:#7A7468}
@@ -415,7 +415,7 @@ canvas.farmVid{background:#3A2A14}
 .br{position:relative;display:flex;flex-direction:column;gap:3px;padding:16px 16px 15px;border-radius:14px;background:#FFFDF8;
   border:1px solid rgba(176,140,72,.28);box-shadow:0 14px 28px -24px rgba(30,24,12,.5)}
 .br h3{margin:8px 0 0;font-family:var(--display);font-size:18px;font-weight:500;line-height:1.2;letter-spacing:normal;color:var(--ink)}
-.brArea{margin:0;font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
+.brArea{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
 .brHours{margin:8px 0 0;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums}
 .brHours b{font-weight:700;color:var(--ink-soft);margin-right:4px}
 .brPromo{margin:8px 0 0;padding:7px 10px;border-radius:9px;background:#FBEBDD;color:#8A3A1C;font-size:12.5px;line-height:1.4}
@@ -457,7 +457,7 @@ canvas.farmVid{background:#3A2A14}
   background:radial-gradient(circle at 50% 48%,rgba(40,30,16,0) 48%,rgba(40,30,16,.26) 100%)}
 .packCap{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 46px);z-index:7;
   text-align:center;padding:0 20px;pointer-events:none}
-.packCap .step{font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;
+.packCap .step{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ember);margin:0}
 .packCap h2{font-family:var(--display);font-size:clamp(1.6rem,5vw,2.8rem);line-height:1.04;margin-top:7px;
   color:#17402E;text-shadow:0 2px 14px rgba(255,255,255,.55)}
@@ -499,7 +499,7 @@ canvas.farmVid{background:#3A2A14}
 .tDish img{width:100%;height:100%;object-fit:cover;display:block}
 .tDish .np{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:6px;
   background:linear-gradient(150deg,#1F4D3A,#2F5A34);color:#E7F0E2;
-  font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;text-transform:uppercase;line-height:1.2}
+  font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11px;text-transform:uppercase;line-height:1.2}
 .tIng{position:absolute;left:50%;top:50%;width:var(--d,90px);height:var(--d,90px);margin:calc(var(--d,90px)/-2) 0 0 calc(var(--d,90px)/-2);
   border-radius:50%;overflow:hidden;border:3px solid rgba(255,253,246,.95);will-change:opacity,transform;
   box-shadow:0 0 26px rgba(255,220,140,.65),0 18px 30px -12px rgba(20,12,4,.5)}
@@ -587,7 +587,7 @@ canvas.farmVid{background:#3A2A14}
 .camp canvas.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .campIn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   gap:clamp(8px,1.6vh,16px);padding:calc(env(safe-area-inset-top,0px) + 54px) 16px 18px}
-.campKick{font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E9C46A}
+.campKick{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E9C46A}
 .campH{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,7.4vw,5rem);line-height:.95;margin:0;letter-spacing:.01em;perspective:600px;
   color:#FFE7A3;text-shadow:0 0 30px rgba(255,200,90,.45)}
 .campH .w{display:inline-block;white-space:nowrap}
@@ -648,7 +648,7 @@ canvas.farmVid{background:#3A2A14}
             mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%)}}
 .fCaps{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 46px);z-index:8;pointer-events:none}
 .fCap{position:absolute;left:0;right:0;top:0;text-align:center;padding:0 20px;opacity:0;visibility:hidden}
-.fCap p{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFE3A3;
+.fCap p{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFE3A3;
   text-shadow:0 1px 10px rgba(30,18,4,.75)}
 .fCap h2{font-family:var(--display);font-size:clamp(1.35rem,4.2vw,2.5rem);line-height:1.06;margin-top:6px;color:#FFFDF6;
   text-shadow:0 2px 22px rgba(30,18,4,.7),0 0 2px rgba(30,18,4,.4)}
@@ -674,7 +674,7 @@ canvas.farmVid{background:#3A2A14}
 .route .rt{display:flex;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A6A54}
 .orderCard{position:absolute;right:clamp(16px,4vw,56px);top:50%;z-index:9;width:min(290px,28vw);padding:16px;border-radius:20px;
   background:rgba(251,246,234,.97);box-shadow:0 30px 60px -28px rgba(10,6,2,.85),0 0 0 1px rgba(214,178,104,.6);opacity:0;visibility:hidden}
-.orderCard .k{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
+.orderCard .k{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
 .orderCard h3{margin:2px 0 0;font-family:var(--display);font-size:19px;color:#17402E}
 .orderCard code{display:inline-block;margin-top:4px;font-size:12px;letter-spacing:.08em;color:#6B4A16}
 .ocQ{margin:12px 0 10px;padding:8px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 2px #E2BE6E,inset 0 0 0 5px #fff,inset 0 0 0 6px rgba(160,120,50,.35)}
@@ -766,7 +766,7 @@ canvas.farmVid{background:#3A2A14}
 @keyframes miniFloat{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-7px) rotate(1.2deg)}}
 @keyframes miniShadow{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.82);opacity:.6}}
 .arriveTx{flex:1 1 auto;min-width:0}
-.arriveTx p{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
+.arriveTx p{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
 .arriveTx h3{margin:3px 0 0;font-family:var(--display);font-size:clamp(1.05rem,2.6vw,1.3rem);line-height:1.15;color:#17402E}
 .arriveTx small{display:block;margin-top:4px;font-size:12.5px;color:#7A6A54}
 .arriveCta{position:relative;margin-top:10px;padding:9px 16px;font-size:13.5px}
@@ -1038,6 +1038,40 @@ footer .logoLock.foot{width:132px;opacity:1;filter:brightness(0) invert(94%) sep
 @media(max-width:700px){.closeCloud{bottom:-44px}.closeCloud.s{top:8%}.closeCloud.l{width:44vw}.closeCloud.r{width:54vw}
   .closeEyebrow{font-size:11.5px;letter-spacing:.16em}.skyClose .close{padding:84px 0 150px}}
 @media(prefers-reduced-motion:reduce){.closeCloud{animation:none}}
+</style>
+<style>/* =====================================================================
+   EN / ไทย toggle, and Thai typography
+   ===================================================================== */
+.ggLang{position:fixed;z-index:150;right:calc(env(safe-area-inset-right,0px) + 14px);
+  top:calc(env(safe-area-inset-top,0px) + 66px);display:flex;gap:2px;padding:3px;border-radius:999px;
+  background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 0 0 1px rgba(31,77,58,.14),0 8px 20px -12px rgba(18,46,33,.55);
+  transition:top .35s cubic-bezier(.2,.8,.2,1)}
+.ggLang.solo{top:calc(env(safe-area-inset-top,0px) + 14px)}
+.ggLang button{min-width:44px;height:30px;padding:0 12px;border:0;border-radius:999px;cursor:pointer;
+  background:transparent;color:#1F4D3A;font:600 13px/1 "IBM Plex Sans","IBM Plex Sans Thai",var(--body);letter-spacing:.02em;
+  transition:background .2s ease,color .2s ease}
+.ggLang button[aria-pressed="true"]{background:#1F4D3A;color:#fff}
+@media(hover:hover){.ggLang button[aria-pressed="false"]:hover{background:rgba(31,77,58,.1)}}
+.ggLang button:focus-visible{outline:3px solid #E9C46A;outline-offset:1px}
+@media(max-width:700px){.ggLang{top:calc(env(safe-area-inset-top,0px) + 62px)}.ggLang button{min-width:40px;height:28px;padding:0 10px}}
+
+/* Thai: Latin keeps its typefaces, Thai letters use IBM Plex Sans Thai (the pitch deck's Thai face) */
+html[lang="th"]{
+  --display:"Fraunces","IBM Plex Sans Thai",Georgia,"Times New Roman",serif;
+  --body:"Karla","IBM Plex Sans Thai","Helvetica Neue",Arial,sans-serif}
+html[lang="th"] .dash,html[lang="th"] .skyClose,html[lang="th"] footer{
+  --serif:"Playfair Display","IBM Plex Sans Thai",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans","IBM Plex Sans Thai","Karla",sans-serif}
+/* Thai has no capitals and its marks sit above and below the line: no tracking, a little more leading */
+html[lang="th"] [data-tr]{letter-spacing:normal!important;text-transform:none!important}
+html[lang="th"] :is(h1,h2,h3,h4,b,.slab)[data-tr]{line-height:1.32}
+html[lang="th"] p[data-tr]{line-height:1.6}
+html[lang="th"] .rv-on .rv-head{clip-path:none}
+
+html[lang="th"] [data-tr]{font-style:normal}
+/* phones: on the opening scene the switch sits bottom-right, clear of the story card */
+@media(max-width:700px){.ggLang:not(.solo){top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 22px)}}
 </style>
 </head>
 <body>
@@ -3794,7 +3828,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 .cine .setGrid span:first-child{grid-row:span 2}
 .cine .setGrid img{width:100%;height:100%;object-fit:cover;display:block}
 .cine .setName{margin:12px 2px 0;display:flex;justify-content:space-between;align-items:baseline;gap:10px;
-  font-family:"Zilla Slab",Georgia,serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#E9C46A}
+  font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#E9C46A}
 .cine .setName b{font-family:var(--display);font-size:15px;letter-spacing:0;text-transform:none;color:#FFF1D0}
 
 /* words */
@@ -3803,7 +3837,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 .cine .say.mid h2{max-width:34ch}
 @media(max-width:700px){.cine .say.mid{top:calc(50% + 40vw)}}
 .cine .say.top{top:calc(env(safe-area-inset-top,0px) + 54px)}
-.cine .say p{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FFE3A3;
+.cine .say p{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FFE3A3;
   text-shadow:0 1px 10px rgba(30,18,4,.7)}
 .cine .say h2{margin:8px auto 0;max-width:22ch;font-family:var(--display);font-weight:400;font-size:clamp(1.4rem,4.2vw,2.6rem);line-height:1.08;color:#FFFDF6;
   text-shadow:0 2px 24px rgba(30,18,4,.75)}
@@ -3821,7 +3855,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
   background:repeating-linear-gradient(180deg,rgba(255,240,200,.18) 0 2px,transparent 2px 6px);mix-blend-mode:screen}
 .cine .serial{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 34px);transform:translateX(-50%);opacity:0;
   padding:8px 16px;border-radius:999px;background:rgba(20,14,6,.72);box-shadow:inset 0 0 0 1px rgba(214,178,104,.6);
-  font-family:"Zilla Slab",Georgia,serif;font-size:12px;letter-spacing:.14em;color:#FFE3A3;white-space:nowrap;
+  font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;letter-spacing:.14em;color:#FFE3A3;white-space:nowrap;
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 
 /* scene 8: reward cards */
@@ -3835,7 +3869,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
 /* final */
 .cine .final{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 9vh);text-align:center;padding:0 20px;opacity:0;visibility:hidden}
-.cine .final p{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FFE3A3;text-shadow:0 1px 10px rgba(30,18,4,.6)}
+.cine .final p{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FFE3A3;text-shadow:0 1px 10px rgba(30,18,4,.6)}
 .cine .final h2{margin:8px 0 22px;font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,5.6vw,3.6rem);line-height:1.02;color:#fff;
   text-shadow:0 2px 30px rgba(40,24,6,.6)}
 .cine .final h2 i{color:#FFE3A3}
@@ -3949,7 +3983,7 @@ html.cineLock,html.cineLock body{overflow:hidden}
   }
 
   /* ---------- words: each line arrives word by word, out of focus into focus ---------- */
-  const words=s=>s.split(" ").map(w=>'<span class="w">'+w+'</span>').join(" ");
+  const words=s=>(window.GGT?GGT(s):s).split(" ").map(w=>'<span class="w">'+w+'</span>').join(" ");
   function say(k,h){
     const id=k+"|"+h; if(id===lastSay) return; lastSay=id;
     const old=[...sayTop.querySelectorAll(".w"),kick];
@@ -4157,6 +4191,511 @@ html.cineLock,html.cineLock body{overflow:hidden}
   addEventListener("keydown",e=>{ if(running&&e.key==="Escape"){ phase==="final"?goPack():toFinal(); } });
 
   window.GGCine={play};
+})();
+</script>
+<script>/* Thai copy for the EN / ไทย toggle.
+   Keys are the English text exactly as it appears on the page (spaces collapsed).
+   Dish names stay in English: every card already shows the Thai menu name under it. */
+window.GG_TH={
+/* ---------- opening journey ---------- */
+"powered by Ohkajhu":"ในเครือโอ้กะจู๋",
+"Altitude":"ระดับความสูง",
+"Ground":"ผืนดิน","Grill":"เตาย่าง","Sky":"ท้องฟ้า","Cloud":"ก้อนเมฆ",
+"01 Ground":"01 ผืนดิน",
+"Fresh from the ground.":"สดจากผืนดิน",
+"Ohkajhu Farm grows it organic, certified by ACT to EU, USDA and Canada standards. Lettuce, kale, carrots, tomatoes, radish, pumpkin, picked in the morning and on a plate the same day.":
+  "ฟาร์มโอ้กะจู๋ปลูกแบบออร์แกนิก ได้รับการรับรองจาก ACT ตามมาตรฐาน EU, USDA และแคนาดา ทั้งผักกาด เคล แครอท มะเขือเทศ หัวไชเท้า และฟักทอง เก็บตอนเช้า ถึงจานในวันเดียวกัน",
+"02 Grill":"02 เตาย่าง",
+"Fired on the grill.":"ย่างร้อน ๆ บนเตา",
+"Every steak grilled to order, plated with the Harvest Salad Bar and packed as one complete set.":
+  "สเต๊กทุกชิ้นย่างตามออร์เดอร์ จัดคู่กับ Harvest Salad Bar แล้วแพ็กรวมเป็นชุดเดียวครบจบ",
+"03 Sky":"03 ท้องฟ้า",
+"Through the cloud.":"ทะลุผ่านก้อนเมฆ",
+"No table to book, no branch to drive to. The buffet is ordered from any screen, anywhere.":
+  "ไม่ต้องจองโต๊ะ ไม่ต้องขับรถไปสาขา สั่งบุฟเฟต์ได้จากทุกหน้าจอ ทุกที่",
+"The Virtual Buffet by Grill & Ground. Thirteen chef-curated mains, one complete set.":
+  "Virtual Buffet by Grill & Ground จานหลัก 13 รายการคัดสรรโดยเชฟ ครบจบในชุดเดียว",
+"Build a set":"จัดชุดของคุณ",
+"See the plan":"ดูแผนการตลาด",
+"Scroll to rise":"เลื่อนเพื่อขึ้นสู่ฟ้า",
+
+/* ---------- facts & branches ---------- */
+"salad bar items already running in the restaurant":"รายการในสลัดบาร์ที่เสิร์ฟอยู่แล้วในร้าน",
+"dine-in starting price, VAT in, no service charge":"ราคาเริ่มต้นทานที่ร้าน รวม VAT ไม่มีค่าบริการ",
+"Ohkajhu":"โอ้กะจู๋",
+"the organic farm brand this concept grows out of":"แบรนด์ฟาร์มออร์แกนิก ต้นกำเนิดของคอนเซปต์นี้",
+"Kanchanaphisek, Lasalle, Bang Yai and Rama 2":"กาญจนาภิเษก ลาซาล บางใหญ่ และพระราม 2",
+"Ohkajhu Farm is certified organic by ACT":"ฟาร์มโอ้กะจู๋ได้รับการรับรองออร์แกนิกจาก ACT",
+"ACT, IFOAM accredited":"ACT ได้รับการรับรองจาก IFOAM",
+"Everything the plate carried up is already proven on the ground: a real organic farm, a kitchen, a growing set of dining rooms and a full salad bar. The Virtual Buffet is simply the way it leaves the building.":
+  "ทุกอย่างบนจานนี้พิสูจน์มาแล้วบนผืนดิน ทั้งฟาร์มออร์แกนิกจริง ครัว สาขาที่เติบโตต่อเนื่อง และสลัดบาร์เต็มรูปแบบ Virtual Buffet คือวิธีที่ทั้งหมดนี้เดินทางออกจากร้านไปหาคุณ",
+"Our branches":"สาขาของเรา",
+"Dine in at any branch, or let the Virtual Buffet bring the set to you.":"ทานที่สาขาใกล้คุณ หรือให้ Virtual Buffet ส่งชุดถึงมือคุณ",
+"The Paseo Park":"เดอะ พาซิโอ พาร์ค",
+"Kanchanaphisek":"กาญจนาภิเษก",
+"Dadfa Lasalle":"ดาดฟ้า ลาซาล",
+"Lasalle":"ลาซาล",
+"PTT Station West Village":"ปตท. เวสต์ วิลเลจ",
+"Bang Yai":"บางใหญ่",
+"SB Design Square":"เอสบี ดีไซน์ สแควร์",
+"Rama 2":"พระราม 2",
+"Daily":"ทุกวัน",
+"9:00 AM – 10:00 PM":"09:00 – 22:00 น.",
+"Special opening steak promotions through October 2026":"โปรโมชันสเต๊กฉลองเปิดสาขา ตลอดเดือนตุลาคม 2569",
+"Opens":"เปิด",
+"22 October 2026":"22 ตุลาคม 2569",
+"Open now":"เปิดแล้ว",
+"Opening tomorrow":"เปิดพรุ่งนี้",
+"Sources:":"แหล่งข้อมูล:",
+"Grill & Ground on Instagram":"Grill & Ground บน Instagram",
+"branch announcement reel":"รีลประกาศสาขา",
+"new branches post":"โพสต์สาขาใหม่",
+
+/* ---------- builder ---------- */
+"Steak, Salad Bar, Pasta, Bread, Soup":"สเต๊ก สลัดบาร์ พาสต้า ขนมปัง ซุป",
+"Build your Virtual Buffet.":"จัด Virtual Buffet ของคุณ",
+"This is the restaurant's own menu book, opened on a screen. Same dishes, same Thai names, same prices as the table, so the delivery menu and the dine-in menu never drift apart. Pick one from each of the eight categories and it leaves the kitchen as one set.":
+  "นี่คือเมนูบุ๊กของร้านบนหน้าจอ จานเดียวกัน ชื่อเดียวกัน ราคาเดียวกับที่โต๊ะ เมนูเดลิเวอรีกับเมนูในร้านจึงตรงกันเสมอ เลือกหมวดละหนึ่งอย่างจากทั้งแปดหมวด แล้วครัวจะส่งออกไปเป็นชุดเดียว",
+"Your set":"ชุดของคุณ",
+"One from each category, packed as one box.":"หมวดละหนึ่งอย่าง แพ็กรวมในกล่องเดียว",
+"Confirm Selection":"ยืนยันรายการ",
+"Confirm":"ยืนยัน",
+"Pick the 6 essentials to continue":"เลือกให้ครบ 6 หมวดหลักเพื่อไปต่อ",
+"Ready for the kitchen. Beverage and Add-on are optional.":"พร้อมส่งเข้าครัวแล้ว เครื่องดื่มและเมนูเสริมเลือกหรือไม่ก็ได้",
+"All 8 chosen. Ready for the kitchen.":"เลือกครบทั้ง 8 หมวดแล้ว พร้อมส่งเข้าครัว",
+"Surprise me":"สุ่มให้หน่อย",
+"Start over":"เริ่มใหม่",
+"Main course":"จานหลัก","Side dish":"เครื่องเคียง","Harvest salad":"สลัดฮาร์เวสต์","Soup & comfort":"ซุปและพาสต้า",
+"Fresh bake":"เบเกอรี่อบสด","Dessert":"ของหวาน","Beverage":"เครื่องดื่ม","Add-on":"เมนูเสริม","Add on":"เมนูเสริม",
+"optional":"ไม่บังคับ","Optional":"ไม่บังคับ","pick 1 or skip":"เลือก 1 หรือข้าม",
+"The Chef's Selection":"เมนูคัดสรรโดยเชฟ",
+"Thirteen mains, hand-picked by our chefs from the menu book, at menu prices. There are no wrong choices here.":
+  "จานหลัก 13 รายการ คัดมาจากเมนูบุ๊กโดยเชฟของเรา ราคาเดียวกับหน้าร้าน เลือกจานไหนก็ไม่ผิดหวัง",
+"Pick 1":"เลือก 1","from the bar":"จากบาร์",
+"All mains":"ทั้งหมด","Pork steak":"สเต๊กหมู","Chicken steak":"สเต๊กไก่","Ocean":"โอเชียนกริลล์","Beef steak":"สเต๊กเนื้อ",
+"Hamburg steak":"แฮมเบิร์กสเต๊ก","Grill combo":"คอมโบย่าง","Pasta":"พาสต้า","Kid's menu":"เมนูเด็ก","Rice dish":"เมนูข้าว","Seafood":"ซีฟู้ด",
+"Customer Favorite":"ลูกค้าชื่นชอบ","Chef Recommendation":"เชฟแนะนำ","Best Seller":"ขายดี","Premium Choice":"ตัวเลือกพรีเมียม",
+"Signature Dish":"จานซิกเนเจอร์","Comfort Classic":"คลาสสิกอบอุ่นใจ",
+"Crafted with":"วัตถุดิบหลัก",
+"Most chosen":"ถูกเลือกมากที่สุด","Guest favourite":"ขวัญใจลูกค้า","Rising favourite":"กำลังมาแรง",
+/* dish stories */
+"Buttery American-style fried rice with golden crispy chicken, a sunny egg and fries. A small plate built for small appetites.":
+  "ข้าวผัดอเมริกันหอมเนย คู่ไก่ทอดกรอบสีทอง ไข่ดาว และเฟรนช์ฟรายส์ จานเล็กสำหรับนักชิมตัวน้อย",
+"Pasta made in house, tossed in fresh basil pesto and finished with a fire-grilled salmon fillet and blistered cherry tomatoes.":
+  "พาสต้าทำเองในร้าน คลุกเพสโต้โหระพาสด ท็อปด้วยแซลมอนย่างไฟและมะเขือเทศเชอร์รีย่าง",
+"Slow-glazed Boston pork beside hand-breaded Texas chicken tenders. Two grill classics, one plate.":
+  "หมูบอสตันเคลือบซอสอย่างพิถีพิถัน คู่ไก่เทนเดอร์เท็กซัสชุบเกล็ดขนมปังด้วยมือ สองความคลาสสิกในจานเดียว",
+"Grilled chicken under a creamy mushroom and bacon sauce, paired with smoky BBQ Boston pork.":
+  "ไก่ย่างราดซอสครีมเห็ดเบคอน คู่หมูบอสตันบาร์บีคิวหอมควัน",
+"Bite-sized tenderloin seared hot and glossed in shoyu butter, served sizzling with garden vegetables.":
+  "เนื้อสันในหั่นเต๋าจี่ไฟแรง เคลือบเนยโชยุเงางาม เสิร์ฟร้อนฉ่าพร้อมผักสวน",
+"100% Japanese Kuroge Wagyu, hand-formed and grilled, crowned with melting cheese and black truffle sauce.":
+  "วากิวคุโรเกะญี่ปุ่นแท้ 100% ปั้นด้วยมือแล้วย่าง ท็อปด้วยชีสเยิ้มและซอสแบล็กทรัฟเฟิล",
+"Prime pork collar grilled for a juicy char and lacquered in our spicy BBQ sauce, with sweet grilled corn.":
+  "สันคอหมูพรีเมียมย่างจนฉ่ำ เคลือบซอสบาร์บีคิวรสเผ็ดสูตรร้าน เสิร์ฟพร้อมข้าวโพดย่างหวาน ๆ",
+"A thick-cut pork chop off the grill, blanketed in creamy mushroom and smoked bacon sauce with shimeji.":
+  "พอร์คชอปหั่นหนาย่างร้อน ๆ ราดซอสครีมเห็ดและเบคอนรมควัน พร้อมเห็ดชิเมจิ",
+"Tender grilled chicken brushed with spicy BBQ and finished under a blanket of melted cheese.":
+  "ไก่ย่างนุ่ม ทาซอสบาร์บีคิวรสเผ็ด แล้วคลุมด้วยชีสละลาย",
+"Grilled chicken steak under a creamy mushroom and smoky bacon sauce. Rich, gentle and made for a slow dinner at home.":
+  "สเต๊กไก่ย่างราดซอสครีมเห็ดและเบคอนหอมควัน เข้มข้นแต่นุ่มนวล เหมาะกับมื้อเย็นสบาย ๆ ที่บ้าน",
+"A salmon fillet and king prawns over open flame, served sizzling with shimeji and sweet corn.":
+  "แซลมอนฟิเล่และกุ้งตัวใหญ่ย่างบนไฟ เสิร์ฟร้อนฉ่ากับเห็ดชิเมจิและข้าวโพดหวาน",
+"Nordic salmon on a silky black truffle cream, with buttery mashed potato and broccoli.":
+  "แซลมอนนอร์ดิกบนครีมแบล็กทรัฟเฟิลเนียนนุ่ม พร้อมมันบดหอมเนยและบร็อคโคลี",
+"Wok-fried rice perfumed with black truffle, topped with marbled pork and a soy-cured egg yolk to stir through.":
+  "ข้าวผัดกระทะไฟแรงหอมแบล็กทรัฟเฟิล ท็อปหมูมาร์เบิลและไข่แดงดองซีอิ๊ว คลุกให้เข้ากันก่อนทาน",
+/* flavours */
+"Crispy":"กรอบ","Buttery":"หอมเนย","Mild":"รสอ่อน","Herbaceous":"หอมสมุนไพร","Ocean Fresh":"สดจากทะเล","Garlic":"กระเทียม",
+"Smoky":"หอมควัน","BBQ":"บาร์บีคิว","Creamy Mushroom":"ครีมเห็ด","Bacon":"เบคอน","Premium Beef":"เนื้อพรีเมียม",
+"Garlic Butter":"เนยกระเทียม","Sizzling":"ร้อนฉ่า","Cheesy":"ชีสเยิ้ม","Truffle":"ทรัฟเฟิล","Spicy":"เผ็ด","Earthy":"หอมเห็ด",
+"Creamy":"ครีมมี่","King Prawn":"กุ้งตัวใหญ่","Fire Grilled":"ย่างไฟแรง","Rich Yolk":"ไข่แดงเข้มข้น","Wok-Fired":"ผัดไฟแรง",
+/* ingredients */
+"Jasmine rice":"ข้าวหอมมะลิ","Crispy chicken":"ไก่กรอบ","Fried egg":"ไข่ดาว","French fries":"เฟรนช์ฟรายส์",
+"Homemade pasta":"พาสต้าโฮมเมด","Basil pesto":"เพสโต้โหระพา","Grilled salmon":"แซลมอนย่าง","Cherry tomato":"มะเขือเทศเชอร์รี",
+"Boston pork":"หมูบอสตัน","House BBQ glaze":"ซอสบาร์บีคิวสูตรร้าน","Texas chicken tenders":"ไก่เทนเดอร์เท็กซัส",
+"Mushroom cream":"ครีมเห็ด","Smoked bacon":"เบคอนรมควัน","Boston pork BBQ":"หมูบอสตันบาร์บีคิว",
+"Beef tenderloin 180g":"เนื้อสันใน 180 กรัม","Japanese shoyu":"โชยุญี่ปุ่น","Cultured butter":"เนยคัลเจอร์","Garden vegetables":"ผักสวน",
+"Kuroge Wagyu 150g":"วากิวคุโรเกะ 150 กรัม","Black truffle":"แบล็กทรัฟเฟิล","Melted cheese":"ชีสละลาย",
+"Prime pork collar":"สันคอหมูพรีเมียม","Spicy BBQ sauce":"ซอสบาร์บีคิวรสเผ็ด","Grilled corn":"ข้าวโพดย่าง",
+"Thick-cut pork chop":"พอร์คชอปหั่นหนา","Shimeji mushroom":"เห็ดชิเมจิ","Cream sauce":"ซอสครีม",
+"Creamy mushroom sauce":"ซอสครีมเห็ด","Salmon fillet":"แซลมอนฟิเล่","King prawns":"กุ้งตัวใหญ่","Shimeji":"เห็ดชิเมจิ",
+"Sweet corn":"ข้าวโพดหวาน","Nordic salmon":"แซลมอนนอร์ดิก","Black truffle cream":"ครีมแบล็กทรัฟเฟิล","Mashed potato":"มันบด",
+"Marbled pork":"หมูมาร์เบิล","Pickled egg yolk":"ไข่แดงดอง",
+"For children under 140 cm, 12 or younger":"สำหรับเด็กสูงไม่เกิน 140 ซม. อายุไม่เกิน 12 ปี",
+"Beef 180g":"เนื้อ 180 กรัม","100% Japanese Wagyu. Beef 150g":"วากิวญี่ปุ่นแท้ 100% เนื้อ 150 กรัม","Served with mashed potato":"เสิร์ฟพร้อมมันบด",
+/* other categories */
+"One free side, exactly as with a steak in the restaurant.":"เลือกเครื่องเคียงฟรี 1 อย่าง เหมือนสั่งสเต๊กที่ร้าน",
+"Harvest salad bar":"ฮาร์เวสต์สลัดบาร์",
+"Ohkajhu organic greens. The bar changes daily, so this is packed from what is on it today.":"ผักออร์แกนิกจากโอ้กะจู๋ สลัดบาร์เปลี่ยนทุกวัน จึงแพ็กจากเมนูที่มีบนบาร์วันนี้",
+"In buffet box":"รวมในกล่องบุฟเฟต์",
+"Soup & pasta":"ซุปและพาสต้า",
+"From the soup and comfort-pasta station, changes daily.":"จากสเตชันซุปและพาสต้า เปลี่ยนเมนูทุกวัน",
+"Fresh baked corner":"มุมเบเกอรี่อบสด",
+"Natural-starter bread from the bakery corner.":"ขนมปังหมักธรรมชาติจากมุมเบเกอรี่",
+"Sweet bar":"สวีทบาร์",
+"From the Live Culture Yogurt Bar and the Tokyo Sweet Bar.":"จาก Live Culture Yogurt Bar และ Tokyo Sweet Bar",
+"The organic juice bar, at menu prices.":"บาร์น้ำผลไม้ออร์แกนิก ราคาตามเมนู",
+"Organic green wheatgrass":"น้ำต้นข้าวอ่อนออร์แกนิก","Cold pressed":"สกัดเย็น","Juice":"น้ำผลไม้","Water":"น้ำดื่ม",
+"Kale, spinach, celery, cucumber, lemon, red apple":"เคล ผักโขม ขึ้นฉ่าย แตงกวา เลมอน แอปเปิ้ลแดง",
+"Melon, cucumber, parsley, lemon, red apple":"เมลอน แตงกวา พาร์สลีย์ เลมอน แอปเปิ้ลแดง",
+"Carrot, pineapple, red apple, lemon":"แครอท สับปะรด แอปเปิ้ลแดง เลมอน",
+"Watermelon, tomato, red apple, lemon":"แตงโม มะเขือเทศ แอปเปิ้ลแดง เลมอน",
+"Tomato, carrot, celery, lemon, pineapple":"มะเขือเทศ แครอท ขึ้นฉ่าย เลมอน สับปะรด",
+"Optional, at menu prices. Pick none if you do not want one.":"ไม่บังคับ ราคาตามเมนู เลือก “No add-on” หากไม่ต้องการ",
+"Back":"ย้อนกลับ",
+"Review the set":"ดูชุดของคุณ","Skip and review the set":"ข้ามและดูชุดของคุณ","Review set":"ดูชุด",
+"not chosen":"ยังไม่ได้เลือก","optional, skipped":"ไม่บังคับ ข้ามแล้ว",
+"Main course, menu price":"จานหลัก ราคาตามเมนู","Free":"ฟรี",
+"Tap it again to clear":"แตะอีกครั้งเพื่อยกเลิก",
+"Chosen. Tap again to clear.":"เลือกแล้ว แตะอีกครั้งเพื่อยกเลิก",
+
+/* ---------- confirm & cinematic ---------- */
+"Perfect! Let's prepare your Virtual Buffet.":"เยี่ยมเลย! มาเตรียม Virtual Buffet ของคุณกัน",
+"Sending to packaging":"กำลังส่งไปแพ็ก",
+"Your Virtual Buffet":"Virtual Buffet ของคุณ",
+"Is Ready.":"พร้อมแล้ว",
+"Order received":"ได้รับออร์เดอร์แล้ว",
+"Sealed above the cloud":"ปิดผนึกเหนือก้อนเมฆ",
+"Continue to Packaging":"ไปดูการแพ็ก",
+"Watch again":"ดูอีกครั้ง",
+"Taking you to packaging…":"กำลังพาคุณไปดูการแพ็ก…",
+"Skip":"ข้าม",
+"Preparing Your Virtual Buffet…":"กำลังเตรียม Virtual Buffet ของคุณ…",
+"02 · Cloud ascension":"02 · ลอยสู่ก้อนเมฆ",
+"Something special <i>is being created.</i>":"สิ่งพิเศษ <i>กำลังถูกสร้างสรรค์</i>",
+"03 · The orchestra":"03 · วงออร์เคสตรา",
+"Eight components <i>rise into the light.</i>":"แปดองค์ประกอบ <i>ลอยขึ้นสู่แสง</i>",
+"04 · Assembly":"04 · ประกอบเป็นชุด",
+"Each one curves home to its own place.":"แต่ละจาน ค่อย ๆ โค้งกลับ สู่ที่ของตัวเอง",
+"05 · The hero":"05 · พระเอกของชุด",
+"The main course <i>lands last.</i>":"จานหลัก <i>ลงเป็นจานสุดท้าย</i>",
+"06 · Sealed":"06 · ปิดผนึก",
+"A crystal lid. <i>Freshness, locked.</i>":"ฝาคริสตัล <i>ล็อกความสด</i>",
+"07 · Your seal":"07 · ซีลของคุณ",
+"One serial. One live QR. <i>Your campaign badge.</i>":"หนึ่งซีเรียล หนึ่ง QR <i>ตราแคมเปญของคุณ</i>",
+"08 · Scan to win":"08 · สแกนลุ้นรางวัล",
+"Point your camera at the seal.":"หันกล้อง ไปที่ซีล",
+"Unlocked":"ปลดล็อกแล้ว",
+"Every seal opens <i>a reward.</i>":"ทุกซีล <i>เปิดสู่รางวัล</i>",
+"Surprise Gift":"ของขวัญเซอร์ไพรส์","A treat packed with your next set":"ของพิเศษแพ็กมากับชุดถัดไป",
+"Lucky Draw":"ลุ้นโชค","Monthly grand prize entry":"สิทธิ์ลุ้นรางวัลใหญ่ประจำเดือน",
+"Spin the Wheel":"หมุนวงล้อ","One spin with every seal":"หมุนได้ 1 ครั้งทุกซีล",
+"Discount Coupon":"คูปองส่วนลด","Up to 20% off your next buffet":"ลดสูงสุด 20% สำหรับบุฟเฟต์ครั้งถัดไป",
+"Loyalty Points":"คะแนนสะสม","Points on every order":"รับคะแนนทุกออร์เดอร์",
+"Buffet Missions":"ภารกิจบุฟเฟต์","Collect all eight categories":"สะสมให้ครบทั้งแปดหมวด",
+
+/* ---------- packaging & campaign ---------- */
+"04 Package":"04 แพ็กเกจ",
+"Eight choices. One set.":"แปดตัวเลือก หนึ่งชุด",
+"packed to order":"แพ็กตามออร์เดอร์",
+"Build your own":"จัดชุดของคุณเอง",
+"What it costs":"ดูราคา",
+"Security seal":"ซีลความปลอดภัย",
+"Sealed for you":"ปิดผนึกเพื่อคุณ",
+"Gold foil · Tamper-evident · Void if broken. Unique to this order.":"ฟอยล์ทอง · ป้องกันการแกะ · ฉีกแล้วใช้ไม่ได้ เฉพาะออร์เดอร์นี้เท่านั้น",
+"On its way to your door":"กำลังเดินทางไปหาคุณ",
+"Arrived":"ถึงแล้ว",
+"Grill & Ground kitchen":"ครัว Grill & Ground",
+"Your door":"หน้าบ้านคุณ",
+"Delivered to your door":"ส่งถึงหน้าบ้านแล้ว",
+"Sealed, warm and on time":"ปิดผนึก อุ่น ๆ และตรงเวลา",
+"Scanning the seal":"กำลังสแกนซีล",
+"Reading the live QR":"กำลังอ่าน QR",
+"Seal verified":"ยืนยันซีลแล้ว",
+"Campaign unlocked for this order":"ปลดล็อกแคมเปญสำหรับออร์เดอร์นี้แล้ว",
+"Virtual Buffet campaign":"แคมเปญ Virtual Buffet",
+"Every Virtual Buffet unlocks a chance to win exciting rewards.":"ทุกชุด Virtual Buffet มีสิทธิ์ลุ้นรางวัลสุดพิเศษ",
+"You won":"คุณได้รับ",
+"Spin again":"หมุนอีกครั้ง",
+"Build your own set":"จัดชุดของคุณเอง",
+"Replay":"เล่นอีกครั้ง",
+"Demo draw for the pitch. Rewards shown are campaign concepts, not live offers.":"การสุ่มรางวัลสาธิตสำหรับการนำเสนอ รางวัลที่แสดงเป็นแนวคิดแคมเปญ ยังไม่ใช่ข้อเสนอจริง",
+"Your security seal":"ซีลความปลอดภัยของคุณ",
+"Unique to this order. Scan it to play.":"เฉพาะออร์เดอร์นี้ สแกนเพื่อร่วมสนุก",
+"Order received in the kitchen":"ครัวได้รับออร์เดอร์แล้ว",
+"Your Virtual Buffet is being packed.":"Virtual Buffet ของคุณกำลังถูกแพ็ก",
+"Scroll to watch it travel from ground to cloud, all the way to your door.":"เลื่อนเพื่อดูการเดินทางจากผืนดินสู่ก้อนเมฆ จนถึงหน้าบ้านคุณ",
+"Watch it being packed ↓":"ดูการแพ็ก ↓",
+"01 In the cloud":"01 บนก้อนเมฆ","Fresh from the ground, rising into the cloud.":"สดจากผืนดิน ลอยขึ้นสู่ก้อนเมฆ",
+"02 Into the bento":"02 ลงกล่องเบนโตะ","The main course takes the largest seat.":"จานหลักได้ช่องที่ใหญ่ที่สุด",
+"03 The crystal lid":"03 ฝาคริสตัล","Closed slowly, sealed in light.":"ค่อย ๆ ปิดลง ผนึกด้วยแสง",
+"04 Security seal":"04 ซีลความปลอดภัย","One serial. One live QR. Tamper-evident.":"หนึ่งซีเรียล หนึ่ง QR ป้องกันการแกะ",
+"05 On its way":"05 กำลังเดินทาง","Your Virtual Buffet is on its way to your door.":"Virtual Buffet ของคุณกำลังเดินทางไปหาคุณ",
+"06 Delivered":"06 ส่งถึงแล้ว","Warm, sealed and right on time.":"อุ่น ๆ ปิดผนึก และตรงเวลา",
+"07 Scan the seal":"07 สแกนซีล","Point your camera at the QR.":"หันกล้องไปที่ QR",
+"08 Unlock":"08 ปลดล็อก","Every seal opens the campaign.":"ทุกซีลเปิดสู่แคมเปญ",
+"Free Buffet Upgrade":"อัปเกรดบุฟเฟต์ฟรี","Step up to the premium set":"อัปเป็นชุดพรีเมียม",
+"Free Side Dish":"เครื่องเคียงฟรี","Any side, on the house":"เลือกเครื่องเคียงได้ ร้านเลี้ยง",
+"10% Discount":"ส่วนลด 10%","Off your next Virtual Buffet":"สำหรับ Virtual Buffet ครั้งถัดไป",
+"Free Drink":"เครื่องดื่มฟรี","A drink with your next set":"รับเครื่องดื่มกับชุดถัดไป",
+"Exclusive Menu Access":"สิทธิ์เมนูพิเศษ","Members-only dishes, first":"ได้ลองเมนูเฉพาะสมาชิกก่อนใคร",
+"20% Discount":"ส่วนลด 20%",
+"Monthly Grand Prize":"รางวัลใหญ่ประจำเดือน","Entered in this month's draw":"มีสิทธิ์ลุ้นรางวัลเดือนนี้",
+
+/* ---------- dashboard ---------- */
+"The plan on one page":"แผนทั้งหมดในหน้าเดียว",
+"12-Month Strategic":"แดชบอร์ดกลยุทธ์",
+"Marketing Dashboard":"การตลาด 12 เดือน",
+"One year, one plan: what we aim for, who we serve, how we win, where we invest and how we measure it.":
+  "หนึ่งปี หนึ่งแผน: เป้าหมายของเรา ลูกค้าที่เราดูแล วิธีที่เราจะชนะ จุดที่เราลงทุน และวิธีวัดผล",
+"Objective":"วัตถุประสงค์","Target market":"ตลาดเป้าหมาย","Strategy":"กลยุทธ์","Major initiatives":"แผนงานหลัก",
+"Budget":"งบประมาณ","KPIs":"ตัวชี้วัด",
+"Where the year lands":"ปลายทางของปีนี้",
+"incremental revenue from Virtual Buffet Sets across delivery channels, within 12 months of launch":"รายได้ส่วนเพิ่มจาก Virtual Buffet Sets ผ่านช่องทางเดลิเวอรี ภายใน 12 เดือนหลังเปิดตัว",
+"+30% sales lift":"ยอดขายเพิ่มขึ้น 30%",
+"new delivery customers in Phase 1 (Jan–Mar 2026)":"ลูกค้าเดลิเวอรีรายใหม่ในเฟส 1 (ม.ค.–มี.ค. 2569)",
+"Acquisition":"ลูกค้าใหม่",
+"delivery orders a week, per branch, sustained all year":"ออร์เดอร์เดลิเวอรีต่อสัปดาห์ต่อสาขา ต่อเนื่องตลอดปี",
+"Volume":"ยอดออร์เดอร์",
+"to":"สู่",
+"brand awareness among urban consumers, within 3 months":"การรับรู้แบรนด์ในกลุ่มผู้บริโภคคนเมือง ภายใน 3 เดือน",
+"Awareness":"การรับรู้แบรนด์",
+"Primary":"กลุ่มหลัก","Secondary":"กลุ่มรอง",
+"Urban professionals and first jobbers":"คนทำงานในเมืองและ First Jobber",
+"Bangkok & Metropolitan area":"กรุงเทพฯ และปริมณฑล",
+"Digital natives who want a healthy, high-quality meal that feels worth every baht.":"คนรุ่นดิจิทัลที่อยากได้มื้ออร่อย ดีต่อสุขภาพ และคุ้มค่าทุกบาท",
+"Health-minded households, family gatherings and office groups":"ครอบครัวสายสุขภาพ งานรวมญาติ และกลุ่มคนทำงานออฟฟิศ",
+"Ordering group sets and party meals to share at home or at work.":"สั่งชุดแชร์และชุดปาร์ตี้ไว้ทานร่วมกันที่บ้านหรือที่ทำงาน",
+"Positioning, pricing & channels":"การวางตำแหน่ง ราคา และช่องทาง",
+"Positioning":"การวางตำแหน่ง","Pricing":"ราคา","Channels":"ช่องทาง",
+"“Steakhouse-quality steak with organic salad bar variety, delivered to your doorstep.”":"“สเต๊กคุณภาพระดับสเต๊กเฮาส์ คู่สลัดบาร์ออร์แกนิกหลากหลาย ส่งตรงถึงหน้าบ้านคุณ”",
+"Premium, healthy dining at an everyday price, backed by the trust of parent brand Ohkajhu.":"อาหารสุขภาพระดับพรีเมียมในราคาที่จับต้องได้ทุกวัน ภายใต้ความเชื่อมั่นของแบรนด์แม่ โอ้กะจู๋",
+"per Virtual Buffet Set":"ต่อ Virtual Buffet Set",
+"Value pricing in the range 42% of consumers are willing to pay, with premium meat add-ons and family party boxes to lift the basket.":
+  "ตั้งราคาแบบคุ้มค่าในช่วงที่ผู้บริโภค 42% ยินดีจ่าย เสริมด้วยเนื้อพรีเมียมแบบ add-on และ Family Party Box เพื่อเพิ่มยอดต่อบิล",
+"A hybrid model: be where guests already order, then bring them home to our own channel.":"โมเดลไฮบริด: อยู่ในแอปที่ลูกค้าสั่งเป็นประจำ แล้วชวนกลับมาสั่งผ่านช่องทางของเราเอง",
+"Direct: CRM, repeat orders, lower GP fees":"ช่องทางตรง: CRM สั่งซ้ำ และลดค่า GP",
+"Share of consumers using each delivery app":"สัดส่วนผู้บริโภคที่ใช้แอปเดลิเวอรีแต่ละแอป",
+"Four phases, one story":"สี่เฟส หนึ่งเรื่องราว",
+"Initiative":"แผนงาน",
+"Phase 1 · Brand awakening & grand launch":"เฟส 1 · ปลุกแบรนด์และแกรนด์โอเพนนิ่ง",
+"Soft-launch PR, Meta and TikTok ads, and community outreach around Paseo Park Kanchana and Dadfa Lasalle.":"PR ช่วง Soft Launch โฆษณาบน Meta และ TikTok และกิจกรรมชุมชนรอบสาขาพาซิโอ พาร์ค กาญจนาภิเษก และดาดฟ้า ลาซาล",
+"Phase 2 · Lead generation & expansion":"เฟส 2 · สร้างฐานลูกค้าและขยายการเติบโต",
+"Virtual Buffet Party Box (4–6 pax), LINE OA CRM launch (>2,000 members) and “Mid-Year Meat × Chef Pom”.":"Virtual Buffet Party Box (4–6 ที่) เปิดตัว LINE OA CRM (มากกว่า 2,000 สมาชิก) และ “Mid-Year Meat × Chef Pom”",
+"Phase 3 · Engagement & loyalty":"เฟส 3 · สร้างการมีส่วนร่วมและความภักดี",
+"Pairing-set collaborations and the “Grill & Gang” TikTok video review contest.":"เซ็ตจับคู่ร่วมกับพาร์ตเนอร์ และประกวดวิดีโอรีวิวบน TikTok “Grill & Gang”",
+"Phase 4 · Festive season & revenue peak":"เฟส 4 · เทศกาลและยอดขายสูงสุด",
+"Halloween and New Year festive sets, an e-voucher push (THB 200k target) and year-end combo promotions.":"ชุดพิเศษฮาโลวีนและปีใหม่ ผลักดันยอดขาย e-Voucher (เป้า 200,000 บาท) และโปรคอมโบส่งท้ายปี",
+"Always-on":"ต่อเนื่องตลอดปี",
+"“Grill & กลอน” monthly interactive campaigns and the “Grill & Guide / Guru” series with 6 master chefs.":"แคมเปญอินเทอร์แอกทีฟรายเดือน “Grill & กลอน” และซีรีส์ “Grill & Guide / Guru” กับมาสเตอร์เชฟ 6 ท่าน",
+"THB 2,000,000 a year":"2,000,000 บาทต่อปี",
+"Always-on campaigns":"แคมเปญต่อเนื่องตลอดปี",
+"Awareness & brand launch":"สร้างการรับรู้และเปิดตัวแบรนด์",
+"Local store & grand opening":"การตลาดระดับสาขาและเปิดสาขาใหม่",
+"Seasonal & festive":"ฤดูกาลและเทศกาล",
+"Engagement & loyalty":"การมีส่วนร่วมและความภักดี",
+"Bars scaled to the largest line. Hover or tap a bar to see what it funds.":"ความยาวแถบเทียบกับรายการที่ใหญ่ที่สุด แตะหรือชี้ที่แถบเพื่อดูว่างบใช้ทำอะไร",
+"How we know it's working":"วัดผลอย่างไรว่าได้ผล",
+"Financial & sales":"การเงินและยอดขาย","average check per head":"ยอดใช้จ่ายเฉลี่ยต่อคน","e-voucher sales":"ยอดขาย e-Voucher",
+"Delivery operations":"การดำเนินงานเดลิเวอรี","orders a week, per branch":"ออร์เดอร์ต่อสัปดาห์ต่อสาขา","delivery app rating":"คะแนนรีวิวบนแอปเดลิเวอรี",
+"Retention & CRM":"การรักษาลูกค้าและ CRM","new LINE OA members":"สมาชิก LINE OA ใหม่","60-day repeat purchase rate":"อัตราการซื้อซ้ำภายใน 60 วัน",
+"up from an 8% baseline":"เพิ่มจากฐานเดิม 8%",
+"Brand reach & engagement":"การเข้าถึงและการมีส่วนร่วม","digital impressions a year":"อิมเพรสชันดิจิทัลต่อปี",
+"engagement rate on Meta & TikTok":"อัตราการมีส่วนร่วมบน Meta และ TikTok",
+"Jan":"ม.ค.","Feb":"ก.พ.","Mar":"มี.ค.","Apr":"เม.ย.","May":"พ.ค.","Jun":"มิ.ย.","Jul":"ก.ค.","Aug":"ส.ค.","Sep":"ก.ย.","Oct":"ต.ค.","Nov":"พ.ย.","Dec":"ธ.ค.",
+
+/* ---------- closing & footer ---------- */
+"by Ohkajhu":"โดย โอ้กะจู๋",
+"Ohkajhu grows it, Grill & Ground grills it, and the Virtual Buffet carries it to anyone with a screen. Ground at one end, cloud at the other, one plate travelling between them.":
+  "โอ้กะจู๋ปลูก Grill & Ground ย่าง และ Virtual Buffet พาไปถึงทุกคนที่มีหน้าจอ ผืนดินอยู่ปลายทางหนึ่ง ก้อนเมฆอยู่อีกปลายทาง และอาหารหนึ่งจานเดินทางอยู่ระหว่างกลาง",
+"Build your set":"จัดชุดของคุณ",
+"Powered by":"พัฒนาโดย",
+
+/* ---------- labels for assistive tech and tooltips ---------- */
+"From Ground to Cloud, a scrolling introduction":"From Ground to Cloud บทนำแบบเลื่อนชม",
+"A camera glides through rows of organic vegetables at sunrise, tilts up to the sky and rises into the clouds":"กล้องเคลื่อนผ่านแปลงผักออร์แกนิกยามเช้า เงยขึ้นสู่ท้องฟ้า แล้วลอยขึ้นไปในก้อนเมฆ",
+"Thai Jaew Fire Grilled Chicken on the house plate":"ไก่ย่างแจ่วไฟแรงบนจานของร้าน",
+"Previous category":"หมวดก่อนหน้า","Next category":"หมวดถัดไป","Virtual Buffet categories":"หมวดของ Virtual Buffet",
+"Previous filter":"ตัวกรองก่อนหน้า","Next filter":"ตัวกรองถัดไป",
+"The Virtual Buffet set being packed":"ชุด Virtual Buffet กำลังถูกแพ็ก",
+"Fresh dishes float above the clouds, settle into a black and gold bento, a crystal lid closes and a Grill and Ground seal is applied; the box arrives at a home table, a phone scans the seal and rewards burst out":
+  "อาหารสด ๆ ลอยเหนือก้อนเมฆ ลงสู่กล่องเบนโตะสีดำทอง ฝาคริสตัลปิดลงและติดซีล Grill & Ground กล่องมาถึงโต๊ะที่บ้าน โทรศัพท์สแกนซีล แล้วรางวัลก็ปรากฏขึ้น",
+"Order QR code":"คิวอาร์โค้ดออร์เดอร์",
+"Dashboard flow":"ลำดับของแดชบอร์ด",
+"Delivery app usage among consumers":"การใช้แอปเดลิเวอรีของผู้บริโภค",
+"GrabFood: used by 73% of consumers surveyed":"GrabFood: ผู้บริโภคที่สำรวจใช้ 73%",
+"LINE MAN: used by 67% of consumers surveyed":"LINE MAN: ผู้บริโภคที่สำรวจใช้ 67%",
+"Initiatives by month":"แผนงานรายเดือน",
+"Budget allocation":"การจัดสรรงบประมาณ",
+"Always-on campaigns: THB 600,000 (30%). Year-round performance ads, Virtual Buffet pushes and the master chef series.":"แคมเปญต่อเนื่องตลอดปี: 600,000 บาท (30%) โฆษณาเพอร์ฟอร์มแมนซ์ตลอดปี โปรโมต Virtual Buffet และซีรีส์มาสเตอร์เชฟ",
+"Awareness & brand launch: THB 400,000 (20%). PR content, influencer media and digital performance ads.":"สร้างการรับรู้และเปิดตัวแบรนด์: 400,000 บาท (20%) คอนเทนต์ PR สื่ออินฟลูเอนเซอร์ และโฆษณาดิจิทัล",
+"Local store & grand opening: THB 400,000 (20%). Catchment-area promotions and geo-targeted social ads.":"การตลาดระดับสาขาและเปิดสาขาใหม่: 400,000 บาท (20%) โปรโมชันในรัศมีสาขา และโฆษณาโซเชียลตามพื้นที่",
+"Seasonal & festive: THB 400,000 (20%). Holiday promotions, party boxes and B2B e-voucher marketing.":"ฤดูกาลและเทศกาล: 400,000 บาท (20%) โปรโมชันวันหยุด Party Box และการตลาด e-Voucher แบบ B2B",
+"Engagement & loyalty: THB 200,000 (10%). LINE OA CRM rewards, UGC contests and community activation.":"การมีส่วนร่วมและความภักดี: 200,000 บาท (10%) รางวัล LINE OA CRM การประกวด UGC และกิจกรรมชุมชน",
+"Your Virtual Buffet being created":"Virtual Buffet ของคุณกำลังถูกสร้าง",
+"Your sealed Virtual Buffet floating above the clouds":"Virtual Buffet ที่ปิดผนึกแล้ว ลอยอยู่เหนือก้อนเมฆ",
+"Fire-seared beef":"เนื้อย่างไฟแรง","Garden carrot":"แครอทจากสวน","Organic cabbage":"กะหล่ำปลีออร์แกนิก","Vine tomato":"มะเขือเทศ",
+"Natural-starter dough":"แป้งหมักธรรมชาติ","Fresh fruit":"ผลไม้สด","Organic kale":"เคลออร์แกนิก","Radish":"หัวไชเท้า"
+};
+</script>
+<script>/* =====================================================================
+   EN / ไทย language toggle
+   English is the page as written. Thai is applied on top by swapping text
+   (and a few labels) from GG_TH, so the English markup and every script
+   that builds the page stay untouched. Text the builder renders later is
+   translated as it appears. Choice is remembered; ?lang=th opens in Thai.
+   ===================================================================== */
+(function(){
+  const TH=window.GG_TH||{};
+  const BACK={}; for(const k in TH) if(!(TH[k] in BACK)) BACK[TH[k]]=k;      /* Thai → English, for text rewritten while in Thai */
+  const norm=s=>s.replace(/\s+/g," ").trim();
+  const t=s=>{ const k=norm(s); return TH[k]!=null?TH[k]:(rule(k)??s); };
+  window.GGT=s=>lang==="th"?t(s):s;                                          /* used by scripts that animate words */
+
+  /* ---------- dynamic strings ---------- */
+  const MON={Jan:"ม.ค.",Feb:"ก.พ.",Mar:"มี.ค.",Apr:"เม.ย.",May:"พ.ค.",Jun:"มิ.ย.",Jul:"ก.ค.",Aug:"ส.ค.",Sep:"ก.ย.",Oct:"ต.ค.",Nov:"พ.ย.",Dec:"ธ.ค."};
+  const mon=s=>s.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g,m=>MON[m]);
+  const tt=s=>TH[s]!=null?TH[s]:s;
+  const RULES=[
+    [/^(\d+) of 8 chosen$/,m=>"เลือกแล้ว "+m[1]+" จาก 8"],
+    [/^Pick the 6 essentials to continue · (\d+) to go$/,m=>"เลือกให้ครบ 6 หมวดหลักเพื่อไปต่อ · เหลืออีก "+m[1]],
+    [/^Next: (.+)$/,m=>"ถัดไป: "+tt(m[1])],
+    [/^Skip to (.+)$/,m=>"ข้ามไป"+tt(m[1])],
+    [/^(\d+) branches$/,m=>m[1]+" สาขา"],
+    [/^(\d+) open now, (\d+) opening soon$/,m=>"เปิดแล้ว "+m[1]+" สาขา และกำลังจะเปิดอีก "+m[2]+" สาขา"],
+    [/^Opening (\d+) (\w{3}) · in (\d+) days$/,m=>"เปิด "+m[1]+" "+MON[m[2]]+" · อีก "+m[3]+" วัน"],
+    [/^Open since$/,()=>"เปิดตั้งแต่"],
+    [/^(\d+) (\w{3}) (\d{4})$/,m=>MON[m[2]]?m[1]+" "+MON[m[2]]+" "+(+m[3]+543):null],
+    [/^Arriving in (\d+) min$/,m=>"ถึงในอีก "+m[1]+" นาที"],
+    [/^Your (\d+) picks are on their way to the kitchen\.$/,m=>"รายการทั้ง "+m[1]+" ของคุณกำลังส่งเข้าครัว"],
+    [/^Popularity (\d) of 5, (.+)$/,m=>"ความนิยม "+m[1]+" จาก 5, "+tt(m[2])],
+    [/^Remove (.+)$/,m=>"นำ "+m[1]+" ออก"],
+    [/^Filter (.+)$/,m=>"ตัวกรอง"+tt(m[1].charAt(0).toUpperCase()+m[1].slice(1))],
+    [/^QR code for order (.+)$/,m=>"คิวอาร์โค้ดของออร์เดอร์ "+m[1]],
+    [/^(Phase \d|Always-on) · (\w{3})–(\w{3})$/,m=>(m[1]==="Always-on"?"ต่อเนื่องตลอดปี":"เฟส "+m[1].slice(6))+" · "+MON[m[2]]+"–"+MON[m[3]]],
+    [/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)–(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/,m=>mon(m[0])]
+  ];
+  const BACK_RULES=[
+    [/^(\d+) สาขา$/,m=>m[1]+" branches"],
+    [/^เลือกแล้ว (\d+) จาก 8$/,m=>m[1]+" of 8 chosen"],
+    [/^ถึงในอีก (\d+) นาที$/,m=>"Arriving in "+m[1]+" min"]
+  ];
+  function rule(k){ for(const [re,fn] of RULES){ const m=k.match(re); if(m){ const r=fn(m); if(r!=null) return r; } } return null; }
+  function backRule(k){ for(const [re,fn] of BACK_RULES){ const m=k.match(re); if(m) return fn(m); } return null; }
+
+  /* ---------- sentences split around inline markup: {0},{1} are the original child elements ---------- */
+  const TPL={
+    "Orders delivery {0} a week":"สั่งเดลิเวอรี {0} ต่อสัปดาห์",
+    "{0} years old":"อายุ {0} ปี",
+    "{0} a month":"รายได้ {0} ต่อเดือน",
+    "With {0} chef-curated main courses from the menu book, plus choices across sides, salads, soups, bakes, desserts, drinks, and add-ons, guests can build over {1} different set combinations.":
+      "ด้วยจานหลัก {0} รายการคัดสรรโดยเชฟจากเมนูบุ๊ก รวมกับตัวเลือกเครื่องเคียง สลัด ซุป เบเกอรี่ ของหวาน เครื่องดื่ม และเมนูเสริม ลูกค้าจัดชุดได้มากกว่า {1} แบบ"
+  };
+  const TPL_RULES=[[/^Step \{0\} of 8 · (.+)$/,m=>"ขั้นที่ {0} จาก 8 · "+tt(m[1])]];
+  const SKIP=".dn,.luxName,.luxTh,.dth,script,style,svg,.ggLang,[data-noi18n]";
+  const SKIP_ATTR=".ggLang,[data-noi18n]";
+  /* dish names stay English on the menu cards (the Thai name sits under each one); in the tray and the packing caption the Thai name is used */
+  let NAMES=null;
+  const names=()=>{ if(NAMES) return NAMES; NAMES={};
+    try{ CATS.forEach(c=>c.items.forEach(it=>{ if(it.th){ NAMES[norm(it.nm)]=it.th; if(it.it) NAMES[norm(it.it+" "+it.nm)]=it.th; } })); }catch(e){}
+    return NAMES; };
+
+  let lang="en";
+  const textOrig=new Map(), attrOrig=new Map(), tplOrig=new Map(), written=new WeakMap();
+  const ATTRS=["aria-label","alt","title","data-tip","placeholder"];
+
+  function tplKey(el){
+    let k="",i=0,hasT=false,hasE=false;
+    for(const c of el.childNodes){
+      if(c.nodeType===3){ k+=c.nodeValue; if(/[A-Za-z]/.test(c.nodeValue)) hasT=true; }
+      else if(c.nodeType===1){ if(c.nodeName==="BR"){ k+=" "; continue; } hasE=true; k+="{"+(i++)+"}"; }
+    }
+    return hasT&&hasE?norm(k):null;
+  }
+  function applyTpl(el){
+    if(tplOrig.has(el)) return true;
+    const k=tplKey(el); if(!k) return false;
+    let th=TPL[k]; if(th==null) for(const [re,fn] of TPL_RULES){ const m=k.match(re); if(m){ th=fn(m); break; } }
+    if(th==null) return false;
+    const kids=[...el.childNodes], els=kids.filter(c=>c.nodeType===1&&c.nodeName!=="BR");
+    const frag=document.createDocumentFragment();
+    th.split(/(\{\d\})/).forEach(p=>{ const m=p.match(/^\{(\d)\}$/); frag.appendChild(m?els[+m[1]]:document.createTextNode(p)); });
+    tplOrig.set(el,kids); el.textContent=""; el.appendChild(frag); el.setAttribute("data-tr","");
+    return true;
+  }
+  function doText(n){
+    const v=n.nodeValue; if(!v||!/[A-Za-z]/.test(v)) return;
+    const p=n.parentElement; if(!p||p.closest(SKIP)) return;
+    const k=norm(v), inDish=p.closest(".tv,#packNm,.sealPrice small");
+    let dish=inDish?names()[k]:null;
+    if(inDish&&dish==null&&k.includes("→")){ const [a,b]=k.split("→").map(norm); dish=(TH[a]??a)+"  →  "+(names()[b]??b); }
+    const th=dish!=null?dish:TH[k]!=null?TH[k]:rule(k); if(th==null) return;
+    const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0], out=lead+th+trail;
+    textOrig.set(n,v); written.set(n,out); n.nodeValue=out; p.setAttribute("data-tr","");
+  }
+  function doAttrs(el){
+    for(const a of ATTRS){ const v=el.getAttribute(a); if(!v||!/[A-Za-z]/.test(v)) continue;
+      const k=norm(v), th=TH[k]!=null?TH[k]:rule(k); if(th==null||th===v) continue;
+      const key=a; let m=attrOrig.get(el); if(!m){ m={}; attrOrig.set(el,m); } m[key]=v; el.setAttribute(a,th); }
+  }
+  function walk(root){
+    if(root.nodeType===3){ doText(root); return; }
+    if(root.nodeType!==1||root.closest(SKIP_ATTR)) return;
+    if(root.closest(SKIP)){ if(root.matches("svg")) doAttrs(root); return; }
+    const els=[root,...root.querySelectorAll("*")];
+    for(const el of els){ if(!el.closest(SKIP_ATTR)) doAttrs(el); if(el.closest(SKIP)) continue; applyTpl(el); }
+    const tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+    const nodes=[]; while(tw.nextNode()) nodes.push(tw.currentNode);
+    nodes.forEach(doText);
+  }
+  function restore(){
+    tplOrig.forEach((kids,el)=>{ el.textContent=""; kids.forEach(k=>el.appendChild(k)); el.removeAttribute("data-tr"); }); tplOrig.clear();
+    textOrig.forEach((v,n)=>{ if(n.nodeValue===written.get(n)) n.nodeValue=v; n.parentElement&&n.parentElement.removeAttribute("data-tr"); }); textOrig.clear();
+    attrOrig.forEach((m,el)=>{ for(const a in m) el.setAttribute(a,m[a]); }); attrOrig.clear();
+    /* text a script rewrote from Thai while Thai was on */
+    const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n;
+    while((n=tw.nextNode())){ const v=norm(n.nodeValue); if(!v||!/[฀-๿]/.test(v)) continue;
+      const p=n.parentElement; if(!p||p.closest(SKIP)) continue;
+      const en=BACK[v]??backRule(v); if(en!=null) n.nodeValue=en; }
+  }
+
+  /* ---------- watch for text the page renders later ---------- */
+  let busy=false;
+  const mo=new MutationObserver(recs=>{
+    if(lang!=="th"||busy) return; busy=true;
+    try{
+      for(const r of recs){
+        if(r.type==="childList"){
+          const el=r.target; if(el.nodeType===1&&!el.closest(SKIP)){ tplOrig.delete(el); applyTpl(el); }   /* a sentence re-rendered around new markup */
+          r.addedNodes.forEach(walk); }
+        else if(r.type==="characterData"){ if(written.get(r.target)!==r.target.nodeValue){ textOrig.delete(r.target); doText(r.target); } }
+        else if(r.type==="attributes"){ const v=r.target.getAttribute(r.attributeName); if(v&&/[A-Za-z]/.test(v)) doAttrs(r.target); }
+      }
+    } finally { mo.takeRecords(); busy=false; }
+  });
+
+  /* ---------- the toggle ---------- */
+  let ui;
+  function setLang(l,save){
+    if(l===lang) return; lang=l;
+    document.documentElement.lang=l==="th"?"th":"en";
+    if(l==="th"){ busy=true; walk(document.body); mo.takeRecords(); busy=false;
+      mo.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:ATTRS}); }
+    else { mo.disconnect(); restore(); }
+    if(ui) ui.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===l)));
+    if(save){ try{ localStorage.setItem("gg-lang",l); }catch(e){} }
+    document.dispatchEvent(new CustomEvent("gg:lang",{detail:l}));
+  }
+  function buildUI(){
+    ui=document.createElement("div"); ui.className="ggLang"; ui.setAttribute("role","group"); ui.setAttribute("aria-label","Language / ภาษา");
+    ui.innerHTML='<button type="button" data-l="en" lang="en" aria-pressed="true">EN</button><button type="button" data-l="th" lang="th" aria-pressed="false">ไทย</button>';
+    ui.addEventListener("click",e=>{ const b=e.target.closest("button"); if(b) setLang(b.dataset.l,true); });
+    document.body.appendChild(ui);
+    /* on the opening scene it sits under the top pills; after that it moves up to the corner */
+    const j=document.getElementById("journey");
+    const place=()=>ui.classList.toggle("solo",!j||j.getBoundingClientRect().bottom<innerHeight*.5);
+    addEventListener("scroll",place,{passive:true}); place();
+  }
+  function init(){
+    buildUI();
+    let want=null;
+    try{ const q=new URLSearchParams(location.search).get("lang"); if(q==="th"||q==="en") want=q; }catch(e){}
+    if(!want){ try{ want=localStorage.getItem("gg-lang"); }catch(e){} }
+    if(want==="th") setLang("th",false);
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",init); else init();
+  window.GGLang={set:l=>setLang(l,true),get:()=>lang};
 })();
 </script>
 

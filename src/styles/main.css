@@ -190,10 +190,10 @@ canvas.farmVid{background:#3A2A14}
 .secHead{max-width:56ch;margin-bottom:26px}
 .secHead h2{font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.08}
 .secHead p{margin-top:12px;color:var(--ink-soft)}
-.slab{font-family:"Zilla Slab",Georgia,serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+.slab{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
 .bookRun{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
   border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:22px;font-size:12.5px;color:var(--ink-soft)}
-.bookRun b{font-family:"Zilla Slab",Georgia,serif;font-size:14px;color:#1F4D3A;text-transform:none}
+.bookRun b{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:14px;color:#1F4D3A;text-transform:none}
 /* builder category tabs (the rollout list below has its own .steps class) */
 .stepNav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 10px}
 .stepRail{min-width:0;position:relative}
@@ -268,7 +268,7 @@ canvas.farmVid{background:#3A2A14}
 .dish:hover{border-color:#B4C0AC}
 .dish>img,.dish>.noPhoto{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#E9E7E2}
 .dish>.noPhoto{display:grid;place-items:center;padding:10px;text-align:center;
-  background:linear-gradient(150deg,#1F4D3A,#2F5A34);color:#E7F0E2;font-family:"Zilla Slab",Georgia,serif;
+  background:linear-gradient(150deg,#1F4D3A,#2F5A34);color:#E7F0E2;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;
   font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.02em}
 .dish .meta{padding:9px 11px 11px;display:flex;flex-direction:column;gap:3px;flex:1}
 .dish .dn{font-family:var(--display);font-size:14.5px;line-height:1.2;font-weight:500}
@@ -279,7 +279,7 @@ canvas.farmVid{background:#3A2A14}
   font-family:var(--display);font-size:13.5px;font-weight:500}
 .dish .dpr .rule{flex:1;height:1px;background:#1B1B1B}
 .dish .dpr .sq{width:6px;height:6px;background:#1B1B1B}
-.dish .tag{position:absolute;left:8px;top:8px;background:#C7A17A;color:#fff;font-family:"Zilla Slab",Georgia,serif;
+.dish .tag{position:absolute;left:8px;top:8px;background:#C7A17A;color:#fff;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;
   font-weight:700;font-size:11px;letter-spacing:.04em;padding:3px 9px;border-radius:4px}
 .dish .ok{position:absolute;right:8px;top:8px;width:28px;height:28px;border-radius:50%;background:#9BCB5B;
   display:none;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
@@ -307,11 +307,11 @@ canvas.farmVid{background:#3A2A14}
 .luxBadge{position:absolute;left:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;
   padding:5px 11px 5px 9px;border-radius:999px;background:rgba(18,16,13,.82);color:#EBD39C;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(214,178,104,.55);
-  font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+  font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
 .luxBadge svg{width:10px;height:10px;color:#D6B268}
 .dish.lux .ok{z-index:3;right:12px;top:12px;width:32px;height:32px}
 .luxBody{display:flex;flex-direction:column;gap:7px;padding:16px 18px 16px;flex:1}
-.luxSec{font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.16em;
+.luxSec{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.16em;
   text-transform:uppercase;color:#8A6A2E}
 .luxName{font-family:var(--display);font-size:19px;line-height:1.18;font-weight:500;color:#15241C;letter-spacing:-.005em}
 .luxName i{font-style:italic;font-weight:300}
@@ -321,7 +321,7 @@ canvas.farmVid{background:#3A2A14}
 .luxFlav .fl{display:inline-flex;align-items:center;gap:5px;padding:3px 10px 3px 8px;border-radius:999px;
   background:#F4EEE1;color:#4A3C22;font-size:12px;font-weight:500;line-height:1.5}
 .luxIngr{font-size:12.5px;line-height:1.5;color:#5C5A52;padding-top:9px;border-top:1px solid rgba(176,140,72,.22)}
-.luxIngr b{display:block;font-family:"Zilla Slab",Georgia,serif;font-size:10.5px;letter-spacing:.14em;
+.luxIngr b{display:block;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:10.5px;letter-spacing:.14em;
   text-transform:uppercase;color:#8A6A2E;margin-bottom:1px}
 .luxIngr .dot{margin:0 6px;color:#B9A16A}
 .luxNote{font-size:11.5px;font-style:italic;color:#7A7468}
@@ -398,7 +398,7 @@ canvas.farmVid{background:#3A2A14}
 .br{position:relative;display:flex;flex-direction:column;gap:3px;padding:16px 16px 15px;border-radius:14px;background:#FFFDF8;
   border:1px solid rgba(176,140,72,.28);box-shadow:0 14px 28px -24px rgba(30,24,12,.5)}
 .br h3{margin:8px 0 0;font-family:var(--display);font-size:18px;font-weight:500;line-height:1.2;letter-spacing:normal;color:var(--ink)}
-.brArea{margin:0;font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
+.brArea{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2E}
 .brHours{margin:8px 0 0;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums}
 .brHours b{font-weight:700;color:var(--ink-soft);margin-right:4px}
 .brPromo{margin:8px 0 0;padding:7px 10px;border-radius:9px;background:#FBEBDD;color:#8A3A1C;font-size:12.5px;line-height:1.4}
@@ -440,7 +440,7 @@ canvas.farmVid{background:#3A2A14}
   background:radial-gradient(circle at 50% 48%,rgba(40,30,16,0) 48%,rgba(40,30,16,.26) 100%)}
 .packCap{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 46px);z-index:7;
   text-align:center;padding:0 20px;pointer-events:none}
-.packCap .step{font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;
+.packCap .step{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ember);margin:0}
 .packCap h2{font-family:var(--display);font-size:clamp(1.6rem,5vw,2.8rem);line-height:1.04;margin-top:7px;
   color:#17402E;text-shadow:0 2px 14px rgba(255,255,255,.55)}
@@ -482,7 +482,7 @@ canvas.farmVid{background:#3A2A14}
 .tDish img{width:100%;height:100%;object-fit:cover;display:block}
 .tDish .np{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:6px;
   background:linear-gradient(150deg,#1F4D3A,#2F5A34);color:#E7F0E2;
-  font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:11px;text-transform:uppercase;line-height:1.2}
+  font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-weight:700;font-size:11px;text-transform:uppercase;line-height:1.2}
 .tIng{position:absolute;left:50%;top:50%;width:var(--d,90px);height:var(--d,90px);margin:calc(var(--d,90px)/-2) 0 0 calc(var(--d,90px)/-2);
   border-radius:50%;overflow:hidden;border:3px solid rgba(255,253,246,.95);will-change:opacity,transform;
   box-shadow:0 0 26px rgba(255,220,140,.65),0 18px 30px -12px rgba(20,12,4,.5)}
@@ -570,7 +570,7 @@ canvas.farmVid{background:#3A2A14}
 .camp canvas.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .campIn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   gap:clamp(8px,1.6vh,16px);padding:calc(env(safe-area-inset-top,0px) + 54px) 16px 18px}
-.campKick{font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E9C46A}
+.campKick{font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E9C46A}
 .campH{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,7.4vw,5rem);line-height:.95;margin:0;letter-spacing:.01em;perspective:600px;
   color:#FFE7A3;text-shadow:0 0 30px rgba(255,200,90,.45)}
 .campH .w{display:inline-block;white-space:nowrap}
@@ -631,7 +631,7 @@ canvas.farmVid{background:#3A2A14}
             mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%)}}
 .fCaps{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 46px);z-index:8;pointer-events:none}
 .fCap{position:absolute;left:0;right:0;top:0;text-align:center;padding:0 20px;opacity:0;visibility:hidden}
-.fCap p{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFE3A3;
+.fCap p{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFE3A3;
   text-shadow:0 1px 10px rgba(30,18,4,.75)}
 .fCap h2{font-family:var(--display);font-size:clamp(1.35rem,4.2vw,2.5rem);line-height:1.06;margin-top:6px;color:#FFFDF6;
   text-shadow:0 2px 22px rgba(30,18,4,.7),0 0 2px rgba(30,18,4,.4)}
@@ -657,7 +657,7 @@ canvas.farmVid{background:#3A2A14}
 .route .rt{display:flex;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A6A54}
 .orderCard{position:absolute;right:clamp(16px,4vw,56px);top:50%;z-index:9;width:min(290px,28vw);padding:16px;border-radius:20px;
   background:rgba(251,246,234,.97);box-shadow:0 30px 60px -28px rgba(10,6,2,.85),0 0 0 1px rgba(214,178,104,.6);opacity:0;visibility:hidden}
-.orderCard .k{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
+.orderCard .k{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
 .orderCard h3{margin:2px 0 0;font-family:var(--display);font-size:19px;color:#17402E}
 .orderCard code{display:inline-block;margin-top:4px;font-size:12px;letter-spacing:.08em;color:#6B4A16}
 .ocQ{margin:12px 0 10px;padding:8px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 2px #E2BE6E,inset 0 0 0 5px #fff,inset 0 0 0 6px rgba(160,120,50,.35)}
@@ -749,7 +749,7 @@ canvas.farmVid{background:#3A2A14}
 @keyframes miniFloat{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-7px) rotate(1.2deg)}}
 @keyframes miniShadow{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.82);opacity:.6}}
 .arriveTx{flex:1 1 auto;min-width:0}
-.arriveTx p{margin:0;font-family:"Zilla Slab",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
+.arriveTx p{margin:0;font-family:"Zilla Slab","IBM Plex Sans Thai",Georgia,serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B8862A}
 .arriveTx h3{margin:3px 0 0;font-family:var(--display);font-size:clamp(1.05rem,2.6vw,1.3rem);line-height:1.15;color:#17402E}
 .arriveTx small{display:block;margin-top:4px;font-size:12.5px;color:#7A6A54}
 .arriveCta{position:relative;margin-top:10px;padding:9px 16px;font-size:13.5px}

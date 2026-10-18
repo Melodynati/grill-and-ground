@@ -62,7 +62,7 @@
   }
 
   /* ---------- words: each line arrives word by word, out of focus into focus ---------- */
-  const words=s=>s.split(" ").map(w=>'<span class="w">'+w+'</span>').join(" ");
+  const words=s=>(window.GGT?GGT(s):s).split(" ").map(w=>'<span class="w">'+w+'</span>').join(" ");
   function say(k,h){
     const id=k+"|"+h; if(id===lastSay) return; lastSay=id;
     const old=[...sayTop.querySelectorAll(".w"),kick];

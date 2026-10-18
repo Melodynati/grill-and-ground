@@ -11,6 +11,7 @@
 - **Confirm Selection**: full-screen cinematic order creation (assembly, crystal lid, live QR seal, scan-to-win rewards), then an automatic glide to packaging
 - **Packaging scene**: scroll-controlled packing film, delivery, scan and the campaign
 - **12-Month Strategic Marketing Dashboard**: Objective → Target market → Strategy → Major initiatives → Budget → KPIs (`src/partials/dashboard.html`), styled after the pitch deck: forest green, cream, Playfair Display numerals, watercolour clouds
+- **EN / ไทย toggle**: top-right switch; the whole page, builder and cinematic switch to Thai. The choice is remembered, and `?lang=th` opens the site in Thai
 - **Closing and footer**: "Virtual Buffet, from Ground to Cloud", powered by Melody Nati
 
 ## Quick start
@@ -32,6 +33,7 @@ src/
     main.css             layout, journey, builder, branches, packaging
     dashboard.css        styles for the dashboard section only
     closing.css          closing section and footer
+    i18n.css             language toggle and Thai typography
     cinematic.css        full-screen Confirm Selection sequence
   scripts/               loaded in this order (classic scripts sharing one scope)
     00-media.js          photo and footage-frame tables (PH, FARM_FRAMES, ...)
@@ -44,6 +46,8 @@ src/
     07-scroll-sync.js    ties the opening to GSAP ScrollTrigger
     08-campaign.js       packaging scenes, QR seal (links to the live site), rewards
     09-branches.js       branch status by date, branch count
+    i18n-th.js           Thai copy: English text → Thai (edit translations here)
+    i18n.js              the EN / ไทย toggle and translation engine
     10-reveal.js         section fade-in on scroll, counting numbers, dashboard charts drawing in
     11-confirm.js        Confirm Selection button and hand-off
     12-cinematic.js      cinematic order-creation sequence
@@ -79,6 +83,7 @@ The output is one self-contained `index.html` (about 16 MB), so the site also ru
 - **Swap a menu photo:** replace `src/assets/images/ph/<dish-id>.webp` (720×480 works well), then build.
 - **Edit menu items, prices, badges:** `src/scripts/03-menu.js` (`MAINS`, `CURATE`, `CATS`).
 - **Edit branches:** the `.br` cards in `src/index.html` (`data-open="YYYY-MM-DD"` drives the status).
+- **Edit the Thai translation:** `src/scripts/i18n-th.js` maps each English line to its Thai version. If you change English text on the page, update its key there too.
 - **Edit the marketing dashboard:** `src/partials/dashboard.html`; bar widths are the `width:` percentages.
 - **Edit styling:** `src/styles/main.css`.
 
