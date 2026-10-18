@@ -23,7 +23,7 @@ html[lang="th"] .dash,html[lang="th"] .skyClose,html[lang="th"] footer{
   --serif:"Playfair Display","IBM Plex Sans Thai",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans","IBM Plex Sans Thai","Karla",sans-serif}
 /* Thai has no capitals and its marks sit above and below the line: no tracking, a little more leading */
-html[lang="th"] [data-tr]{letter-spacing:normal!important;text-transform:none!important}
+html[lang="th"] [data-tr]{letter-spacing:normal!important;text-transform:none!important;text-wrap:pretty}
 html[lang="th"] :is(h1,h2,h3,h4,b,.slab)[data-tr]{line-height:1.32}
 html[lang="th"] p[data-tr]{line-height:1.6}
 html[lang="th"] .rv-on .rv-head{clip-path:none}

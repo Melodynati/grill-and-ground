@@ -9,7 +9,21 @@
   const TH=window.GG_TH||{};
   const BACK={}; for(const k in TH) if(!(TH[k] in BACK)) BACK[TH[k]]=k;      /* Thai → English, for text rewritten while in Thai */
   const norm=s=>s.replace(/\s+/g," ").trim();
-  const t=s=>{ const k=norm(s); return TH[k]!=null?TH[k]:(rule(k)??s); };
+  /* Thai has no spaces between words, so the browser guesses where it may wrap and sometimes splits
+     a compound (มะเขือ|เทศ). These words are glued with invisible word joiners so they stay whole. */
+  const GLUE=["มะเขือเทศเชอร์รี","มะเขือเทศ","เชอร์รี","ออร์แกนิก","ออร์เดอร์","บาร์บีคิว","เบเกอรี่","แอปเปิ้ล","ข้าวโพด","หัวไชเท้า","ผักโขม","ขึ้นฉ่าย",
+    "แตงกวา","กะหล่ำปลี","สับปะรด","เฟรนช์ฟรายส์","โหระพา","ชิเมจิ","บร็อคโคลี","กาญจนาภิเษก","ปริมณฑล","โอ้กะจู๋","ทรัฟเฟิล","มาร์เบิล",
+    "พาสต้า","เพสโต้","แซลมอน","ซีอิ๊ว","เทนเดอร์","บอสตัน","คุโรเกะ","วากิว","แฮมเบิร์ก","สเต๊ก","ฟักทอง","เครื่องเคียง","เครื่องดื่ม","ของหวาน",
+    "จานหลัก","หน้าบ้าน","ก้อนเมฆ","ผืนดิน","ปลายนิ้ว","วันเดียวกัน","เมนูบุ๊ก","แคมเปญ","พาร์ตเนอร์","มาสเตอร์เชฟ","เดลิเวอรี","ก็อร่อย",
+    "เกล็ดขนมปัง","ขนมปัง","สมุนไพร","กระเทียม","เบคอน","รมควัน","สันคอหมู","สันใน","พอร์คชอป","หมูมาร์เบิล","ไข่แดง","ไข่ดาว","หอมเนย",
+    "ข้าวผัด","กุ้งตัวโต","นักชิม","ตัวน้อย","เผ็ด","ชีสเยิ้ม","ร้อนฉ่า","ฟาร์ม","สาขา","สลัด","ซีฟู้ด","ส่วนลด","รางวัล","ประจำเดือน",
+    "พรีเมียม","คุ้มค่า","สุขภาพ","ผู้บริโภค","ไอเดีย","โปรโมชัน","คอนเซปต์","แบรนด์","ปีใหม่","ออฟฟิศ","กลุ่มเป้าหมาย","กลยุทธ์","งบประมาณ"]
+    .sort((a,b)=>b.length-a.length);
+  const GLUE_RE=new RegExp(GLUE.join("|"),"g");
+  const MARK=/[\u0E31\u0E33-\u0E3A\u0E47-\u0E4E]/;
+  const glue=s=>s.replace(GLUE_RE,w=>[...w].map((ch,i)=>i&&!MARK.test(ch)?"\u2060"+ch:ch).join(""));
+  const unglue=s=>s.replace(/\u2060/g,"");
+  const t=s=>{ const k=norm(s); return glue(TH[k]!=null?TH[k]:(rule(k)??s)); };
   window.GGT=s=>lang==="th"?t(s):s;                                          /* used by scripts that animate words */
 
   /* ---------- dynamic strings ---------- */
@@ -17,41 +31,41 @@
   const mon=s=>s.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g,m=>MON[m]);
   const tt=s=>TH[s]!=null?TH[s]:s;
   const RULES=[
-    [/^(\d+) of 8 chosen$/,m=>"เลือกแล้ว "+m[1]+" จาก 8"],
-    [/^Pick the 6 essentials to continue · (\d+) to go$/,m=>"เลือกให้ครบ 6 หมวดหลักเพื่อไปต่อ · เหลืออีก "+m[1]],
-    [/^Next: (.+)$/,m=>"ถัดไป: "+tt(m[1])],
-    [/^Skip to (.+)$/,m=>"ข้ามไป"+tt(m[1])],
+    [/^(\d+) of 8 chosen$/,m=>"เลือกแล้ว "+m[1]+"/8"],
+    [/^Pick the 6 essentials to continue · (\d+) to go$/,m=>"เลือกให้ครบ 6 หมวดหลักก่อนนะ · อีก "+m[1]+" หมวด"],
+    [/^Next: (.+)$/,m=>"ต่อไป: "+tt(m[1])],
+    [/^Skip to (.+)$/,m=>"ข้ามไป "+tt(m[1])],
     [/^(\d+) branches$/,m=>m[1]+" สาขา"],
-    [/^(\d+) open now, (\d+) opening soon$/,m=>"เปิดแล้ว "+m[1]+" สาขา และกำลังจะเปิดอีก "+m[2]+" สาขา"],
+    [/^(\d+) open now, (\d+) opening soon$/,m=>"เปิดแล้ว "+m[1]+" สาขา อีก "+m[2]+" สาขาเร็ว ๆ นี้"],
     [/^Opening (\d+) (\w{3}) · in (\d+) days$/,m=>"เปิด "+m[1]+" "+MON[m[2]]+" · อีก "+m[3]+" วัน"],
     [/^Open since$/,()=>"เปิดตั้งแต่"],
     [/^(\d+) (\w{3}) (\d{4})$/,m=>MON[m[2]]?m[1]+" "+MON[m[2]]+" "+(+m[3]+543):null],
-    [/^Arriving in (\d+) min$/,m=>"ถึงในอีก "+m[1]+" นาที"],
-    [/^Your (\d+) picks are on their way to the kitchen\.$/,m=>"รายการทั้ง "+m[1]+" ของคุณกำลังส่งเข้าครัว"],
+    [/^Arriving in (\d+) min$/,m=>"อีก "+m[1]+" นาทีถึง"],
+    [/^Your (\d+) picks are on their way to the kitchen\.$/,m=>"ทั้ง "+m[1]+" เมนู กำลังส่งเข้าครัว"],
     [/^Popularity (\d) of 5, (.+)$/,m=>"ความนิยม "+m[1]+" จาก 5, "+tt(m[2])],
-    [/^Remove (.+)$/,m=>"นำ "+m[1]+" ออก"],
+    [/^Remove (.+)$/,m=>"ลบ "+m[1]+" ออก"],
     [/^Filter (.+)$/,m=>"ตัวกรอง"+tt(m[1].charAt(0).toUpperCase()+m[1].slice(1))],
     [/^QR code for order (.+)$/,m=>"คิวอาร์โค้ดของออร์เดอร์ "+m[1]],
-    [/^(Phase \d|Always-on) · (\w{3})–(\w{3})$/,m=>(m[1]==="Always-on"?"ต่อเนื่องตลอดปี":"เฟส "+m[1].slice(6))+" · "+MON[m[2]]+"–"+MON[m[3]]],
+    [/^(Phase \d|Always-on) · (\w{3})–(\w{3})$/,m=>m[1]+" · "+MON[m[2]]+"–"+MON[m[3]]],
     [/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)–(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/,m=>mon(m[0])]
   ];
   const BACK_RULES=[
     [/^(\d+) สาขา$/,m=>m[1]+" branches"],
-    [/^เลือกแล้ว (\d+) จาก 8$/,m=>m[1]+" of 8 chosen"],
-    [/^ถึงในอีก (\d+) นาที$/,m=>"Arriving in "+m[1]+" min"]
+    [/^เลือกแล้ว (\d+)\/8$/,m=>m[1]+" of 8 chosen"],
+    [/^อีก (\d+) นาทีถึง$/,m=>"Arriving in "+m[1]+" min"]
   ];
   function rule(k){ for(const [re,fn] of RULES){ const m=k.match(re); if(m){ const r=fn(m); if(r!=null) return r; } } return null; }
   function backRule(k){ for(const [re,fn] of BACK_RULES){ const m=k.match(re); if(m) return fn(m); } return null; }
 
   /* ---------- sentences split around inline markup: {0},{1} are the original child elements ---------- */
   const TPL={
-    "Orders delivery {0} a week":"สั่งเดลิเวอรี {0} ต่อสัปดาห์",
+    "Orders delivery {0} a week":"สั่ง Delivery {0} / สัปดาห์",
     "{0} years old":"อายุ {0} ปี",
-    "{0} a month":"รายได้ {0} ต่อเดือน",
+    "{0} a month":"รายได้ {0} / เดือน",
     "With {0} chef-curated main courses from the menu book, plus choices across sides, salads, soups, bakes, desserts, drinks, and add-ons, guests can build over {1} different set combinations.":
-      "ด้วยจานหลัก {0} รายการคัดสรรโดยเชฟจากเมนูบุ๊ก รวมกับตัวเลือกเครื่องเคียง สลัด ซุป เบเกอรี่ ของหวาน เครื่องดื่ม และเมนูเสริม ลูกค้าจัดชุดได้มากกว่า {1} แบบ"
+      "จานหลัก {0} เมนูที่เชฟคัดจากเมนูบุ๊ก รวมกับเครื่องเคียง สลัด ซุป เบเกอรี่ ของหวาน เครื่องดื่ม และ Add-on จัดเซ็ตได้มากกว่า {1} แบบ"
   };
-  const TPL_RULES=[[/^Step \{0\} of 8 · (.+)$/,m=>"ขั้นที่ {0} จาก 8 · "+tt(m[1])]];
+  const TPL_RULES=[[/^Step \{0\} of 8 · (.+)$/,m=>"ขั้นที่ {0}/8 · "+tt(m[1])]];
   const SKIP=".dn,.luxName,.luxTh,.dth,script,style,svg,.ggLang,[data-noi18n]";
   const SKIP_ATTR=".ggLang,[data-noi18n]";
   /* dish names stay English on the menu cards (the Thai name sits under each one); in the tray and the packing caption the Thai name is used */
@@ -79,7 +93,7 @@
     if(th==null) return false;
     const kids=[...el.childNodes], els=kids.filter(c=>c.nodeType===1&&c.nodeName!=="BR");
     const frag=document.createDocumentFragment();
-    th.split(/(\{\d\})/).forEach(p=>{ const m=p.match(/^\{(\d)\}$/); frag.appendChild(m?els[+m[1]]:document.createTextNode(p)); });
+    th.split(/(\{\d\})/).forEach(p=>{ const m=p.match(/^\{(\d)\}$/); frag.appendChild(m?els[+m[1]]:document.createTextNode(glue(p))); });
     tplOrig.set(el,kids); el.textContent=""; el.appendChild(frag); el.setAttribute("data-tr","");
     return true;
   }
@@ -90,7 +104,7 @@
     let dish=inDish?names()[k]:null;
     if(inDish&&dish==null&&k.includes("→")){ const [a,b]=k.split("→").map(norm); dish=(TH[a]??a)+"  →  "+(names()[b]??b); }
     const th=dish!=null?dish:TH[k]!=null?TH[k]:rule(k); if(th==null) return;
-    const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0], out=lead+th+trail;
+    const lead=v.match(/^\s*/)[0], trail=v.match(/\s*$/)[0], out=lead+glue(th)+trail;
     textOrig.set(n,v); written.set(n,out); n.nodeValue=out; p.setAttribute("data-tr","");
   }
   function doAttrs(el){
@@ -114,7 +128,7 @@
     attrOrig.forEach((m,el)=>{ for(const a in m) el.setAttribute(a,m[a]); }); attrOrig.clear();
     /* text a script rewrote from Thai while Thai was on */
     const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n;
-    while((n=tw.nextNode())){ const v=norm(n.nodeValue); if(!v||!/[฀-๿]/.test(v)) continue;
+    while((n=tw.nextNode())){ const v=norm(unglue(n.nodeValue)); if(!v||!/[฀-๿]/.test(v)) continue;
       const p=n.parentElement; if(!p||p.closest(SKIP)) continue;
       const en=BACK[v]??backRule(v); if(en!=null) n.nodeValue=en; }
   }
