@@ -58,7 +58,7 @@ window.GG_TH={
 "Start over":"เริ่มใหม่",
 "Main course":"จานหลัก","Side dish":"เครื่องเคียง","Harvest salad":"สลัด","Soup & comfort":"ซุปและพาสต้า",
 "Fresh bake":"เบเกอรี่","Dessert":"ของหวาน","Beverage":"เครื่องดื่ม",
-"optional":"ไม่บังคับ","Optional":"ไม่บังคับ","pick 1 or skip":"เลือก 1 หรือข้ามก็ได้",
+"pick 1 or skip":"เลือก 1 หรือข้ามก็ได้",
 "The Chef's Selection":"เมนูแนะนำจากเชฟ",
 "Thirteen mains, hand-picked by our chefs from the menu book, at menu prices. There are no wrong choices here.":
   "13 เมนูจานหลัก ที่เชฟคัดมาจากเมนูบุ๊ก ราคาเดียวกับที่ร้าน เลือกจานไหนก็อร่อย",
@@ -175,7 +175,7 @@ window.GG_TH={
 "Grill & Ground kitchen":"ครัว Grill & Ground",
 "Your door":"บ้านคุณ",
 "Delivered to your door":"ส่งถึงหน้าบ้านแล้ว",
-"Sealed, warm and on time":"ซีลเรียบร้อย อุ่น ๆ ตรงเวลา",
+"Sealed, warm and on time":"ซีลแน่นหนา พร้อม QR Code ส่งความสุข",
 "Scanning the seal":"กำลังสแกนซีล",
 "Reading the live QR":"กำลังอ่าน QR",
 "Seal verified":"ซีลถูกต้อง",
@@ -192,12 +192,12 @@ window.GG_TH={
 "Your Virtual Buffet is being packed.":"กำลังแพ็ก Virtual Buffet ของคุณ",
 "Scroll to watch it travel from ground to cloud, all the way to your door.":"เลื่อนลงเพื่อดูการเดินทาง จากฟาร์มสู่ก้อนเมฆ จนถึงหน้าบ้านคุณ",
 "Watch it being packed ↓":"ดูการแพ็ก ↓",
-"Fresh from the ground, rising into the cloud.":"สดจากฟาร์ม ลอยขึ้นสู่ก้อนเมฆ",
+"Fresh from the ground, rising into the cloud.":"Fresh from the farm, delivered on a cloud.",
 "The main course takes the largest seat.":"จานหลัก ได้ช่องใหญ่ที่สุด",
 "Closed slowly, sealed in light.":"ค่อย ๆ ปิดฝา ซีลด้วยแสง",
 "One serial. One live QR. Tamper-evident.":"1 ซีเรียล 1 QR พร้อมซีลกันแกะ",
 "Your Virtual Buffet is on its way to your door.":"Virtual Buffet ของคุณ กำลังไปส่งถึงหน้าบ้าน",
-"Warm, sealed and right on time.":"อุ่น ๆ ซีลเรียบร้อย ตรงเวลา",
+"Warm, sealed and right on time.":"Sealed with love ส่งตรงถึงมือคุณ",
 "Point your camera at the QR.":"สแกน QR ได้เลย",
 "Every seal opens the campaign.":"ทุกซีล พาไปสู่แคมเปญ",
 "Free Buffet Upgrade":"อัปเกรดบุฟเฟต์ฟรี","Step up to the premium set":"อัปเป็นเซ็ตพรีเมียม",
@@ -262,7 +262,7 @@ window.GG_TH={
 
 /* ---------- closing ---------- */
 "Ohkajhu grows it, Grill & Ground grills it, and the Virtual Buffet carries it to anyone with a screen. Ground at one end, cloud at the other, one plate travelling between them.":
-  "โอ้กะจู๋ปลูก Grill & Ground ย่าง แล้ว Virtual Buffet ก็เสิร์ฟถึงหน้าบ้านคุณ จากผืนดินสู่ก้อนเมฆ อาหารหนึ่งจาน ที่เดินทางมาหาคุณ",
+  "จากฟาร์มโอ้กะจู๋ สู่เตาย่าง Grill & Ground แล้วส่งตรงถึงบ้านคุณ ด้วย Virtual Buffet",
 "Build your set":"จัดเซ็ตของคุณ",
 
 /* ---------- labels for assistive tech and tooltips ---------- */

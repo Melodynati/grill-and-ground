@@ -11,7 +11,7 @@
   const norm=s=>s.replace(/\s+/g," ").trim();
   /* Thai has no spaces between words, so the browser guesses where it may wrap and sometimes splits
      a compound (มะเขือ|เทศ). These words are glued with invisible word joiners so they stay whole. */
-  const GLUE=["มะเขือเทศเชอร์รี","มะเขือเทศ","เชอร์รี","ออร์แกนิก","ออร์เดอร์","บาร์บีคิว","เบเกอรี่","แอปเปิ้ล","ข้าวโพด","หัวไชเท้า","ผักโขม","ขึ้นฉ่าย",
+  const GLUE=["ไข่แดงดองซีอิ๊ว","ดองซีอิ๊ว","ไข่แดงดอง","มะเขือเทศเชอร์รี","มะเขือเทศ","เชอร์รี","ออร์แกนิก","ออร์เดอร์","บาร์บีคิว","เบเกอรี่","แอปเปิ้ล","ข้าวโพด","หัวไชเท้า","ผักโขม","ขึ้นฉ่าย",
     "แตงกวา","กะหล่ำปลี","สับปะรด","เฟรนช์ฟรายส์","โหระพา","ชิเมจิ","บร็อคโคลี","กาญจนาภิเษก","ปริมณฑล","โอ้กะจู๋","ทรัฟเฟิล","มาร์เบิล",
     "พาสต้า","เพสโต้","แซลมอน","ซีอิ๊ว","เทนเดอร์","บอสตัน","คุโรเกะ","วากิว","แฮมเบิร์ก","สเต๊ก","ฟักทอง","เครื่องเคียง","เครื่องดื่ม","ของหวาน",
     "จานหลัก","หน้าบ้าน","ก้อนเมฆ","ผืนดิน","ปลายนิ้ว","วันเดียวกัน","เมนูบุ๊ก","แคมเปญ","พาร์ตเนอร์","มาสเตอร์เชฟ","เดลิเวอรี","ก็อร่อย",
@@ -21,7 +21,14 @@
     .sort((a,b)=>b.length-a.length);
   const GLUE_RE=new RegExp(GLUE.join("|"),"g");
   const MARK=/[\u0E31\u0E33-\u0E3A\u0E47-\u0E4E]/;
-  const glue=s=>s.replace(GLUE_RE,w=>[...w].map((ch,i)=>i&&!MARK.test(ch)?"\u2060"+ch:ch).join(""));
+  const join=w=>[...w].map((ch,i)=>i&&!MARK.test(ch)?"\u2060"+ch:ch).join("");
+  /* short Thai phrases (up to ~16 letters between spaces) never break; longer ones keep their compound words whole */
+  const glue=s=>s.split(/( +)/).map(tok=>{ if(!/[\u0E00-\u0E7F]/.test(tok)) return tok;
+    const len=[...tok].filter(ch=>!MARK.test(ch)).length;
+    return len<=16?join(tok):tok.replace(GLUE_RE,join); }).join("");
+  /* the joiners are invisible; keep them out of anything a guest copies */
+  document.addEventListener("copy",e=>{ if(lang!=="th") return; const sel=String(getSelection()); if(!sel.includes("\u2060")) return;
+    e.clipboardData.setData("text/plain",sel.replace(/\u2060/g,"")); e.preventDefault(); });
   const unglue=s=>s.replace(/\u2060/g,"");
   const t=s=>{ const k=norm(s); return glue(TH[k]!=null?TH[k]:(rule(k)??s)); };
   window.GGT=s=>lang==="th"?t(s):s;                                          /* used by scripts that animate words */
