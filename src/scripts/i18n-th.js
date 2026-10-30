@@ -194,7 +194,7 @@ window.GG_TH={
 "Watch it being packed ↓":"ดูการแพ็ก ↓",
 "Fresh from the ground, rising into the cloud.":"Fresh from the farm, delivered on a cloud.",
 "The main course takes the largest seat.":"จานหลัก ได้ช่องใหญ่ที่สุด",
-"Closed slowly, sealed in light.":"Packing…",
+"Closed slowly, sealed in light.":"Packing with love…",
 "One serial. One live QR. Tamper-evident.":"1 ซีเรียล 1 QR พร้อมซีลกันแกะ",
 "Your Virtual Buffet is on its way to your door.":"Virtual Buffet ของคุณ กำลังไปส่งถึงหน้าบ้าน",
 "Warm, sealed and right on time.":"Sealed with love ส่งตรงถึงมือคุณ",
