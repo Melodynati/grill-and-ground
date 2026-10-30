@@ -971,6 +971,19 @@ canvas.farmVid{background:#3A2A14}
 .kTile span{font-size:13px;line-height:1.45;color:rgba(248,241,224,.78)}
 .kTile i{display:block;font-style:normal;font-size:12px;color:#A9DDA2;margin-top:2px}
 
+
+/* 7 · financial feasibility */
+@media(min-width:900px){.dFin{grid-column:span 12}}
+@media(min-width:900px){.dFinRow{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.dUnitTag{margin-top:20px!important}
+.dUnit{display:flex;gap:3px;border-radius:12px;overflow:hidden;min-height:58px}
+.dUnit span{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:9px 12px;font-size:12.5px;line-height:1.35;min-width:0}
+.dUnit b{font-family:var(--serif);font-weight:400;font-size:1.15rem;font-variant-numeric:lining-nums}
+.dUnit .u1{background:#E9DFC4;color:var(--d-ink)}
+.dUnit .u2{background:#C8BFA8;color:var(--d-ink)}
+.dUnit .u3{background:var(--forest);color:var(--cream)}
+@media(max-width:560px){.dUnit{flex-direction:column}.dUnit span{flex:none!important}}
+
 @media(prefers-reduced-motion:reduce){
   .dashCloud{animation:none}
   .dBarTrack i,.gBar{transform:none!important}
@@ -1469,6 +1482,7 @@ html[lang="th"] [data-tr]{font-style:normal}
       <li><a href="#dInitiatives"><span>04</span>Major initiatives</a></li>
       <li><a href="#dBudget"><span>05</span>Budget</a></li>
       <li><a href="#dKpi"><span>06</span>KPIs</a></li>
+      <li><a href="#dFin"><span>07</span>Financials</a></li>
     </ol>
 
     <div class="dashGrid">
@@ -1478,12 +1492,12 @@ html[lang="th"] [data-tr]{font-style:normal}
         <h3><span class="dNum" aria-hidden="true">01/</span>Objective <small>Where the year lands</small></h3>
         <div class="dHeroRow">
           <div class="dHero">
-            <b><small>THB</small>1,575,000</b>
-            <span>incremental revenue from Virtual Buffet Sets across delivery channels, within 12 months of launch</span>
-            <em>+30% sales lift</em>
+            <b><small>THB</small>15,750,000</b>
+            <span>incremental sales from the Virtual Buffet campaign in year 1 (total revenue THB 29,750,000)</span>
+            <em>ROMI 175.63%</em>
           </div>
           <div class="dHero">
-            <b>30,000</b>
+            <b>15,000</b>
             <span>new delivery customers in Phase 1 (Jan–Mar 2027)</span>
             <em>Acquisition</em>
           </div>
@@ -1494,7 +1508,7 @@ html[lang="th"] [data-tr]{font-style:normal}
           </div>
           <div class="dHero">
             <b>13% <small class="dTo">to</small> &gt;40%</b>
-            <span>brand awareness among urban consumers, within 3 months</span>
+            <span>brand awareness among urban consumers within 3 months, up from 13% top-of-mind recall</span>
             <em>Awareness</em>
           </div>
         </div>
@@ -1508,7 +1522,7 @@ html[lang="th"] [data-tr]{font-style:normal}
           <h4>Urban professionals and first jobbers</h4>
           <ul class="dFacts">
             <li><b>20–49</b> years old</li>
-            <li><b>THB 15,000–74,999</b> a month</li>
+            <li><b>THB 15,000+</b> a month</li>
             <li>Orders delivery <b>2–3×</b> a week</li>
             <li>Bangkok &amp; Metropolitan area</li>
           </ul>
@@ -1533,17 +1547,17 @@ html[lang="th"] [data-tr]{font-style:normal}
           <div>
             <p class="dTag">Pricing</p>
             <p class="dBig">THB 199–299 <small>per Virtual Buffet Set</small></p>
-            <p>Value pricing in the range 42% of consumers are willing to pay, with premium meat add-ons and family party boxes to lift the basket.</p>
+            <p>Value pricing in the range 43% of consumers are willing to pay, with premium meat add-ons and family party boxes to lift the basket.</p>
           </div>
           <div>
             <p class="dTag">Channels</p>
             <p>A hybrid model: be where guests already order, then bring them home to our own channel.</p>
             <div class="dBars" role="list" aria-label="Delivery app usage among consumers">
-              <div class="dBar" role="listitem" tabindex="0" data-tip="GrabFood: used by 73% of consumers surveyed">
-                <span class="dBarLab">GrabFood</span><span class="dBarTrack"><i style="width:73%"></i></span><span class="dBarVal">73%</span>
+              <div class="dBar" role="listitem" tabindex="0" data-tip="GrabFood: used by 74% of consumers surveyed">
+                <span class="dBarLab">GrabFood</span><span class="dBarTrack"><i style="width:74%"></i></span><span class="dBarVal">74%</span>
               </div>
-              <div class="dBar" role="listitem" tabindex="0" data-tip="LINE MAN: used by 67% of consumers surveyed">
-                <span class="dBarLab">LINE MAN</span><span class="dBarTrack"><i style="width:67%"></i></span><span class="dBarVal">67%</span>
+              <div class="dBar" role="listitem" tabindex="0" data-tip="LINE MAN: used by 69% of consumers surveyed">
+                <span class="dBarLab">LINE MAN</span><span class="dBarTrack"><i style="width:69%"></i></span><span class="dBarVal">69%</span>
               </div>
               <div class="dBar" role="listitem">
                 <span class="dBarLab">LINE OA</span><span class="dBarTrack dDirect">Direct: CRM, repeat orders, lower GP fees</span><span class="dBarVal"></span>
@@ -1563,23 +1577,23 @@ html[lang="th"] [data-tr]{font-style:normal}
             <span role="columnheader" class="gMonths"><i>Jan</i><i>Feb</i><i>Mar</i><i>Apr</i><i>May</i><i>Jun</i><i>Jul</i><i>Aug</i><i>Sep</i><i>Oct</i><i>Nov</i><i>Dec</i></span>
           </div>
           <div class="gRow" role="row">
-            <span role="cell" class="gName"><b>Phase 1 · Brand awakening &amp; grand launch</b><small>Soft-launch PR, Meta and TikTok ads, and community outreach around Paseo Park Kanchana and Dadfa Lasalle.</small></span>
+            <span role="cell" class="gName"><b>Phase 1 · Brand awareness &amp; brand launch</b><small>Soft-launch PR content on Facebook, Instagram and TikTok (&gt;500,000 reach), then local community activation around Paseo Park Kanchana and Dadfa Lasalle.</small></span>
             <span role="cell" class="gMonths"><em class="gBar" style="--s:0;--e:3" tabindex="0" data-tip="Phase 1 · Jan–Mar">Jan–Mar</em></span>
           </div>
           <div class="gRow" role="row">
-            <span role="cell" class="gName"><b>Phase 2 · Lead generation &amp; expansion</b><small>Virtual Buffet Party Box (4–6 pax), LINE OA CRM launch (&gt;2,000 members) and “Mid-Year Meat × Chef Pom”.</small></span>
+            <span role="cell" class="gName"><b>Phase 2 · Lead generation &amp; Virtual Buffet expansion</b><small>Virtual Buffet Party Box (4–6 pax, 1,500 sets), LINE OA membership launch (&gt;2,000 members) and “Mid-Year Meat × Chef Pom”.</small></span>
             <span role="cell" class="gMonths"><em class="gBar" style="--s:3;--e:6" tabindex="0" data-tip="Phase 2 · Apr–Jun">Apr–Jun</em></span>
           </div>
           <div class="gRow" role="row">
-            <span role="cell" class="gName"><b>Phase 3 · Engagement &amp; loyalty</b><small>Pairing-set collaborations and the “Grill &amp; Gang” TikTok video review contest.</small></span>
+            <span role="cell" class="gName"><b>Phase 3 · Engagement &amp; loyalty retention</b><small>A collaborative campaign (+15% repeat frequency) and the “Grill &amp; Gang” UGC contest (&gt;80 clips, &gt;1,000,000 views).</small></span>
             <span role="cell" class="gMonths"><em class="gBar" style="--s:6;--e:9" tabindex="0" data-tip="Phase 3 · Jul–Sep">Jul–Sep</em></span>
           </div>
           <div class="gRow" role="row">
-            <span role="cell" class="gName"><b>Phase 4 · Festive season &amp; revenue peak</b><small>Halloween and New Year festive sets, an e-voucher push (THB 200k target) and year-end combo promotions.</small></span>
+            <span role="cell" class="gName"><b>Phase 4 · Festive season &amp; revenue maximization</b><small>Festive buffet sets for Halloween, Loy Krathong and Christmas (+30% sales), New Year e-vouchers (&gt;THB 200,000) and 750 New Year sets.</small></span>
             <span role="cell" class="gMonths"><em class="gBar" style="--s:9;--e:12" tabindex="0" data-tip="Phase 4 · Oct–Dec">Oct–Dec</em></span>
           </div>
           <div class="gRow gAlways" role="row">
-            <span role="cell" class="gName"><b>Always-on</b><small>“Grill &amp; กลอน” monthly interactive campaigns and the “Grill &amp; Guide / Guru” series with 6 master chefs.</small></span>
+            <span role="cell" class="gName"><b>Always-on</b><small>“Launch Virtual Buffet” pushes in Feb, Apr, Jul and Oct (&gt;10,000,000 views) and “Grill &amp; กลอน” all year (&gt;10,000 participants).</small></span>
             <span role="cell" class="gMonths"><em class="gBar" style="--s:0;--e:12" tabindex="0" data-tip="Always-on · Jan–Dec">Jan–Dec</em></span>
           </div>
         </div>
@@ -1589,20 +1603,20 @@ html[lang="th"] [data-tr]{font-style:normal}
       <article class="dCard dBudget" id="dBudget">
         <h3><span class="dNum" aria-hidden="true">05/</span>Budget <small>THB 2,000,000 a year</small></h3>
         <div class="dBars dBudgetBars" role="list" aria-label="Budget allocation">
-          <div class="dBar" role="listitem" tabindex="0" data-tip="Always-on campaigns: THB 600,000 (30%). Year-round performance ads, Virtual Buffet pushes and the master chef series.">
+          <div class="dBar" role="listitem" tabindex="0" data-tip="Always-on campaigns: THB 600,000 (30%). Launch Virtual Buffet pushes (THB 350,000) and Grill &amp; กลอน (THB 250,000).">
             <span class="dBarLab">Always-on campaigns</span><span class="dBarTrack"><i style="width:100%"></i></span><span class="dBarVal">600k <small>30%</small></span>
           </div>
-          <div class="dBar" role="listitem" tabindex="0" data-tip="Awareness &amp; brand launch: THB 400,000 (20%). PR content, influencer media and digital performance ads.">
+          <div class="dBar" role="listitem" tabindex="0" data-tip="Awareness &amp; brand launch: THB 400,000 (20%). Soft-launch PR content (THB 150,000) and local community activation (THB 250,000).">
             <span class="dBarLab">Awareness &amp; brand launch</span><span class="dBarTrack"><i style="width:66.667%"></i></span><span class="dBarVal">400k <small>20%</small></span>
           </div>
-          <div class="dBar" role="listitem" tabindex="0" data-tip="Local store &amp; grand opening: THB 400,000 (20%). Catchment-area promotions and geo-targeted social ads.">
-            <span class="dBarLab">Local store &amp; grand opening</span><span class="dBarTrack"><i style="width:66.667%"></i></span><span class="dBarVal">400k <small>20%</small></span>
+          <div class="dBar" role="listitem" tabindex="0" data-tip="Lead generation &amp; Virtual Buffet expansion: THB 400,000 (20%). Party Box (THB 150,000), LINE OA membership (THB 100,000) and Mid-Year Meat × Chef Pom (THB 150,000).">
+            <span class="dBarLab">Lead generation &amp; Virtual Buffet expansion</span><span class="dBarTrack"><i style="width:66.667%"></i></span><span class="dBarVal">400k <small>20%</small></span>
           </div>
-          <div class="dBar" role="listitem" tabindex="0" data-tip="Seasonal &amp; festive: THB 400,000 (20%). Holiday promotions, party boxes and B2B e-voucher marketing.">
+          <div class="dBar" role="listitem" tabindex="0" data-tip="Seasonal &amp; festive: THB 400,000 (20%). Festive buffet (THB 200,000), New Year e-vouchers (THB 100,000) and New Year promo (THB 100,000).">
             <span class="dBarLab">Seasonal &amp; festive</span><span class="dBarTrack"><i style="width:66.667%"></i></span><span class="dBarVal">400k <small>20%</small></span>
           </div>
-          <div class="dBar" role="listitem" tabindex="0" data-tip="Engagement &amp; loyalty: THB 200,000 (10%). LINE OA CRM rewards, UGC contests and community activation.">
-            <span class="dBarLab">Engagement &amp; loyalty</span><span class="dBarTrack"><i style="width:33.333%"></i></span><span class="dBarVal">200k <small>10%</small></span>
+          <div class="dBar" role="listitem" tabindex="0" data-tip="Engagement &amp; loyalty retention: THB 200,000 (10%). Collaborative campaign (THB 100,000) and Grill &amp; Gang UGC (THB 100,000).">
+            <span class="dBarLab">Engagement &amp; loyalty retention</span><span class="dBarTrack"><i style="width:33.333%"></i></span><span class="dBarVal">200k <small>10%</small></span>
           </div>
         </div>
         <p class="dNote">Bars scaled to the largest line. Hover or tap a bar to see what it funds.</p>
@@ -1635,6 +1649,40 @@ html[lang="th"] [data-tr]{font-style:normal}
         </div>
       </article>
 
+
+      <!-- 7 · Financial feasibility -->
+      <article class="dCard dFin" id="dFin">
+        <h3><span class="dNum" aria-hidden="true">07/</span>Financial feasibility <small>Year 1, from the plan's assumptions</small></h3>
+        <div class="dHeroRow dFinRow">
+          <div class="dHero">
+            <b><small>THB</small>29,750,000</b>
+            <span>total revenue: 85,000 orders × THB 350 average order</span>
+            <em>THB 15.75M incremental</em>
+          </div>
+          <div class="dHero">
+            <b><small>THB</small>8,412,500</b>
+            <span>net operating profit (EBIT) after the THB 2,000,000 marketing budget</span>
+            <em>ROI 39.43%</em>
+          </div>
+          <div class="dHero">
+            <b>175.63%</b>
+            <span>marketing ROMI: (THB 5.51M incremental contribution − THB 2M budget) ÷ THB 2M</span>
+            <em>Marketing pays back</em>
+          </div>
+          <div class="dHero">
+            <b>1,361</b>
+            <span>orders a month to break even (16,327 a year) · CAC THB 23.53 per order</span>
+            <em>Break-even</em>
+          </div>
+        </div>
+        <p class="dTag dUnitTag">Unit economics per THB 350 order</p>
+        <div class="dUnit" role="img" aria-label="Of a THB 350 order: THB 122.50 food and packaging (35%), THB 105 platform GP fee (30%), THB 122.50 contribution margin (35%)">
+          <span class="u1" style="flex:35"><b>THB 122.50</b> Food &amp; packaging 35%</span>
+          <span class="u2" style="flex:30"><b>THB 105</b> Platform GP fee 30%</span>
+          <span class="u3" style="flex:35"><b>THB 122.50</b> Contribution margin 35%</span>
+        </div>
+        <p class="dNote">Baseline sales THB 14,000,000 without marketing. CAC is the marketing budget divided by expected orders.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -4489,7 +4537,52 @@ window.GG_TH={
 "Your Virtual Buffet being created":"กำลังสร้าง Virtual Buffet ของคุณ",
 "Your sealed Virtual Buffet floating above the clouds":"Virtual Buffet ที่ซีลแล้ว ลอยอยู่เหนือก้อนเมฆ",
 "Fire-seared beef":"เนื้อย่างไฟ","Garden carrot":"แครอท","Organic cabbage":"กะหล่ำปลีออร์แกนิก","Vine tomato":"มะเขือเทศ",
-"Natural-starter dough":"แป้งหมักธรรมชาติ","Fresh fruit":"ผลไม้สด","Organic kale":"เคลออร์แกนิก","Radish":"หัวไชเท้า"
+"Natural-starter dough":"แป้งหมักธรรมชาติ","Fresh fruit":"ผลไม้สด","Organic kale":"เคลออร์แกนิก","Radish":"หัวไชเท้า",
+/* ---------- aligned with the report (Oct 29) ---------- */
+"incremental sales from the Virtual Buffet campaign in year 1 (total revenue THB 29,750,000)":"ยอดขายส่วนเพิ่มจากแคมเปญ Virtual Buffet ในปีแรก (รายได้รวม 29,750,000 บาท)",
+"ROMI 175.63%":"ROMI 175.63%",
+"brand awareness among urban consumers within 3 months, up from 13% top-of-mind recall":"การรับรู้แบรนด์ในกลุ่มคนเมือง ภายใน 3 เดือน จากเดิมที่นึกถึงแบรนด์เป็นอันดับแรก 13%",
+"Value pricing in the range 43% of consumers are willing to pay, with premium meat add-ons and family party boxes to lift the basket.":
+  "Value Pricing ในช่วงราคาที่ผู้บริโภค 43% ยินดีจ่าย พร้อม Add-on เนื้อพรีเมียม และ Family Party Box เพื่อเพิ่มยอดต่อบิล",
+"GrabFood: used by 74% of consumers surveyed":"GrabFood: ผู้ตอบแบบสำรวจใช้ 74%",
+"LINE MAN: used by 69% of consumers surveyed":"LINE MAN: ผู้ตอบแบบสำรวจใช้ 69%",
+"Soft-launch PR content on Facebook, Instagram and TikTok (>500,000 reach), then local community activation around Paseo Park Kanchana and Dadfa Lasalle.":
+  "คอนเทนต์ PR ช่วง Soft Launch บน Facebook, Instagram และ TikTok (Reach 500,000+) ต่อด้วยแคมเปญ “เพื่อนบ้านอิ่มจุก” รอบสาขา Paseo Park กาญจนาภิเษก และดาดฟ้า ลาซาล",
+"Virtual Buffet Party Box (4–6 pax, 1,500 sets), LINE OA membership launch (>2,000 members) and “Mid-Year Meat × Chef Pom”.":
+  "Virtual Buffet Party Box (4–6 ที่ 1,500 ชุด), เปิดระบบสมาชิก LINE OA (2,000+ คน) และ “Mid-Year Meat × เชฟป้อม”",
+"A collaborative campaign (+15% repeat frequency) and the “Grill & Gang” UGC contest (>80 clips, >1,000,000 views).":
+  "แคมเปญ Collaboration (ซื้อซ้ำเพิ่ม 15%) และประกวดคลิป “Grill & Gang” (80+ คลิป ยอดชม 1,000,000+)",
+"Festive buffet sets for Halloween, Loy Krathong and Christmas (+30% sales), New Year e-vouchers (>THB 200,000) and 750 New Year sets.":
+  "เซ็ตเทศกาล Halloween ลอยกระทง และคริสต์มาส (ยอดขายโต 30%) e-Voucher ปีใหม่ (200,000+ บาท) และเซ็ตปีใหม่ 750 ชุด",
+"“Launch Virtual Buffet” pushes in Feb, Apr, Jul and Oct (>10,000,000 views) and “Grill & กลอน” all year (>10,000 participants).":
+  "“บุ๊กบุฟเฟต์เดลิเวอรี” ช่วง ก.พ. เม.ย. ก.ค. และ ต.ค. (ยอดชม 10,000,000+) และ “Grill & กลอน” ตลอดปี (ผู้ร่วมกิจกรรม 10,000+ คน)",
+"Always-on campaigns: THB 600,000 (30%). Launch Virtual Buffet pushes (THB 350,000) and Grill & กลอน (THB 250,000).":
+  "Always-on Campaigns: 600,000 บาท (30%) บุ๊กบุฟเฟต์เดลิเวอรี 350,000 บาท และ Grill & กลอน 250,000 บาท",
+"Awareness & brand launch: THB 400,000 (20%). Soft-launch PR content (THB 150,000) and local community activation (THB 250,000).":
+  "Awareness & Brand Launch: 400,000 บาท (20%) คอนเทนต์ PR 150,000 บาท และเพื่อนบ้านอิ่มจุก 250,000 บาท",
+"Lead generation & Virtual Buffet expansion: THB 400,000 (20%). Party Box (THB 150,000), LINE OA membership (THB 100,000) and Mid-Year Meat × Chef Pom (THB 150,000).":
+  "Lead Generation & Virtual Buffet Expansion: 400,000 บาท (20%) Party Box 150,000 บาท สมาชิก LINE OA 100,000 บาท และ Mid-Year Meat × เชฟป้อม 150,000 บาท",
+"Seasonal & festive: THB 400,000 (20%). Festive buffet (THB 200,000), New Year e-vouchers (THB 100,000) and New Year promo (THB 100,000).":
+  "Seasonal & Festive: 400,000 บาท (20%) เซ็ตเทศกาล 200,000 บาท e-Voucher ปีใหม่ 100,000 บาท และโปรปีใหม่ 100,000 บาท",
+"Engagement & loyalty retention: THB 200,000 (10%). Collaborative campaign (THB 100,000) and Grill & Gang UGC (THB 100,000).":
+  "Engagement & Loyalty Retention: 200,000 บาท (10%) แคมเปญ Collaboration 100,000 บาท และ Grill & Gang 100,000 บาท",
+"Financials":"การเงิน",
+"Financial feasibility":"ความเป็นไปได้ทางการเงิน",
+"Year 1, from the plan's assumptions":"ปีแรก ตามสมมติฐานในแผน",
+"total revenue: 85,000 orders × THB 350 average order":"รายได้รวม: 85,000 ออเดอร์ × 350 บาทต่อออเดอร์",
+"THB 15.75M incremental":"ยอดขายเพิ่ม 15.75 ล้านบาท",
+"net operating profit (EBIT) after the THB 2,000,000 marketing budget":"กำไรจากการดำเนินงาน (EBIT) หลังหักงบการตลาด 2,000,000 บาท",
+"ROI 39.43%":"ROI 39.43%",
+"marketing ROMI: (THB 5.51M incremental contribution − THB 2M budget) ÷ THB 2M":"Marketing ROMI: (กำไรส่วนเกินที่เพิ่มขึ้น 5.51 ล้าน − งบ 2 ล้าน) ÷ 2 ล้าน",
+"Marketing pays back":"งบการตลาดคุ้มค่า",
+"orders a month to break even (16,327 a year) · CAC THB 23.53 per order":"ออร์เดอร์ต่อเดือนถึงจุดคุ้มทุน (16,327 ต่อปี) · CAC 23.53 บาทต่อออร์เดอร์",
+"Break-even":"จุดคุ้มทุน",
+"Unit economics per THB 350 order":"Unit Economics ต่อออร์เดอร์ 350 บาท",
+"Food & packaging 35%":"วัตถุดิบและแพ็กเกจ 35%",
+"Platform GP fee 30%":"ค่า GP แพลตฟอร์ม 30%",
+"Contribution margin 35%":"กำไรส่วนเกิน 35%",
+"Baseline sales THB 14,000,000 without marketing. CAC is the marketing budget divided by expected orders.":"ยอดขายฐานเดิม 14,000,000 บาท (ไม่รวมการตลาด) CAC คำนวณจากงบการตลาด หารด้วยจำนวนออร์เดอร์ที่คาดการณ์",
+"Of a THB 350 order: THB 122.50 food and packaging (35%), THB 105 platform GP fee (30%), THB 122.50 contribution margin (35%)":"ออร์เดอร์ 350 บาท: วัตถุดิบและแพ็กเกจ 122.50 บาท (35%) ค่า GP 105 บาท (30%) กำไรส่วนเกิน 122.50 บาท (35%)",
 };
 </script>
 <script>/* =====================================================================

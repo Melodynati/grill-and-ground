@@ -289,5 +289,50 @@ window.GG_TH={
 "Your Virtual Buffet being created":"กำลังสร้าง Virtual Buffet ของคุณ",
 "Your sealed Virtual Buffet floating above the clouds":"Virtual Buffet ที่ซีลแล้ว ลอยอยู่เหนือก้อนเมฆ",
 "Fire-seared beef":"เนื้อย่างไฟ","Garden carrot":"แครอท","Organic cabbage":"กะหล่ำปลีออร์แกนิก","Vine tomato":"มะเขือเทศ",
-"Natural-starter dough":"แป้งหมักธรรมชาติ","Fresh fruit":"ผลไม้สด","Organic kale":"เคลออร์แกนิก","Radish":"หัวไชเท้า"
+"Natural-starter dough":"แป้งหมักธรรมชาติ","Fresh fruit":"ผลไม้สด","Organic kale":"เคลออร์แกนิก","Radish":"หัวไชเท้า",
+/* ---------- aligned with the report (Oct 29) ---------- */
+"incremental sales from the Virtual Buffet campaign in year 1 (total revenue THB 29,750,000)":"ยอดขายส่วนเพิ่มจากแคมเปญ Virtual Buffet ในปีแรก (รายได้รวม 29,750,000 บาท)",
+"ROMI 175.63%":"ROMI 175.63%",
+"brand awareness among urban consumers within 3 months, up from 13% top-of-mind recall":"การรับรู้แบรนด์ในกลุ่มคนเมือง ภายใน 3 เดือน จากเดิมที่นึกถึงแบรนด์เป็นอันดับแรก 13%",
+"Value pricing in the range 43% of consumers are willing to pay, with premium meat add-ons and family party boxes to lift the basket.":
+  "Value Pricing ในช่วงราคาที่ผู้บริโภค 43% ยินดีจ่าย พร้อม Add-on เนื้อพรีเมียม และ Family Party Box เพื่อเพิ่มยอดต่อบิล",
+"GrabFood: used by 74% of consumers surveyed":"GrabFood: ผู้ตอบแบบสำรวจใช้ 74%",
+"LINE MAN: used by 69% of consumers surveyed":"LINE MAN: ผู้ตอบแบบสำรวจใช้ 69%",
+"Soft-launch PR content on Facebook, Instagram and TikTok (>500,000 reach), then local community activation around Paseo Park Kanchana and Dadfa Lasalle.":
+  "คอนเทนต์ PR ช่วง Soft Launch บน Facebook, Instagram และ TikTok (Reach 500,000+) ต่อด้วยแคมเปญ “เพื่อนบ้านอิ่มจุก” รอบสาขา Paseo Park กาญจนาภิเษก และดาดฟ้า ลาซาล",
+"Virtual Buffet Party Box (4–6 pax, 1,500 sets), LINE OA membership launch (>2,000 members) and “Mid-Year Meat × Chef Pom”.":
+  "Virtual Buffet Party Box (4–6 ที่ 1,500 ชุด), เปิดระบบสมาชิก LINE OA (2,000+ คน) และ “Mid-Year Meat × เชฟป้อม”",
+"A collaborative campaign (+15% repeat frequency) and the “Grill & Gang” UGC contest (>80 clips, >1,000,000 views).":
+  "แคมเปญ Collaboration (ซื้อซ้ำเพิ่ม 15%) และประกวดคลิป “Grill & Gang” (80+ คลิป ยอดชม 1,000,000+)",
+"Festive buffet sets for Halloween, Loy Krathong and Christmas (+30% sales), New Year e-vouchers (>THB 200,000) and 750 New Year sets.":
+  "เซ็ตเทศกาล Halloween ลอยกระทง และคริสต์มาส (ยอดขายโต 30%) e-Voucher ปีใหม่ (200,000+ บาท) และเซ็ตปีใหม่ 750 ชุด",
+"“Launch Virtual Buffet” pushes in Feb, Apr, Jul and Oct (>10,000,000 views) and “Grill & กลอน” all year (>10,000 participants).":
+  "“บุ๊กบุฟเฟต์เดลิเวอรี” ช่วง ก.พ. เม.ย. ก.ค. และ ต.ค. (ยอดชม 10,000,000+) และ “Grill & กลอน” ตลอดปี (ผู้ร่วมกิจกรรม 10,000+ คน)",
+"Always-on campaigns: THB 600,000 (30%). Launch Virtual Buffet pushes (THB 350,000) and Grill & กลอน (THB 250,000).":
+  "Always-on Campaigns: 600,000 บาท (30%) บุ๊กบุฟเฟต์เดลิเวอรี 350,000 บาท และ Grill & กลอน 250,000 บาท",
+"Awareness & brand launch: THB 400,000 (20%). Soft-launch PR content (THB 150,000) and local community activation (THB 250,000).":
+  "Awareness & Brand Launch: 400,000 บาท (20%) คอนเทนต์ PR 150,000 บาท และเพื่อนบ้านอิ่มจุก 250,000 บาท",
+"Lead generation & Virtual Buffet expansion: THB 400,000 (20%). Party Box (THB 150,000), LINE OA membership (THB 100,000) and Mid-Year Meat × Chef Pom (THB 150,000).":
+  "Lead Generation & Virtual Buffet Expansion: 400,000 บาท (20%) Party Box 150,000 บาท สมาชิก LINE OA 100,000 บาท และ Mid-Year Meat × เชฟป้อม 150,000 บาท",
+"Seasonal & festive: THB 400,000 (20%). Festive buffet (THB 200,000), New Year e-vouchers (THB 100,000) and New Year promo (THB 100,000).":
+  "Seasonal & Festive: 400,000 บาท (20%) เซ็ตเทศกาล 200,000 บาท e-Voucher ปีใหม่ 100,000 บาท และโปรปีใหม่ 100,000 บาท",
+"Engagement & loyalty retention: THB 200,000 (10%). Collaborative campaign (THB 100,000) and Grill & Gang UGC (THB 100,000).":
+  "Engagement & Loyalty Retention: 200,000 บาท (10%) แคมเปญ Collaboration 100,000 บาท และ Grill & Gang 100,000 บาท",
+"Financials":"การเงิน",
+"Financial feasibility":"ความเป็นไปได้ทางการเงิน",
+"Year 1, from the plan's assumptions":"ปีแรก ตามสมมติฐานในแผน",
+"total revenue: 85,000 orders × THB 350 average order":"รายได้รวม: 85,000 ออเดอร์ × 350 บาทต่อออเดอร์",
+"THB 15.75M incremental":"ยอดขายเพิ่ม 15.75 ล้านบาท",
+"net operating profit (EBIT) after the THB 2,000,000 marketing budget":"กำไรจากการดำเนินงาน (EBIT) หลังหักงบการตลาด 2,000,000 บาท",
+"ROI 39.43%":"ROI 39.43%",
+"marketing ROMI: (THB 5.51M incremental contribution − THB 2M budget) ÷ THB 2M":"Marketing ROMI: (กำไรส่วนเกินที่เพิ่มขึ้น 5.51 ล้าน − งบ 2 ล้าน) ÷ 2 ล้าน",
+"Marketing pays back":"งบการตลาดคุ้มค่า",
+"orders a month to break even (16,327 a year) · CAC THB 23.53 per order":"ออร์เดอร์ต่อเดือนถึงจุดคุ้มทุน (16,327 ต่อปี) · CAC 23.53 บาทต่อออร์เดอร์",
+"Break-even":"จุดคุ้มทุน",
+"Unit economics per THB 350 order":"Unit Economics ต่อออร์เดอร์ 350 บาท",
+"Food & packaging 35%":"วัตถุดิบและแพ็กเกจ 35%",
+"Platform GP fee 30%":"ค่า GP แพลตฟอร์ม 30%",
+"Contribution margin 35%":"กำไรส่วนเกิน 35%",
+"Baseline sales THB 14,000,000 without marketing. CAC is the marketing budget divided by expected orders.":"ยอดขายฐานเดิม 14,000,000 บาท (ไม่รวมการตลาด) CAC คำนวณจากงบการตลาด หารด้วยจำนวนออร์เดอร์ที่คาดการณ์",
+"Of a THB 350 order: THB 122.50 food and packaging (35%), THB 105 platform GP fee (30%), THB 122.50 contribution margin (35%)":"ออร์เดอร์ 350 บาท: วัตถุดิบและแพ็กเกจ 122.50 บาท (35%) ค่า GP 105 บาท (30%) กำไรส่วนเกิน 122.50 บาท (35%)",
 };

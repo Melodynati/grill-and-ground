@@ -194,6 +194,19 @@
 .kTile span{font-size:13px;line-height:1.45;color:rgba(248,241,224,.78)}
 .kTile i{display:block;font-style:normal;font-size:12px;color:#A9DDA2;margin-top:2px}
 
+
+/* 7 · financial feasibility */
+@media(min-width:900px){.dFin{grid-column:span 12}}
+@media(min-width:900px){.dFinRow{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.dUnitTag{margin-top:20px!important}
+.dUnit{display:flex;gap:3px;border-radius:12px;overflow:hidden;min-height:58px}
+.dUnit span{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:9px 12px;font-size:12.5px;line-height:1.35;min-width:0}
+.dUnit b{font-family:var(--serif);font-weight:400;font-size:1.15rem;font-variant-numeric:lining-nums}
+.dUnit .u1{background:#E9DFC4;color:var(--d-ink)}
+.dUnit .u2{background:#C8BFA8;color:var(--d-ink)}
+.dUnit .u3{background:var(--forest);color:var(--cream)}
+@media(max-width:560px){.dUnit{flex-direction:column}.dUnit span{flex:none!important}}
+
 @media(prefers-reduced-motion:reduce){
   .dashCloud{animation:none}
   .dBarTrack i,.gBar{transform:none!important}
